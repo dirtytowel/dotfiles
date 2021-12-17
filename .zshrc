@@ -1,3 +1,16 @@
+#           _
+#   _______| |__  _ __ ___
+#  |_  / __| '_ \| '__/ __|
+# _ / /\__ \ | | | | | (__
+#(_)___|___/_| |_|_|  \___|
+#
+# to enable changes restart your terminal emulator and come back.
+# if you are using ssh or a tty then type exit and log back in
+
+# Enable colors and change prompt:
+autoload -U colors && colors
+PS1="[%F{yellow}%n%f%F{yellow}@%f%F{yellow}%m%f %F{cyan}%~%f]%F{magenta}$%f "
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -17,11 +30,6 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 alias ll='ls -l'
 alias la='ls -lA'
 alias l='ls -CF'
-
-# Enable colors and change prompt:
-autoload -U colors && colors
-# PS1="\[\033[38;5;7m\][\[$(tput sgr0)\]\[\033[38;5;11m\]\u@\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;14m\]\w\[$(tput sgr0)\]\[\033[38;5;7m\]]\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;13m\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
-PS1="[%F{yellow}%n%f%F{yellow}@%f%F{yellow}%m%f %F{cyan}%~%f]%F{magenta}$%f "
 
 # Dynamic window title
 case $TERM in
