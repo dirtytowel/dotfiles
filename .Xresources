@@ -1,0 +1,49 @@
+*foreground:		#e0e0e0
+*foreground_bold:	#eeeeee
+*cursor:		#a8a19f
+URxvt.intensityStyles:  false
+URxvt.depth:            32                                                                                                                                               >
+URxvt.background:       [60]#040404
+
+!! black
+*color0:		#696969
+*color8:		#696969
+!! red
+*color1:		#f22c40
+*color9:		#f22c40
+!! green
+*color2:		#00C965
+*color10:		#00C965
+!! yellow
+*color3:		#f7f41b
+*color11:		#f7f41b
+!! blue
+*color4:		#407ee7
+*color12:		#407ee7
+!! magenta
+*color5:		#e56fed
+*color13:		#e56fed
+!! cyan
+*color6:		#00d1e8
+*color14:		#00d1e8
+!! white
+*color7:		#eeeeee
+*color15:		#eeeeee
+
+!! fonts
+URxvt.font:		xft:CozetteVector:size=9
+URxvt.boldFont:
+
+URxvt.scrollBar:	false
+URxvt.cursorColor:	magenta
+URxvt.cursorBlink:	true
+
+!! URxvt Functions
+URxvt.perl-ext-common:	resize-font,
+URxvt.resize-font.step: 8
+URxvt.keysym.C-minus:	resize-font:smaller
+URxvt.keysym.C-equal:	resize-font:bigger
+URxvt.keysym.C-0:	resize-font:reset
+
+URxvt.iso14755:		false
+URxvt.iso14755_52:	false
