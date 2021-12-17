@@ -84,6 +84,7 @@ export PATH=$PATH:/home/ethan/.local/bin/
 
 alias hg='history | grep'
 alias history='history 1'
+#sudo() { /usr/bin/su -c "$*" ;}
 sudo() { doas -- "$@" ;}
 
 # plugins

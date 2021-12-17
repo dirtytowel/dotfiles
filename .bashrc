@@ -38,13 +38,10 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 startx
 fi
 
-# fuck sudo
-#sudo() { /usr/bin/su -c "$*" ;}
-sudo() { doas -- "$@" ;}
-
 # path
 export PATH=$PATH:/home/ethan/.local/bin/
 
 # aliases
 alias hg='history | grep'
-#alias history='history 1'
+#sudo() { /usr/bin/su -c "$*" ;}
+sudo() { doas -- "$@" ;}
