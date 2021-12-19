@@ -10,6 +10,7 @@
 *foreground_bold:	#eeeeee
 *cursor:		#a8a19f
 URxvt.intensityStyles:  false
+URxvt.geometry:		120x45
 URxvt.depth:            32                                                                                                                                               >
 URxvt.background:       [60]#040404
 
