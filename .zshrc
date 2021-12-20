@@ -32,22 +32,9 @@ alias la='ls -lA'
 alias l='ls -CF'
 
 # Dynamic window title
-case $TERM in
-  rxvt|rxvt-unicode|rxvt-256color|rxvt-unicode-256color|(dt|k|E)term)
-    precmd () { print -Pn "\e]0;urxvt $PWD\a" }
-    preexec () { print -Pn "\e]0;$1\a" }
-  ;;
-  screen|screen-256color)
-    precmd () {
-      print -Pn "\e]83;title \"$1\"\a"
-      print -Pn "\e]0;$TERM\a"
-    }
-    preexec () {
-      print -Pn "\e]83;title \"$1\"\a"
-      print -Pn "\e]0;$TERM - $1\a"
-    }
-  ;;
-esac
+[ $$ = /tmp/sppid ] && ;
+precmd () { print -Pn "\e]0;urxvt $PWD\a" }
+preexec () { print -Pn "\e]0;$1\a" }
 
 # History in cache directory:
 HISTSIZE=10000
