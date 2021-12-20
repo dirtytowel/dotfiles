@@ -8,11 +8,11 @@
 
 *foreground:		#e0e0e0
 *foreground_bold:	#eeeeee
-*cursor:		#a8a19f
+URxvt.cursor:		#a8a19f
 URxvt.intensityStyles:  false
-URxvt.geometry:		120x45
-URxvt.depth:            32                                                                                                                                               >
-URxvt.background:       [60]#040404
+URxvt.geometry:		145x45
+URxvt.depth:		32
+URxvt.background:	[80]#040404
 
 !! black
 *color0:		#696969
@@ -44,8 +44,8 @@ URxvt.font:		xft:CozetteVector:size=9
 URxvt.boldFont:
 
 URxvt.scrollBar:	false
-URxvt.cursorColor:	magenta
-URxvt.cursorBlink:	true
+*.cursorColor:		magenta
+*.cursorBlink:	true
 
 !! URxvt Functions
 URxvt.perl-ext-common:	resize-font,

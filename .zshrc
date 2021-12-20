@@ -11,6 +11,10 @@
 autoload -U colors && colors
 PS1="[%F{yellow}%n%f%F{yellow}@%f%F{yellow}%m%f %F{cyan}%~%f]%F{magenta}$%f "
 
+# TERM
+#export TERM=spterm
+
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -32,9 +36,11 @@ alias la='ls -lA'
 alias l='ls -CF'
 
 # Dynamic window title
-[ $$ = /tmp/sppid ] && ;
-precmd () { print -Pn "\e]0;urxvt $PWD\a" }
-preexec () { print -Pn "\e]0;$1\a" }
+case $TERM in
+  rxvt-unicode-256color|(dt|k|E)term)
+    precmd () { print -Pn "\e]0;urxvt $PWD\a" }
+    preexec () { print -Pn "\e]0;$1\a" }
+esac
 
 # History in cache directory:
 HISTSIZE=10000
@@ -66,6 +72,7 @@ export BROWSER="librewolf"
 export PWBROWSER="librewolf --private-window"
 export ALTBROWSER="chromium"
 export ALTPWBROWSER="chromium --incognito"
+
 
 # startx automatically
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
