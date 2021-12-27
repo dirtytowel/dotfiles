@@ -40,7 +40,7 @@ URxvt.background:	[80]#040404
 *color15:		#e0e0e0
 
 !! fonts
-URxvt.font:		xft:CozetteVector:size=9
+URxvt.font:		xft:cozette
 URxvt.boldFont:
 
 URxvt.scrollBar:	false
