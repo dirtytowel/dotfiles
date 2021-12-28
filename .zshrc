@@ -20,11 +20,12 @@ case $TERM in
     preexec () { print -Pn "\e]0;$1\a" }
 esac
 
-# History in cache directory:
+# History:
 HISTSIZE=10000
 SAVEHIST=10000
 HISTCONTROL=ignoreboth
 HISTFILE=~/.history
+alias history='history 1'
 
 # Basic auto/tab complete:
 autoload -U compinit

@@ -12,7 +12,7 @@ source ~/.aliasrc
 # change prompt
 PS1="\[\033[38;5;7m\][\[$(tput sgr0)\]\[\033[38;5;11m\]bash.\u@\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;14m\]\w\[$(tput sgr0)\]\[\033[38;5;7m\]]\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;13m\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
 
-# History in cache .sh_history:
+# History:
 HISTSIZE=10000
 SAVEHIST=10000
 HISTCONTROL=ignoreboth

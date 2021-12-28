@@ -28,6 +28,7 @@ alias la='ls -lA'
 alias l='ls -CF'
 
 # aliases
+alias history='history'
 alias hg='history | grep'
 #sudo() { /usr/bin/su -c "$*" ;}
 sudo() { doas -- "$@" ;}
