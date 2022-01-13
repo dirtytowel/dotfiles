@@ -34,5 +34,5 @@ alias hg='history | grep'
 sudo() { doas -- "$@" ;}
 
 # default browsers
-export BROWSER="/usr/local/bin/librewolf"
-export PWBROWSER="/usr/local/bin/librewolf --private-window"
+export BROWSER="/usr/bin/librewolf"
+export PWBROWSER="/usr/bin/librewolf --private-window"
