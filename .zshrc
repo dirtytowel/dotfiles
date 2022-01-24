@@ -49,3 +49,5 @@ bindkey '^ ' autosuggest-accept
 bindkey '^f' forward-word
 
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+source ~/.zsh/git.plugin.zsh

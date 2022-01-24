@@ -33,6 +33,11 @@ alias hg='history | grep'
 #sudo() { /usr/bin/su -c "$*" ;}
 sudo() { doas -- "$@" ;}
 
-# default browsers
-export BROWSER="/usr/bin/librewolf"
+# defaults
+
+# browsers
+export BROWSER=/usr/bin/librewolf
 export PWBROWSER="/usr/bin/librewolf --private-window"
+
+# editor
+export EDITOR="vim"
