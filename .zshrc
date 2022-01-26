@@ -35,9 +35,7 @@ compinit
 _comp_options+=(globdots) # Include hidden files.
 
 # startx in tty1
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
-startx
-fi
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then exec startx; fi
 
 # path
 export PATH=$PATH:/home/ethan/.local/bin/
