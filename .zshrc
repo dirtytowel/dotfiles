@@ -16,7 +16,7 @@ PS1="[%F{yellow}%n%f%F{yellow}@%f%F{yellow}%m%f %F{cyan}%~%f]%F{magenta}$%f "
 # Dynamic window title
 case $TERM in
   rxvt-unicode-256color|(dt|k|E)term)
-    precmd () { print -Pn "\e]0;urxvt $PWD\a" }
+    precmd () { print -Pn "\e]0;urxvt %~\a" }
     preexec () { print -Pn "\e]0;$1\a" }
 esac
 
