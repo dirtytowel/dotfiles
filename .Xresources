@@ -40,7 +40,6 @@ URxvt.background:	[80]#040404
 *color15:		#e0e0e0
 
 !! fonts
-!!URxvt.font:		xft:CozetteVector:size=9:antialias=true
 URxvt.font:		xft:Cozette:style=Medium
 URxvt.boldFont:
 
@@ -50,7 +49,7 @@ URxvt.scrollBar:	false
 
 !! URxvt Functions
 URxvt.perl-ext-common:	resize-font,
-URxvt.resize-font.step: 8
+URxvt.resize-font.step: 9
 URxvt.keysym.C-minus:	resize-font:smaller
 URxvt.keysym.C-equal:	resize-font:bigger
 URxvt.keysym.C-0:	resize-font:reset
