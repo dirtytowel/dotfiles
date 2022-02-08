@@ -1,0 +1,56 @@
+super + n
+	kill -44 $(pidof nmtui) & urxvt -tn rxvt-unicode -name nmtui -e nmtui
+
+super + shift + n
+	arandr
+
+super + w
+	$BROWSER
+
+super + shift + w
+	$PWBROWSER
+
+super + e
+	thunderbird
+
+super + v
+	vscode
+
+super + f
+	spacefm
+
+super + Print
+	cd ~/pix/scrot && scrot
+
+super + shift + Print
+	cd ~/pix/scrot && scrot -s
+
+XF86AudioRaiseVolume
+	pamixer -u; pamixer --allow-boost -i 5
+
+XF86AudioLowerVolume
+	pamixer -u; pamixer --allow-boost -d 5
+
+XF86AudioMute
+	pamixer -t
+
+XF86AudioMicMute
+	pamixer --source alsa_input.pci-0000_00_1b.0.analog-stereo -t
+
+XF86Sleep
+	lock.sh & systemctl suspend
+
+XF86ScreenSaver
+	lock.sh
+
+XF86Display
+	desktop_mode.sh
+
+shift + XF86Display
+	autorandr --change
+
+XF86Launch1
+	bluetooth toggle
+
+XF86TouchpadToggle
+	touchpad.sh
