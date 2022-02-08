@@ -27,6 +27,7 @@ alias ll='ls -l'
 alias la='ls -lA'
 alias l='ls -CF'
 
+
 # aliases
 alias history='history'
 alias hg='history | grep'
@@ -34,7 +35,7 @@ alias hg='history | grep'
 sudo() { doas -- "$@" ;}
 
 # defaults
-
+export PATH=$PATH:/home/ethan/.scripts
 # browsers
 export BROWSER=/usr/bin/librewolf
 export PWBROWSER="/usr/bin/librewolf --private-window"
