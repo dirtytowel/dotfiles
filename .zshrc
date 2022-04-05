@@ -20,6 +20,8 @@ case $TERM in
     preexec () { print -Pn "\e]0;$1\a" }
 esac
 
+if [[ $TERM = "rxvt-unicode" ]]; then trap 'tdrop --clear urxvt' EXIT; fi
+
 # History:
 HISTSIZE=10000
 SAVEHIST=10000
