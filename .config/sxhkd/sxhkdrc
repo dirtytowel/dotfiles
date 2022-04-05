@@ -54,3 +54,15 @@ XF86Launch1
 
 XF86TouchpadToggle
 	touchpad.sh
+
+super + s
+	tdrop -w "" -h "" -x "" -y "" urxvt -tn rxvt-unicode -name spterm
+
+super + r
+	tdrop -m -w "" -h "" -x "" -y "" keepassxc
+
+super + shift + r
+	tdrop -m -w "" -h "" -x "" -y "" bitwarden
+
+super + m
+	tdrop -m -w "" -h "" -x "" -y "" plexamp
