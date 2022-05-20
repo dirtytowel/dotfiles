@@ -37,8 +37,8 @@ XF86AudioMute
 XF86Sleep
 	lock.sh
 
-XF86ScreenSaver	
-	lock.sh 
+XF86ScreenSaver
+	lock.sh
 
 XF86Display
 	desktop_mode.sh
@@ -50,13 +50,13 @@ XF86TouchpadToggle
 	touchpad.sh
 
 super + s
-	tdrop -w "" -h "" -x "" -y "" urxvt -name spterm
+	tdrop -w "" -h "" -x "" -y "" urxvt -tn rxvt-unicode -name spterm
 
 super + r
-	 tdrop -w "980" -h "650" -x "" -y "" keepassxc
+	tdrop -w "980" -h "650" -x "" -y "" keepassxc
 
 super + shift + r
-	 tdrop -w "980" -h "650" -x "" -y "" bitwarden
+	tdrop -w "980" -h "650" -x "" -y "" bitwarden
 
 super + m
 	tdrop -w "800" -h "500" -x "" -y "" plexamp
