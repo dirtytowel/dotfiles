@@ -34,14 +34,11 @@ XF86AudioLowerVolume
 XF86AudioMute
 	pamixer -t
 
-XF86AudioMicMute
-	pamixer --source alsa_input.pci-0000_00_1b.0.analog-stereo -t
-
 XF86Sleep
-	lock.sh & systemctl suspend
-
-XF86ScreenSaver
 	lock.sh
+
+XF86ScreenSaver	
+	lock.sh 
 
 XF86Display
 	desktop_mode.sh
@@ -49,20 +46,17 @@ XF86Display
 shift + XF86Display
 	autorandr --change
 
-XF86Launch1
-	bluetooth toggle
-
 XF86TouchpadToggle
 	touchpad.sh
 
 super + s
-	tdrop -w "" -h "" -x "" -y "" urxvt -tn rxvt-unicode -name spterm
+	tdrop -w "" -h "" -x "" -y "" urxvt -name spterm
 
 super + r
-	tdrop -m -w "" -h "" -x "" -y "" keepassxc
+	 tdrop -w "980" -h "650" -x "" -y "" keepassxc
 
 super + shift + r
-	tdrop -m -w "" -h "" -x "" -y "" bitwarden
+	 tdrop -w "980" -h "650" -x "" -y "" bitwarden
 
 super + m
-	tdrop -m -w "" -h "" -x "" -y "" plexamp
+	tdrop -w "800" -h "500" -x "" -y "" plexamp
