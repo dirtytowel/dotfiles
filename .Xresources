@@ -42,19 +42,17 @@ URxvt.background:	[80]#040404
 !! fonts
 URxvt.font:		xft:Cozette:style=Regular:pixelsize=9
 URxvt.boldFont:
-!!URxvt.font:		xft:Spleen:style=Regular:pixelsize=12, xft:Cozette:style=Regular:pixelsize=9
-!!URxvt.boldFont:		xft:Tamzen:style=Bold:pixelsize=9
 
 URxvt.scrollBar:	false
 *.cursorColor:		magenta
 *.cursorBlink:		true
 
 !! URxvt Functions
-URxvt.perl-ext-common:	resize-font,
-URxvt.resize-font.step: 4 
-URxvt.keysym.C-minus:	resize-font:smaller
-URxvt.keysym.C-equal:	resize-font:bigger
-URxvt.keysym.C-0:	resize-font:reset
+!!URxvt.perl-ext-common:	resize-font,
+!!URxvt.resize-font.step: 4 
+!!URxvt.keysym.C-minus:	resize-font:smaller
+!!URxvt.keysym.C-equal:	resize-font:bigger
+!!URxvt.keysym.C-0:	resize-font:reset
 
 URxvt.iso14755:		false
 URxvt.iso14755_52:	false
