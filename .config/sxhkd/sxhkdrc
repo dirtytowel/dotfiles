@@ -26,37 +26,33 @@ super + shift + Print
 	cd ~/pix/scrot && scrot -s
 
 XF86AudioRaiseVolume
-	pamixer -u; pamixer --allow-boost -i 5
+	pamixer -u; pamixer --allow-boost -i 5 && refreshbar.sh
 
 XF86AudioLowerVolume
-	pamixer -u; pamixer --allow-boost -d 5
+	pamixer -u; pamixer --allow-boost -d 5 && refreshbar.sh
 
 XF86AudioMute
-	pamixer -t
+	pamixer -t && refreshbar.sh
 
 XF86Sleep
 	lock.sh
 
 XF86ScreenSaver
 	lock.sh
+super + F2
+	lock.sh
 
-XF86Display
+super + F7
 	desktop_mode.sh
-
-shift + XF86Display
-	autorandr --change
-
-XF86TouchpadToggle
-	touchpad.sh
 
 super + s
 	tdrop -w "" -h "" -x "" -y "" urxvt -tn rxvt-unicode -name spterm
 
 super + r
-	tdrop -w "980" -h "650" -x "" -y "" keepassxc
+	tdrop -w "1900" -h "1400" -x "" -y "" keepassxc 
 
 super + shift + r
-	tdrop -w "980" -h "650" -x "" -y "" bitwarden
+	tdrop -w "1900" -h "1400" -x "" -y "" bitwarden
 
 super + m
-	tdrop -w "800" -h "500" -x "" -y "" plexamp
+	env HOME=/home/ethan/.config tdrop -w "1600" -h "1100" -x "" -y "" plexamp

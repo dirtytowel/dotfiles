@@ -6,6 +6,11 @@
 !!
 !! to enable changes type `xrdb -load .Xresources` and restart URxvt
 
+!!Xft.dpi:		96
+Xft.dpi:		153
+Xcursor.size:		50 
+
+
 *foreground:		#e0e0e0
 *foreground_bold:	#eeeeee
 URxvt.cursor:		#a8a19f
@@ -40,7 +45,8 @@ URxvt.background:	[80]#040404
 *color15:		#e0e0e0
 
 !! fonts
-URxvt.font:		xft:Cozette:style=Regular:pixelsize=9
+URxvt.font:		xft:Hack Nerd Font:style=Regular:size=10
+!!URxvt.font:		xft:Cozette:style=Regular:pixelsize=9
 URxvt.boldFont:
 
 URxvt.scrollBar:	false
@@ -48,11 +54,11 @@ URxvt.scrollBar:	false
 *.cursorBlink:		true
 
 !! URxvt Functions
-!!URxvt.perl-ext-common:	resize-font,
-!!URxvt.resize-font.step: 4 
-!!URxvt.keysym.C-minus:	resize-font:smaller
-!!URxvt.keysym.C-equal:	resize-font:bigger
-!!URxvt.keysym.C-0:	resize-font:reset
+URxvt.perl-ext-common:	resize-font,
+URxvt.resize-font.step: 1 
+URxvt.keysym.C-minus:	resize-font:smaller
+URxvt.keysym.C-equal:	resize-font:bigger
+URxvt.keysym.C-0:	resize-font:reset
 
 URxvt.iso14755:		false
 URxvt.iso14755_52:	false
