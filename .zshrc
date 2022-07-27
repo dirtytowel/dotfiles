@@ -7,11 +7,20 @@
 # to enable changes restart your terminal emulator and come back.
 # if you are using ssh or a tty then type exit and log back in
 
-source ~/.aliasrc
+source ~/.shell/*
 
-# Enable colors and change prompt:
+# Enable colors
 autoload -U colors && colors
-PS1="[%F{yellow}%n%f%F{yellow}@%f%F{yellow}%m%f %F{cyan}%~%f]%F{magenta}$%f "
+
+# Prompt
+#PS1="[%F{yellow}%n%f%F{yellow}@%f%F{yellow}%m%f %F{cyan}%~%f]%F{magenta}$%f "
+setopt PROMPT_SUBST
+
+get_pwd () {
+  echo $(~/.shell/shortpath.sh)
+}
+
+PS1='[%F{yellow}%n%f%F{yellow}@%f%F{yellow}%m%f %F{cyan}$(get_pwd)%f]%F{magenta}$%f '
 
 # Dynamic window title
 case $TERM in

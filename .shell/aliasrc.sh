@@ -9,6 +9,8 @@
 
 source ~/.docker-aliases
 
+alias apt='nala'
+alias 'sudo apt'='sudo nala'
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -48,6 +50,9 @@ export PWBROWSER="/usr/bin/librewolf --private-window"
 
 # editor
 export EDITOR="vim"
+
+# weechat
+alias weechat="ssh -t ryzen-ny 'dtach -A 1 weechat'"
 
 # todo.sh
 alias t="todo.sh -a"
