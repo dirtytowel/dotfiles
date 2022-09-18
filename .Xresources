@@ -6,24 +6,25 @@
 !!
 !! to enable changes type `xrdb -load .Xresources` and restart URxvt
 
-!!Xft.dpi:		96
 Xft.dpi:		153
-Xcursor.size:		50 
+Xcursor.size:		50
 
 
-*foreground:		#e0e0e0
-*foreground_bold:	#eeeeee
+*foreground:		#ffffff
+*foreground_bold:	#e0e0e0
 URxvt.cursor:		#a8a19f
 URxvt.intensityStyles:  false
 URxvt.geometry:		145x45
-URxvt.depth:		32
-URxvt.background:	[80]#040404
+URxvt.depth:		16
+*.background:		#000000
+URxvt.background:	#000000
+*.internalBorder:	20
 
 !! black
-*color0:		#040404
+*color0:		#000000
 *color8:		#696969
 !! red
-*color1:		#fa4646
+*color1:		#ed1b23
 *color9:		#d13b3b
 !! green
 *color2:		#55fa55
@@ -41,13 +42,13 @@ URxvt.background:	[80]#040404
 *color6:		#46e8fa
 *color14:		#39bdcc
 !! white
-*color7:		#eeeeee
+*color7:		#ffffff
 *color15:		#e0e0e0
 
 !! fonts
-URxvt.font:		xft:Hack Nerd Font:style=Regular:size=10
-!!URxvt.font:		xft:Cozette:style=Regular:pixelsize=9
-URxvt.boldFont:
+*.font:			xft:Hack Nerd Font Mono:style=Regular:antialias=true:hinting=true:size=10, \
+			xft:Symbola:style=Regular:antialias=true:hinting=true:size=10
+*.boldFont:
 
 URxvt.scrollBar:	false
 *.cursorColor:		magenta

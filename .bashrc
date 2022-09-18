@@ -7,11 +7,16 @@
 # to enable changes restart your terminal emulator and come back.
 # if you are using ssh or a tty then type exit and log back in
 
-source ~/.aliasrc
+source ~/.shell/*
 
 # change prompt
+
+get_pwd () {
+  echo $(~/.shell/shortpath)
+}
+
 #source ~/prompt
-PS1="\[\033[38;5;7m\][\[$(tput sgr0)\]\[\033[38;5;11m\]bash.\u@\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;14m\]\w\[$(tput sgr0)\]\[\033[38;5;7m\]]\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;13m\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
+PS1="\[\033[38;5;7m\][\[$(tput sgr0)\]\[\033[38;5;11m\]\u@\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;14m\]\$(get_pwd)\[$(tput sgr0)\]\[\033[38;5;7m\]]\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;13m\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
 
 # History:
 HISTSIZE=10000
@@ -26,3 +31,4 @@ fi
 
 # path
 export PATH=$PATH:/home/ethan/.local/bin/
+

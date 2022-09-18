@@ -1,8 +1,11 @@
-super + n
-	kill -44 $(pidof nmtui) & urxvt -tn rxvt-unicode -name nmtui -e nmtui
+super + shift + Return
+	urxvtcd
 
-super + shift + n
-	arandr
+super + shift + backslash
+	smartspwn.sh
+
+super + n
+	kill -44 $(pidof nmtui) & urxvtc -tn rxvt-unicode -name nmtui -e nmtui
 
 super + w
 	$BROWSER
@@ -14,7 +17,7 @@ super + e
 	thunderbird
 
 super + v
-	vscode
+	code
 
 super + f
 	spacefm
@@ -34,6 +37,15 @@ XF86AudioLowerVolume
 XF86AudioMute
 	pamixer -t && refreshbar.sh
 
+shift + XF86AudioRaiseVolume
+	pamixer --source alsa_input.pci-0000_00_1f.3.analog-stereo -u; pamixer --source alsa_input.pci-0000_00_1f.3.analog-stereo --allow-boost -i 5 && refreshbar.sh
+
+shift + XF86AudioLowerVolume
+	pamixer --source alsa_input.pci-0000_00_1f.3.analog-stereo -u; pamixer --source alsa_input.pci-0000_00_1f.3.analog-stereo --allow-boost -d 5 && refreshbar.sh
+
+shift + XF86AudioMute
+	pamixer --source alsa_input.pci-0000_00_1f.3.analog-stereo -t && refreshbar.sh
+
 XF86Sleep
 	lock.sh
 
@@ -44,6 +56,9 @@ super + F2
 
 super + F7
 	desktop_mode.sh
+
+super + shift + F7
+	autorandr --change
 
 super + s
 	tdrop -w "" -h "" -x "" -y "" urxvt -tn rxvt-unicode -name spterm
