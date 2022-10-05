@@ -6,56 +6,86 @@
 !!
 !! to enable changes type `xrdb -load .Xresources` and restart URxvt
 
-Xft.dpi:		153
-Xcursor.size:		50
+!! Define Colors
+!#define FOREGROUND #c2c2b0
+!#define BACKGROUND #1c1c1c
 
+!!black
+#define COLOR0  #000000
+#define COLOR8  #696969
+!!red
+#define COLOR1  #ed1b23
+#define COLOR9  #d13b3b
+!!green
+#define COLOR2  #55fa55
+#define COLOR10 #44c744
+!!yellow
+#define COLOR3  #fafa46
+#define COLOR11 #d1d13b
+!!blue
+#define COLOR4  #466dfa
+#define COLOR12 #3552bd
+!!magenta
+#define COLOR5  #f746fa
+#define COLOR13 #c738c9
+!!cyan
+#define COLOR6  #46e8fa
+#define COLOR14 #39bdcc 
+!!white
+#define COLOR7  #ffffff
+#define COLOR15 #e0e0e0
 
-*foreground:		#ffffff
-*foreground_bold:	#e0e0e0
-URxvt.cursor:		#a8a19f
-URxvt.intensityStyles:  false
-URxvt.geometry:		145x45
-URxvt.depth:		16
-*.background:		#000000
-URxvt.background:	#000000
-*.internalBorder:	20
+!! Set Colors
+*color0:		COLOR0
+*color8:		COLOR8
+*color1:		COLOR1
+*color9:		COLOR9
+*color2:		COLOR2
+*color10:		COLOR10
+*color3:		COLOR3
+*color11:		COLOR11
+*color4:		COLOR4
+*color12:		COLOR12
+*color5:		COLOR5
+*color13:		COLOR13
+*color6:		COLOR6
+*color14:		COLOR14
+*color7:		COLOR7
+*color15:		COLOR15
 
-!! black
-*color0:		#000000
-*color8:		#696969
-!! red
-*color1:		#ed1b23
-*color9:		#d13b3b
-!! green
-*color2:		#55fa55
-*color10:		#44c744
-!! yellow
-*color3:		#fafa46
-*color11:		#d1d13b
-!! blue
-*color4:		#466dfa
-*color12:		#3552bd
-!! magenta
-*color5:		#f746fa
-*color13:		#c738c9
-!! cyan
-*color6:		#46e8fa
-*color14:		#39bdcc
-!! white
-*color7:		#ffffff
-*color15:		#e0e0e0
+!! hiDPI
+!Xft.dpi:		96
+!Xft.dpi:		135
+!Xft.dpi:		144
+Xft.dpi:		168
+!Xft.dpi:		244
 
-!! fonts
-*.font:			xft:Hack Nerd Font Mono:style=Regular:antialias=true:hinting=true:size=10, \
-			xft:Symbola:style=Regular:antialias=true:hinting=true:size=10
-*.boldFont:
+!! Cursors
+!Xcursor.size:		16
+!Xcursor.size:		32
+Xcursor.size:		48
 
-URxvt.scrollBar:	false
-*.cursorColor:		magenta
+*.foreground:		COLOR7
+*.foreground_bold:	COLOR15
+*.background:		COLOR0
+*.cursorColor:		COLOR5
+*.internalBorder:	5
 *.cursorBlink:		true
 
-!! URxvt Functions
-URxvt.perl-ext-common:	resize-font,
+!! Fonts
+*.font:			xft:Hack Nerd Font Mono:antialias=true:hinting=true:size=10, \
+			xft:Symbola:antialias=true:hinting=true:size=10
+*.boldFont:
+
+!! URxvt
+URxvt.scrollBar:	false
+URxvt.intensityStyles:  false
+!URxvt.geometry:		145x45
+
+!! URxvt extensions
+URxvt.perl-ext-common:	default,matcher,resize-font,config-reload
+URxvt.matcher.button:	Ctrl-1
+urxvt.urlLauncher:	/usr/bin/librewolf
 URxvt.resize-font.step: 1 
 URxvt.keysym.C-minus:	resize-font:smaller
 URxvt.keysym.C-equal:	resize-font:bigger
