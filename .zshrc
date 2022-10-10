@@ -7,7 +7,7 @@
 # to enable changes restart your terminal emulator and come back.
 # if you are using ssh or a tty then type exit and log back in
 
-source ~/.shell/aliasrc.sh
+source ~/.shell/*
 
 # Enable colors
 autoload -U colors && colors

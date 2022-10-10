@@ -5,14 +5,13 @@ super + shift + backslash
 	smartspwn.sh
 
 super + n
-	kill -44 $(pidof nmtui) & urxvtc -tn rxvt-unicode -name nmtui -e nmtui
+	kill -44 $(pidof nmtui) & urxvtcd -tn rxvt-unicode -name nmtui -e nmtui
 
 super + w
 	$BROWSER
 
 super + shift + w
-	$PWBROWSER
-
+	weechat
 super + e
 	thunderbird
 
@@ -52,13 +51,13 @@ super + shift + F7
 	autorandr --change
 
 super + s
-	tdrop -w "" -h "" -x "" -y "" urxvt -tn rxvt-unicode -name spterm
+	tdrop -w 50% -h 55% -x 25% -y 22% urxvt -tn rxvt-unicode -name spterm -title spterm
 
 super + r
-	tdrop -w "1900" -h "1400" -x "" -y "" keepassxc 
+	tdrop -w 60% -h 70% -x 20% -y 15% keepassxc 
 
 super + shift + r
-	tdrop -w "1900" -h "1400" -x "" -y "" bitwarden
+	tdrop -w 60% -h 70% -x 20% -y 15% bitwarden
 
 super + m
-	env HOME=/home/ethan/.config tdrop -w "1600" -h "1100" -x "" -y "" plexamp
+	env HOME=/home/ethan/.config tdrop -w 40% -h 40% -x 30% -y 30% plexamp
