@@ -8,11 +8,11 @@
 
 !! Define Colors
 !#define FOREGROUND #c2c2b0
-!#define BACKGROUND #1c1c1c
+#define BACKGROUND [85]#000000
 
 !!black
 #define COLOR0  #000000
-#define COLOR8  #696969
+#define COLOR8  #444444
 !!red
 #define COLOR1  #ed1b23
 #define COLOR9  #d13b3b
@@ -33,7 +33,7 @@
 #define COLOR14 #39bdcc 
 !!white
 #define COLOR7  #ffffff
-#define COLOR15 #e0e0e0
+#define COLOR15 #bebbb8
 
 !! Set Colors
 *color0:		COLOR0
@@ -67,7 +67,8 @@ Xcursor.size:		48
 
 *.foreground:		COLOR7
 *.foreground_bold:	COLOR15
-URxvt.background:		COLOR0
+URxvt.background:	BACKGROUND
+*.internalBorder:	10
 *.cursorColor:		COLOR5
 *.cursorBlink:		true
 
