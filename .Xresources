@@ -69,7 +69,6 @@ Xcursor.size:		48
 *.foreground_bold:	COLOR15
 *.background:		COLOR0
 *.cursorColor:		COLOR5
-*.internalBorder:	5
 *.cursorBlink:		true
 
 !! Fonts
