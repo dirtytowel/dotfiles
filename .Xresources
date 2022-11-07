@@ -67,7 +67,7 @@ Xcursor.size:		48
 
 *.foreground:		COLOR7
 *.foreground_bold:	COLOR15
-*.background:		COLOR0
+URxvt.background:		COLOR0
 *.cursorColor:		COLOR5
 *.cursorBlink:		true
 
@@ -77,6 +77,7 @@ Xcursor.size:		48
 *.boldFont:
 
 !! URxvt
+URxvt.depth:		32
 URxvt.scrollBar:	false
 URxvt.intensityStyles:  false
 !URxvt.geometry:		145x45
