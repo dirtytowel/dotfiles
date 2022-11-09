@@ -7,7 +7,7 @@
 !! to enable changes type `xrdb -load .Xresources` and restart URxvt
 
 !! Define Colors
-!#define FOREGROUND #c2c2b0
+#define FOREGROUND #ffffff
 #define BACKGROUND [85]#000000
 
 !!black
@@ -65,7 +65,7 @@ Xft.dpi:		168
 !Xcursor.size:		32
 Xcursor.size:		48
 
-*.foreground:		COLOR7
+*.foreground:		FORGROUND
 *.foreground_bold:	COLOR15
 URxvt.background:	BACKGROUND
 *.internalBorder:	10
