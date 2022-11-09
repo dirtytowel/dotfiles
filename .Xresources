@@ -65,7 +65,7 @@ Xft.dpi:		168
 !Xcursor.size:		32
 Xcursor.size:		48
 
-*.foreground:		FORGROUND
+*.foreground:		FOREGROUND
 *.foreground_bold:	COLOR15
 URxvt.background:	BACKGROUND
 *.internalBorder:	10
@@ -84,9 +84,9 @@ URxvt.intensityStyles:  false
 !URxvt.geometry:		145x45
 
 !! URxvt extensions
-URxvt.perl-ext-common:	default,matcher,resize-font,config-reload
-URxvt.matcher.button:	Ctrl-1
-urxvt.urlLauncher:	/usr/bin/librewolf
+URxvt.perl-ext-common:	default,resize-font
+!URxvt.matcher.button:	Ctrl-1
+!urxvt.urlLauncher:	/usr/bin/librewolf
 URxvt.resize-font.step: 1 
 URxvt.keysym.C-minus:	resize-font:smaller
 URxvt.keysym.C-equal:	resize-font:bigger
