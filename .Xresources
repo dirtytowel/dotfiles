@@ -8,7 +8,7 @@
 
 !! Define Colors
 #define FOREGROUND #ffffff
-#define BACKGROUND [85]#000000
+#define BACKGROUND #000000
 
 !!black
 #define COLOR0  #000000
@@ -67,8 +67,8 @@ Xcursor.size:		32
 
 *.foreground:		FOREGROUND
 *.foreground_bold:	COLOR15
-URxvt.background:	BACKGROUND
-XTerm*background:	COLOR0
+URxvt.background:	[85]BACKGROUND
+XTerm*background:	BACKGROUND
 *.internalBorder:	10
 *.cursorColor:		COLOR5
 *.cursorBlink:		true
