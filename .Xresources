@@ -86,6 +86,10 @@ URxvt.scrollBar:	false
 URxvt.intensityStyles:  false
 !URxvt.geometry:		145x45
 
+!! XTerm
+XTerm*pointerShape: left_ptr
+XTerm*cursorTheme: Adwaita
+
 !! URxvt extensions
 URxvt.perl-ext-common:	default,resize-font
 !URxvt.matcher.button:	Ctrl-1
