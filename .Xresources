@@ -7,12 +7,12 @@
 !! to enable changes type `xrdb -load .Xresources` and restart URxvt
 
 !! Define Colors
-!#define FOREGROUND #c2c2b0
-!#define BACKGROUND #1c1c1c
+#define FOREGROUND #ffffff
+#define BACKGROUND #000000
 
 !!black
 #define COLOR0  #000000
-#define COLOR8  #696969
+#define COLOR8  #444444
 !!red
 #define COLOR1  #ed1b23
 #define COLOR9  #d13b3b
@@ -33,7 +33,7 @@
 #define COLOR14 #39bdcc 
 !!white
 #define COLOR7  #ffffff
-#define COLOR15 #e0e0e0
+#define COLOR15 #bebbb8
 
 !! Set Colors
 *color0:		COLOR0
@@ -65,30 +65,35 @@ Xcursor.size:		16
 !Xcursor.size:		32
 !Xcursor.size:		48
 
-*.foreground:		COLOR7
+*.foreground:		FOREGROUND
 *.foreground_bold:	COLOR15
-*.background:		COLOR0
+URxvt.background:	[85]BACKGROUND
+XTerm*background:	BACKGROUND
+*.internalBorder:	10
 *.cursorColor:		COLOR5
-*.internalBorder:	5
 *.cursorBlink:		true
 
 !! Fonts
 *.font:			xft:Cozette:style=Regular:pixelsize=9
+URxvt.iso14755:		false
+URxvt.iso14755_52:	false
 *.boldFont:
 
 !! URxvt
+URxvt.depth:		32
 URxvt.scrollBar:	false
 URxvt.intensityStyles:  false
 !URxvt.geometry:		145x45
 
+!! XTerm
+XTerm*pointerShape: left_ptr
+XTerm*cursorTheme: Adwaita
+
 !! URxvt extensions
-URxvt.perl-ext-common:	default,matcher,resize-font,config-reload
-URxvt.matcher.button:	Ctrl-1
-urxvt.urlLauncher:	/usr/bin/librewolf
+URxvt.perl-ext-common:	default,-confirm-paste,matcher,resize-font,
+URxvt.url-launcher:	/usr/bin/librewolf
+URxvt.matcher.button:	C-1
 URxvt.resize-font.step: 1 
 URxvt.keysym.C-minus:	resize-font:smaller
 URxvt.keysym.C-equal:	resize-font:bigger
 URxvt.keysym.C-0:	resize-font:reset
-
-URxvt.iso14755:		false
-URxvt.iso14755_52:	false
