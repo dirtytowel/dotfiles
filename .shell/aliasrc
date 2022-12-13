@@ -7,7 +7,7 @@
 # add "source ~/.aliasrc" to your .zshrc or .bashrc file
 # to add the following aliases to your shell
 
-source ~/.docker-aliases
+#source ~/.docker-aliases
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -30,58 +30,27 @@ alias la='ls -lA'
 alias l='ls -CF'
 
 # aliases
-alias history='history'
 alias hg='history | grep'
-
 alias mirror='devour mpv av://v4l2:/dev/video0 --vf=hflip --profile=low-latency --untimed'
-alias nano='vim'
+alias t="todo.sh -a"
+alias s="share.sh"
+alias ifconfig.me="curl ifconfig.me; echo"
 
 # timezones
 alias CST='doas timedatectl set-timezone America/Chicago && refreshbar.sh'
 alias EST='doas timedatectl set-timezone America/New_York && refreshbar.sh'
 
-# defaults
+# paths
 export PATH=$PATH:/home/ethan/.scripts
+export PATH=$PATH:/usr/sbin
+export PATH=$PATH:/sbin
+
 # browsers
 export BROWSER=/usr/bin/librewolf
 export PWBROWSER="/usr/bin/librewolf --private-window"
 
-export PATH=/home/ethan/.nimble/bin:$PATH
-
-export PATH=$PATH:/usr/sbin
-export PATH=$PATH:/sbin
-
 # editor
 export EDITOR="vim"
-
-# weechat
-#alias weechat="ssh -t ryzen-ny 'dtach -A 1 weechat'"
-
-# apt -> nala
-
-apt() {
-  command nala "$@"
-}
-
-sudo() {
-  if [ "$1" = "apt" ]; then
-    shift
-    command sudo nala "$@"
-  else
-    command sudo "$@"
-  fi
-}
-
-#export XCURSOR_SIZE=32
-
-# todo.sh
-alias t="todo.sh -a"
-
-# share.sh
-alias s="share.sh"
-
-# ifconfig.me
-alias ifconfig.me="curl ifconfig.me; echo"
 
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8

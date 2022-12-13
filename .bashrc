@@ -28,7 +28,3 @@ HISTFILE=~/.history
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 startx
 fi
-
-# path
-export PATH=$PATH:/home/ethan/.local/bin/
-

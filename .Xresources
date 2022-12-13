@@ -12,7 +12,7 @@
 
 !!black
 #define COLOR0  #000000
-#define COLOR8  #444444
+#define COLOR8  #666666
 !!red
 #define COLOR1  #ed1b23
 #define COLOR9  #d13b3b
@@ -56,8 +56,8 @@
 !! hiDPI
 !Xft.dpi:		96
 !Xft.dpi:		135
-Xft.dpi:		144
-!Xft.dpi:		168
+!Xft.dpi:		144
+Xft.dpi:		168
 !Xft.dpi:		244
 
 !! Cursors
@@ -79,6 +79,38 @@ URxvt.iso14755_52:	false
 *.font:			xft:Hack Nerd Font Mono:antialias=true:hinting=true:size=10, \
 			xft:Symbola:antialias=true:hinting=true:size=10
 *.boldFont:
+
+
+!! dwm
+!dwm.borderpx:
+!dwm.snap:
+!dwm.gappih:
+!dwm.gappiv:
+!dwm.gappoh:
+!dwm.gappov:
+!dwm.smartgaps:
+!dwm.showbar:
+!dwm.topbar:
+dwm.font:		Hack Nerd Font Mono:style=Regular:size=10
+!dwm.dmenufont:
+
+!dwm.normbordercol:
+!dwm.selbordercol:
+!dwm.statusfgcol:
+!dwm.statusbgcol:
+!dwm.tagsselfgcol:
+!dwm.tagsselbgcol:
+!dwm.tagsnormfgcol:
+!dwm.tagsnormbgcol:
+!dwm.infoselfgcol:
+!dwm.infoselbgcol:
+!dwm.infonormfgcol:
+!dwm.infonormbgcol:
+
+!dwm.mfact:
+!dwm.nmaster:
+!dwm.resizehints:
+!dwm.attachdirection:
 
 !! URxvt
 URxvt.depth:		32

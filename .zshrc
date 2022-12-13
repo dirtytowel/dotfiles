@@ -16,10 +16,7 @@ autoload -U colors && colors
 #PS1="[%F{yellow}%n%f%F{yellow}@%f%F{yellow}%m%f %F{cyan}%~%f]%F{magenta}$%f "
 setopt PROMPT_SUBST
 
-#git prompt
-export PATH=$PATH:$HOME/git/git-radar
-
-#path
+# shortpath
 get_pth () {
   echo $(~/.shell/shortpath)
 }
