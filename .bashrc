@@ -15,8 +15,14 @@ get_pwd () {
   echo $(~/.shell/shortpath)
 }
 
+ssh_check () {
+  [ -z $SSH_TTY ] && echo "" || echo "($(cat /proc/sys/kernel/hostname)) "
+}
+
 #source ~/prompt
-PS1="\[\033[38;5;14m\]\$(get_pwd)\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;13m\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
+PS1="\[\033[38;5;11m\]\$(ssh_check)\[$(tput sgr0)\]\[\033[38;5;14m\]\$(get_pwd)\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;13m\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
+
+#PROMPT_COMMAND=$(echo "$ssh_checkecho")
 
 # History:
 HISTSIZE=10000
