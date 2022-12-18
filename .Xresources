@@ -12,7 +12,7 @@
 
 !!black
 #define COLOR0  #000000
-#define COLOR8  #444444
+#define COLOR8  #666666
 !!red
 #define COLOR1  #ed1b23
 #define COLOR9  #d13b3b
@@ -78,6 +78,38 @@ XTerm*background:	BACKGROUND
 URxvt.iso14755:		false
 URxvt.iso14755_52:	false
 *.boldFont:
+
+
+!! dwm
+!dwm.borderpx:
+!dwm.snap:
+!dwm.gappih:
+!dwm.gappiv:
+!dwm.gappoh:
+!dwm.gappov:
+!dwm.smartgaps:
+!dwm.showbar:
+!dwm.topbar:
+dwm.font:		Hack Nerd Font Mono:style=Regular:size=10
+!dwm.dmenufont:
+
+!dwm.normbordercol:
+!dwm.selbordercol:
+!dwm.statusfgcol:
+!dwm.statusbgcol:
+!dwm.tagsselfgcol:
+!dwm.tagsselbgcol:
+!dwm.tagsnormfgcol:
+!dwm.tagsnormbgcol:
+!dwm.infoselfgcol:
+!dwm.infoselbgcol:
+!dwm.infonormfgcol:
+!dwm.infonormbgcol:
+
+!dwm.mfact:
+!dwm.nmaster:
+!dwm.resizehints:
+!dwm.attachdirection:
 
 !! URxvt
 URxvt.depth:		32

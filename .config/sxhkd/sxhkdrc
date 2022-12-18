@@ -46,7 +46,7 @@ shift + XF86AudioMute
 	pactl set-source-mute @DEFAULT_SOURCE@ toggle && refreshbar.sh
 
 XF86Sleep
-	lock.sh
+	lock.sh & systemctl suspend
 
 XF86ScreenSaver
 	lock.sh

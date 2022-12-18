@@ -16,23 +16,23 @@ autoload -U colors && colors
 #PS1="[%F{yellow}%n%f%F{yellow}@%f%F{yellow}%m%f %F{cyan}%~%f]%F{magenta}$%f "
 setopt PROMPT_SUBST
 
-#git prompt
-export PATH=$PATH:$HOME/git/git-radar
-
-#path
+# shortpath
 get_pth () {
   echo $(~/.shell/shortpath)
 }
 
+ssh_check () {
+  [ -z $SSH_TTY ] && echo "" || echo "($(cat /proc/sys/kernel/hostname)) "
+}
 
 #PS1="[%F{yellow}%n%f%F{yellow}@%f%F{yellow}%m%f %F{cyan}\$(get_pth)%f]%F{magenta}$%f "
-PS1="%F{cyan}\$(get_pth)%f %F{magenta}$%f "
+PS1="%F{yellow}\$(ssh_check)%f%F{cyan}\$(get_pth)%f %F{magenta}$%f "
 
 # Dynamic window title
 case $TERM in
   rxvt-unicode-256color|(dt|k|E)term)
-    precmd () { print -Pn "\e]0;urxvt %~\a" }
-    preexec () { print -Pn "\e]0;$1\a" }
+    precmd () { print -Pn "\e]0;\$(ssh_check)urxvt %~\a" }
+    preexec () { print -Pn "\e]0;\$(ssh_check)$1\a" }
 esac
 
 if [[ $TERM = "rxvt-unicode" ]]; then trap 'tdrop --clear urxvt' EXIT; fi
