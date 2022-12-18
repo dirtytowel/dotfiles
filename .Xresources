@@ -56,8 +56,8 @@
 !! hiDPI
 !Xft.dpi:		96
 !Xft.dpi:		135
-!Xft.dpi:		144
-Xft.dpi:		168
+Xft.dpi:		144
+!Xft.dpi:		168
 !Xft.dpi:		244
 
 !! Cursors

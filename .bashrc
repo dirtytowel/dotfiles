@@ -22,7 +22,7 @@ ssh_check () {
 #source ~/prompt
 PS1="\[\033[38;5;11m\]\$(ssh_check)\[$(tput sgr0)\]\[\033[38;5;14m\]\$(get_pwd)\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;13m\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
 
-#PROMPT_COMMAND=$(echo "$ssh_checkecho")
+#${PWD/#$HOME/\~}
 
 # History:
 HISTSIZE=10000
