@@ -66,50 +66,51 @@ Xcursor.size:		16
 !Xcursor.size:		48
 
 *.foreground:		FOREGROUND
-*.foreground_bold:	COLOR15
+*foreground_bold:	COLOR15
+*background:		BACKGROUND
 URxvt.background:	[85]BACKGROUND
-XTerm*background:	BACKGROUND
-*.internalBorder:	10
+*.internalBorder:	5
 *.cursorColor:		COLOR5
 *.cursorBlink:		true
 
 !! Fonts
-*.font:			xft:Cozette:style=Regular:pixelsize=9
+*.font:			xft:Cozette:style=Regular:pixelsize=12
 URxvt.iso14755:		false
 URxvt.iso14755_52:	false
 *.boldFont:
 
 
 !! dwm
-!dwm.borderpx:
-!dwm.snap:
-!dwm.gappih:
-!dwm.gappiv:
-!dwm.gappoh:
-!dwm.gappov:
-!dwm.smartgaps:
-!dwm.showbar:
-!dwm.topbar:
-dwm.font:		Hack Nerd Font Mono:style=Regular:size=10
-!dwm.dmenufont:
+dwm.borderpx:		1
+dwm.snap:		10
+dwm.gappih:		4
+dwm.gappiv:		4
+dwm.gappoh:		4
+dwm.gappov:		4
+dwm.smartgaps:		1
+dwm.showbar:		1
+dwm.topbar:		1
+dwm.font:		Cozette:style=Regular:pixelsize=12
+dwm.dmenufont:		Cozette:style=Regular:pixelsize=12
 
-!dwm.normbordercol:
-!dwm.selbordercol:
-!dwm.statusfgcol:
-!dwm.statusbgcol:
-!dwm.tagsselfgcol:
-!dwm.tagsselbgcol:
-!dwm.tagsnormfgcol:
-!dwm.tagsnormbgcol:
-!dwm.infoselfgcol:
-!dwm.infoselbgcol:
-!dwm.infonormfgcol:
-!dwm.infonormbgcol:
+dwm.normbordercol:	#444444
+dwm.selbordercol:	#bebbb8
+dwm.statusfgcol:	#666666
+dwm.statusbgcol:	#000000
+dwm.tagsselfgcol:	#000000
+dwm.tagsselbgcol:	#bebbb8
+dwm.tagsnormfgcol:	#666666
+dwm.tagsnormbgcol:	#000000
+dwm.infoselfgcol:	#bebbb8
+dwm.infoselbgcol:	#000000
+dwm.infonormfgcol:	#666666
+dwm.infonormbgcol:	#000000
 
-!dwm.mfact:
-!dwm.nmaster:
-!dwm.resizehints:
-!dwm.attachdirection:
+dwm.mfact:		0.5
+dwm.nmaster:		1
+dwm.resizehints:	0
+dwm.attachdirection:	4
+dwm.enablegaps:		0
 
 !! URxvt
 URxvt.depth:		32

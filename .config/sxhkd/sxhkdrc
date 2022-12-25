@@ -42,7 +42,7 @@ shift + XF86AudioRaiseVolume
 shift + XF86AudioLowerVolume
 	pactl set-source-mute @DEFAULT_SOURCE@ 0; pactl set-source-volume @DEFAULT_SOURCE@ -5% && refreshbar.sh
 
-shift + XF86AudioMute
+XF86AudioMicMute
 	pactl set-source-mute @DEFAULT_SOURCE@ toggle && refreshbar.sh
 
 XF86Sleep
