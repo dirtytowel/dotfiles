@@ -107,7 +107,7 @@ dwm.infoselbgcol:	#000000
 dwm.infonormfgcol:	#666666
 dwm.infonormbgcol:	#000000
 
-dwm.mfact:		0.5
+dwm.mfact:		0.55
 dwm.nmaster:		1
 dwm.resizehints:	0
 dwm.attachdirection:	4
