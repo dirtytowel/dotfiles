@@ -74,9 +74,10 @@ URxvt.background:	[85]BACKGROUND
 *.cursorBlink:		true
 
 !! Fonts
-*.font:			xft:Cozette:style=Regular:pixelsize=12
 URxvt.iso14755:		false
 URxvt.iso14755_52:	false
+*.font:			xft:Hack Nerd Font Mono:antialias=true:hinting=true:size=10, \
+			xft:Symbola:antialias=true:hinting=true:size=10
 *.boldFont:
 
 
@@ -90,8 +91,8 @@ dwm.gappov:		4
 dwm.smartgaps:		1
 dwm.showbar:		1
 dwm.topbar:		1
-dwm.font:		Cozette:style=Regular:pixelsize=12
-dwm.dmenufont:		Cozette:style=Regular:pixelsize=12
+dwm.font:		Hack Nerd Font Mono:style=Regular:size=10
+dwm.dmenufont:		Hack Nerd Font Mono:style=Regular:size=10
 
 dwm.normbordercol:	#444444
 dwm.selbordercol:	#bebbb8
