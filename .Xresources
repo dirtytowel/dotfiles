@@ -124,7 +124,7 @@ XTerm*pointerShape: left_ptr
 XTerm*cursorTheme: Adwaita
 
 !! URxvt extensions
-URxvt.perl-ext-common:	default,-confirm-paste,matcher,resize-font,
+URxvt.perl-ext-common:	default,-confirm-paste,matcher,resize-font,config-reload,
 URxvt.url-launcher:	/usr/bin/librewolf
 URxvt.matcher.button:	C-1
 URxvt.resize-font.step: 1 
