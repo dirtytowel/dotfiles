@@ -54,9 +54,9 @@
 *color15:		COLOR15
 
 !! hiDPI
-Xft.dpi:		96
+!Xft.dpi:		96
 !Xft.dpi:		135
-!Xft.dpi:		144
+Xft.dpi:		144
 !Xft.dpi:		168
 !Xft.dpi:		244
 
@@ -82,8 +82,8 @@ URxvt.iso14755_52:	false
 
 
 !! dwm
-dwm.borderpx:		1
-dwm.snap:		10
+dwm.borderpx:		4
+dwm.snap:		20
 dwm.gappih:		4
 dwm.gappiv:		4
 dwm.gappoh:		4
