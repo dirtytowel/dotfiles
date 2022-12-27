@@ -30,15 +30,17 @@ PS1="%F{yellow}\$(ssh_check)%f%F{cyan}\$(get_pth)%f %F{magenta}$%f "
 [ $TERM = xterm ] && TERM=xterm-256color
 
 # Dynamic window title
-if [ $(xdotool getactivewindow getwindowname) != "spterm" ]; then
-  case $TERM in (rxvt|rxvt-*|st|st-*|*xterm*|(dt|k|E)term)
-    precmd () {
-      print -Pn "\e]0;\$(ssh_check)zsh %~\a"
-    }
-    preexec () {
-      print -Pn "\e]0;\$(ssh_check)$1\a"
-    }
-  esac
+local dwt () {
+    case $TERM in (rxvt|rxvt-*|st|st-*|*xterm*|(dt|k|E)term)
+      precmd  () { print -Pn "\e]0;\$(ssh_check)zsh %~\a" }
+      preexec () { print -Pn "\e]0;\$(ssh_check)$1\a" }
+    esac
+}
+
+if [ -z $(ssh_check) ]; then
+  [ $(xdotool getactivewindow getwindowname) != "spterm" ] && dwt
+else
+  dwt
 fi
 
 # ensure tdrop knows when scratchpad is closed
