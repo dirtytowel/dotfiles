@@ -12,8 +12,6 @@ source ~/.shell/*
 # Enable colors
 autoload -U colors && colors
 
-# Prompt
-#PS1="[%F{yellow}%n%f%F{yellow}@%f%F{yellow}%m%f %F{cyan}%~%f]%F{magenta}$%f "
 setopt PROMPT_SUBST
 
 # shortpath
@@ -25,7 +23,6 @@ ssh_check () {
   [ -z $SSH_TTY ] && echo "" || echo "($(cat /proc/sys/kernel/hostname)) "
 }
 
-#PS1="[%F{yellow}%n%f%F{yellow}@%f%F{yellow}%m%f %F{cyan}\$(get_pth)%f]%F{magenta}$%f "
 PS1="%F{yellow}\$(ssh_check)%f%F{cyan}\$(get_pth)%f %F{magenta}$%f "
 
 # Dynamic window title
