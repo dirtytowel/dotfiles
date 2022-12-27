@@ -26,13 +26,20 @@ ssh_check () {
 PS1="%F{yellow}\$(ssh_check)%f%F{cyan}\$(get_pth)%f %F{magenta}$%f "
 
 # Dynamic window title
-case $TERM in
-  rxvt-unicode-256color|(dt|k|E)term)
-    precmd () { print -Pn "\e]0;\$(ssh_check)urxvt %~\a" }
-    preexec () { print -Pn "\e]0;\$(ssh_check)$1\a" }
-esac
 
-if [[ $TERM = "rxvt-unicode" ]]; then trap 'tdrop --clear urxvt' EXIT; fi
+if [ $(xdotool getactivewindow getwindowname) != "spterm" ]; then
+  case $TERM in (rxvt|rxvt-*|st|st-*|*xterm*|(dt|k|E)term)
+    precmd () {
+      print -Pn "\e]0;\$(ssh_check)zsh %~\a"
+    }
+    preexec () {
+      print -Pn "\e]0;\$(ssh_check)$1\a"
+    }
+  esac
+fi
+
+#ensure tdrop knows when scratchpad is closed
+#if [[ $TERM = "rxvt-unicode" ]]; then trap 'tdrop --clear urxvt' EXIT; fi
 
 # History:
 HISTSIZE=10000
