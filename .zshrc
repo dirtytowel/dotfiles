@@ -24,6 +24,7 @@ local ssh_check () {
   [ -z $SSH_TTY ] && echo "" || echo "($(cat /proc/sys/kernel/hostname)) "
 }
 
+# Prompt
 PS1="%F{yellow}\$(ssh_check)%f%F{cyan}\$(get_pth)%f %F{magenta}$%f "
 
 [ $TERM = xterm ] && TERM=xterm-256color
@@ -40,7 +41,8 @@ if [ $(xdotool getactivewindow getwindowname) != "spterm" ]; then
   esac
 fi
 
-#ensure tdrop knows when scratchpad is closed
+# ensure tdrop knows when scratchpad is closed
+# might not be needed
 #if [[ $TERM = "rxvt-unicode" ]]; then trap 'tdrop --clear urxvt' EXIT; fi
 
 # History:
