@@ -120,8 +120,10 @@ URxvt.intensityStyles:  false
 !URxvt.geometry:		145x45
 
 !! XTerm
-XTerm*pointerShape: left_ptr
-XTerm*cursorTheme: Adwaita
+XTerm*pointerShape:	XC_xterm
+XTerm*cursorTheme:	Adwaita
+XTerm*boldMode:		false
+XTerm*alwaysBoldMode:	false
 
 !! URxvt extensions
 URxvt.perl-ext-common:	default,-confirm-paste,matcher,resize-font,config-reload,
