@@ -58,9 +58,6 @@ _comp_options+=(globdots) # Include hidden files.
 # startx in tty1
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then startx; fi
 
-# path
-export PATH=$PATH:/home/ethan/.local/bin/
-
 # plugins
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
