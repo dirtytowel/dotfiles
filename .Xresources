@@ -122,6 +122,7 @@ URxvt.intensityStyles:  false
 !! XTerm
 XTerm*pointerShape:	XC_xterm
 XTerm*cursorTheme:	Adwaita
+XTerm*allowBoldFonts:	false
 XTerm*boldMode:		false
 XTerm*alwaysBoldMode:	false
 

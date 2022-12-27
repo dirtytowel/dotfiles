@@ -25,8 +25,9 @@ ssh_check () {
 
 PS1="%F{yellow}\$(ssh_check)%f%F{cyan}\$(get_pth)%f %F{magenta}$%f "
 
-# Dynamic window title
+[ $TERM = xterm ] && TERM=xterm-256color
 
+# Dynamic window title
 if [ $(xdotool getactivewindow getwindowname) != "spterm" ]; then
   case $TERM in (rxvt|rxvt-*|st|st-*|*xterm*|(dt|k|E)term)
     precmd () {

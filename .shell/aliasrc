@@ -49,6 +49,9 @@ export PATH=$PATH:/sbin
 export BROWSER=/usr/bin/librewolf
 export PWBROWSER="/usr/bin/librewolf --private-window"
 
+#xterm color support
+[ $TERM = xterm ] && TERM=xterm-256color
+
 # editor
 export EDITOR="vim"
 
