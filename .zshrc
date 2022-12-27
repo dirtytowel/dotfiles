@@ -15,11 +15,12 @@ autoload -U colors && colors
 setopt PROMPT_SUBST
 
 # shortpath
-get_pth () {
+local get_pth () {
   echo $(~/.shell/shortpath)
 }
 
-ssh_check () {
+# ssh_check
+local ssh_check () {
   [ -z $SSH_TTY ] && echo "" || echo "($(cat /proc/sys/kernel/hostname)) "
 }
 
