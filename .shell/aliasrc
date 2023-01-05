@@ -44,6 +44,7 @@ alias EST='doas timedatectl set-timezone America/New_York && refreshbar.sh'
 export PATH=$PATH:/home/ethan/.scripts
 export PATH=$PATH:/usr/sbin
 export PATH=$PATH:/sbin
+export PATH=$PATH:/home/ethan/.local/usr/bin/
 
 # browsers
 export BROWSER=/usr/bin/librewolf
