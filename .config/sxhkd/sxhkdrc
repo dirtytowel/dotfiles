@@ -1,11 +1,11 @@
 super + shift + Return
-	urxvtcd
+	urxvtc
 
 super + shift + backslash
 	smartspwn.sh
 
 super + n
-	kill -44 $(pidof nmtui) & urxvtcd -tn rxvt-unicode -name nmtui -e nmtui
+	kill -44 $(pidof nmtui) & urxvtc -tn rxvt-unicode -name nmtui -e nmtui
 
 super + w
 	$BROWSER

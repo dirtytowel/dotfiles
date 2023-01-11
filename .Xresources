@@ -6,34 +6,13 @@
 !!
 !! to enable changes type `xrdb -load .Xresources` and restart URxvt
 
-!! Define Colors
-#define FOREGROUND #ffffff
-#define BACKGROUND #000000
+#include ".colors/default"
+!#include ".colors/nord"
+!#include ".colors/gruv-light"
+!#include ".colors/gruv-dark"
+!#include ".colors/borland"
+!#include ".colors/dracula"
 
-!!black
-#define COLOR0  #000000
-#define COLOR8  #666666
-!!red
-#define COLOR1  #ed1b23
-#define COLOR9  #d13b3b
-!!green
-#define COLOR2  #55fa55
-#define COLOR10 #44c744
-!!yellow
-#define COLOR3  #fafa46
-#define COLOR11 #d1d13b
-!!blue
-#define COLOR4  #466dfa
-#define COLOR12 #3552bd
-!!magenta
-#define COLOR5  #f746fa
-#define COLOR13 #c738c9
-!!cyan
-#define COLOR6  #46e8fa
-#define COLOR14 #39bdcc 
-!!white
-#define COLOR7  #ffffff
-#define COLOR15 #bebbb8
 
 !! Set Colors
 *color0:		COLOR0
@@ -65,12 +44,13 @@ Xcursor.size:		16
 !Xcursor.size:		32
 !Xcursor.size:		48
 
-*.foreground:		FOREGROUND
-*foreground_bold:	COLOR15
+*foreground:    	FOREGROUND
 *background:		BACKGROUND
-URxvt.background:	[85]BACKGROUND
+URxvt.foreground:	FOREGROUND
+URxvt.background:	BACKGROUND
 *.internalBorder:	5
 *.cursorColor:		COLOR5
+URxvt.cursorColor:	COLOR5
 *.cursorBlink:		true
 
 !! Fonts
@@ -94,18 +74,18 @@ dwm.topbar:		1
 dwm.font:		Hack Nerd Font Mono:style=Regular:size=10
 dwm.dmenufont:		Hack Nerd Font Mono:style=Regular:size=10
 
-dwm.normbordercol:	#444444
-dwm.selbordercol:	#bebbb8
-dwm.statusfgcol:	#666666
-dwm.statusbgcol:	#000000
-dwm.tagsselfgcol:	#000000
-dwm.tagsselbgcol:	#bebbb8
-dwm.tagsnormfgcol:	#666666
-dwm.tagsnormbgcol:	#000000
-dwm.infoselfgcol:	#bebbb8
-dwm.infoselbgcol:	#000000
-dwm.infonormfgcol:	#666666
-dwm.infonormbgcol:	#000000
+dwm.normbordercol:	COLOR8
+dwm.selbordercol:	ACCENT
+dwm.statusfgcol:	COLOR8
+dwm.statusbgcol:	BACKGROUND
+dwm.tagsselfgcol:	BACKGROUND
+dwm.tagsselbgcol:	ACCENT
+dwm.tagsnormfgcol:	COLOR8
+dwm.tagsnormbgcol:	BACKGROUND
+dwm.infoselfgcol:	FOREGROUND
+dwm.infoselbgcol:	BACKGROUND
+dwm.infonormfgcol:	COLOR8
+dwm.infonormbgcol:	BACKGROUND
 
 dwm.mfact:		0.55
 dwm.nmaster:		1
@@ -117,7 +97,7 @@ dwm.enablegaps:		0
 URxvt.depth:		32
 URxvt.scrollBar:	false
 URxvt.intensityStyles:  false
-!URxvt.geometry:		145x45
+!!URxvt.geometry:		175x63
 
 !! XTerm
 XTerm*pointerShape:	XC_xterm
