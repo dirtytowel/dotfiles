@@ -1,4 +1,4 @@
-#define FOREGROUND #ffff4e
+#define FOREGROUND #ffffff
 #define BACKGROUND #0000a4
 #define ACCENT #ffff4e
 

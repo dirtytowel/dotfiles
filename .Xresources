@@ -10,6 +10,8 @@
 !#include ".colors/nord"
 !#include ".colors/gruv-light"
 !#include ".colors/gruv-dark"
+!#include ".colors/solar-light"
+!#include ".colors/solar-dark"
 !#include ".colors/borland"
 !#include ".colors/dracula"
 

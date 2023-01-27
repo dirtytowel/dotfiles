@@ -25,4 +25,4 @@
 
 #define FOREGROUND #ffffff
 #define BACKGROUND #000000
-#define ACCENT     #bebbb8
+#define ACCENT     COLOR6
