@@ -58,23 +58,24 @@ URxvt.cursorColor:	COLOR5
 !! Fonts
 URxvt.iso14755:		false
 URxvt.iso14755_52:	false
-*.font:			xft:Hack Nerd Font Mono:antialias=true:hinting=true:size=10, \
-			xft:Symbola:antialias=true:hinting=true:size=10
+*.font:			xft:Hack Nerd Font Mono:antialias=true:hinting=true:size=9, \
+			xft:Symbola:antialias=true:hinting=true:size=9
 *.boldFont:
 
 
 !! dwm
-dwm.borderpx:		4
+dwm.borderpx:		2
 dwm.snap:		20
-dwm.gappih:		4
-dwm.gappiv:		4
-dwm.gappoh:		4
-dwm.gappov:		4
+dwm.gappih:		8
+dwm.gappiv:		8
+dwm.gappoh:		8
+dwm.gappov:		8
 dwm.smartgaps:		1
 dwm.showbar:		1
 dwm.topbar:		1
-dwm.font:		Hack Nerd Font Mono:style=Regular:size=10
-dwm.dmenufont:		Hack Nerd Font Mono:style=Regular:size=10
+dwm.usealtbar:		0
+dwm.font:		Hack Nerd Font Mono:style=Regular:size=9
+dwm.dmenufont:		Hack Nerd Font Mono:style=Regular:size=9
 
 dwm.normbordercol:	COLOR8
 dwm.selbordercol:	ACCENT

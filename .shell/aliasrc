@@ -50,11 +50,9 @@ export PATH=$PATH:/home/ethan/.local/usr/bin/
 export BROWSER=/usr/bin/librewolf
 export PWBROWSER="/usr/bin/librewolf --private-window"
 
-#xterm color support
-[ $TERM = xterm ] && TERM=xterm-256color
-
 # editor
 export EDITOR="vim"
 
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+

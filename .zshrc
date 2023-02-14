@@ -6,28 +6,38 @@
 #
 # to enable changes restart your terminal emulator and come back.
 # if you are using ssh or a tty then type exit and log back in
+setopt PROMPT_SUBST
 
+
+# common
 source ~/.shell/*
+  # History
+HISTSIZE=10000
+SAVEHIST=10000
+HISTCONTROL=ignoreboth
+HISTFILE=~/.history
+
+  # autostart startx in tty1
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then startx; fi
+
+  # SSH check
+ssh_check () {
+  [ -z $SSH_TTY ] && echo "" || echo "($(cat /proc/sys/kernel/hostname)) "
+}
+
+  # shortpath
+get_pwd () {
+  echo $(~/.shell/shortpath)
+}
+
+  # xterm color fix
+[ $TERM = xterm ] && TERM=xterm-256color
 
 # Enable colors
 autoload -U colors && colors
 
-setopt PROMPT_SUBST
-
-# shortpath
-local get_pth () {
-  echo $(~/.shell/shortpath)
-}
-
-# ssh_check
-local ssh_check () {
-  [ -z $SSH_TTY ] && echo "" || echo "($(cat /proc/sys/kernel/hostname)) "
-}
-
 # Prompt
-PS1="%F{yellow}\$(ssh_check)%f%F{cyan}\$(get_pth)%f %F{magenta}$%f "
-
-[ $TERM = xterm ] && TERM=xterm-256color
+PS1="%F{yellow}\$(ssh_check)%f%F{cyan}\$(get_pwd)%f %F{magenta}$%f "
 
 # Dynamic window title
 local dwt () {
@@ -48,10 +58,6 @@ fi
 #if [[ $TERM = "rxvt-unicode" ]]; then trap 'tdrop --clear urxvt' EXIT; fi
 
 # History:
-HISTSIZE=10000
-SAVEHIST=10000
-HISTCONTROL=ignoreboth
-HISTFILE=~/.history
 alias history='history 1'
 
 # Basic auto/tab complete:
