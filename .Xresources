@@ -6,6 +6,8 @@
 !!
 !! to enable changes type `xrdb -load .Xresources` and restart URxvt
 
+#define TRANSPARENCY [60]BACKGROUND
+
 #include ".colors/default"
 !#include ".colors/nord"
 !#include ".colors/gruv-light"
@@ -49,7 +51,7 @@ Xcursor.size:		16
 *foreground:    	FOREGROUND
 *background:		BACKGROUND
 URxvt.foreground:	FOREGROUND
-URxvt.background:	BACKGROUND
+URxvt.background:	TRANSPARENCY
 *.internalBorder:	5
 *.cursorColor:		COLOR5
 URxvt.cursorColor:	COLOR5
