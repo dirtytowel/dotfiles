@@ -52,7 +52,7 @@ Xcursor.size:		16
 *background:		BACKGROUND
 URxvt.foreground:	FOREGROUND
 URxvt.background:	TRANSPARENCY
-*.internalBorder:	5
+*.internalBorder:	10
 *.cursorColor:		COLOR5
 URxvt.cursorColor:	COLOR5
 *.cursorBlink:		true
@@ -66,13 +66,13 @@ URxvt.iso14755_52:	false
 
 
 !! dwm
-dwm.borderpx:		2
+dwm.borderpx:		3
 dwm.snap:		20
 dwm.gappih:		8
 dwm.gappiv:		8
 dwm.gappoh:		8
 dwm.gappov:		8
-dwm.smartgaps:		1
+dwm.smartgaps:		0
 dwm.showbar:		1
 dwm.topbar:		1
 dwm.usealtbar:		0
@@ -98,7 +98,7 @@ dwm.mfact:		0.55
 dwm.nmaster:		1
 dwm.resizehints:	0
 dwm.attachdirection:	4
-dwm.enablegaps:		0
+dwm.enablegaps:		1
 
 !! URxvt
 URxvt.depth:		32
