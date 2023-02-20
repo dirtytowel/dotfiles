@@ -5,8 +5,8 @@
 !!(_)_/\_\_|  \___||___/\___/ \__,_|_|  \___\___||___/
 !!
 !! to enable changes type `xrdb -load .Xresources` and restart URxvt
-
-#define TRANSPARENCY [60]BACKGROUND
+#define TRANSPARENCY [75]BACKGROUND
+!#define TRANSPARENCY [100]BACKGROUND
 
 #include ".colors/default"
 !#include ".colors/nord"
@@ -35,6 +35,7 @@
 *color14:		COLOR14
 *color7:		COLOR7
 *color15:		COLOR15
+*accent:		ACCENT
 
 !! hiDPI
 !Xft.dpi:		96
@@ -52,7 +53,7 @@ Xcursor.size:		16
 *background:		BACKGROUND
 URxvt.foreground:	FOREGROUND
 URxvt.background:	TRANSPARENCY
-*.internalBorder:	10
+*.internalBorder:	15
 *.cursorColor:		COLOR5
 URxvt.cursorColor:	COLOR5
 *.cursorBlink:		true
@@ -75,7 +76,7 @@ dwm.gappov:		8
 dwm.smartgaps:		0
 dwm.showbar:		1
 dwm.topbar:		1
-dwm.usealtbar:		0
+dwm.usealtbar:		1
 dwm.font:		Hack Nerd Font Mono:style=Regular:size=9
 dwm.dmenufont:		Hack Nerd Font Mono:style=Regular:size=9
 
