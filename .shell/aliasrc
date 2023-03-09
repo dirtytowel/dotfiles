@@ -35,6 +35,7 @@ alias mirror='devour mpv av://v4l2:/dev/video0 --vf=hflip --profile=low-latency 
 alias t="todo.sh -a"
 alias s="share.sh"
 alias ifconfig.me="curl ifconfig.me; echo"
+alias bat="bat -p --theme base16"
 
 # timezones
 alias CST='doas timedatectl set-timezone America/Chicago && refreshbar.sh'

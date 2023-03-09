@@ -73,7 +73,7 @@ dwm.gappih:		8
 dwm.gappiv:		8
 dwm.gappoh:		8
 dwm.gappov:		8
-dwm.smartgaps:		0
+dwm.smartgaps:		1
 dwm.showbar:		1
 dwm.topbar:		1
 dwm.usealtbar:		1

@@ -18,7 +18,7 @@
 
 [colors]
 ;background = ${xrdb:background}
-background = #99000000
+background = #98000000
 foreground = ${xrdb:foreground}
 primary = ${xrdb:background}
 secondary = ${xrdb:color3}
@@ -30,22 +30,23 @@ disabled = ${xrdb:color8}
 [bar/main]
 width = 100%
 
-;dpi = 135
+dpi = 135
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
 ;line-size = 3
 
-;border-size = 0
+border-size = 0
+height = 20
+radius = 0
+;border-bottom-size = 0
+;border-size = 8
 ;height = 25
-;radius = 0
-border-bottom-size = 0
-border-size = 8
-height = 30
-radius = 7
+;radius = 7
 
 border-color = #00000000
+;border-color = #ff00ff
 
 padding-left = 0
 padding-right = 1
@@ -55,10 +56,10 @@ module-margin = 1
 separator = "│"
 separator-foreground = ${colors.disabled}
 
-font-0 = Hack Nerd Font Mono;3
+font-0 = Hack Nerd Font Mono:antialiasing=true:size=9;3
 
 modules-left = dwm
-modules-right = pulseaudio memory temperature eth wlan battery date
+modules-right = mic pulseaudio memory temperature eth wlan battery date
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -99,7 +100,7 @@ layout-scroll-wrap = false
 layout-scroll-reverse = false
 
 ; If enable-layout-click = true, clicking the layout symbol will switch to this layout
-secondary-layout-symbol = ><>
+secondary-layout-symbol = [M]
 
 ; Separator in between shown tags
 ; label-separator = |
@@ -159,6 +160,13 @@ label-urgent-padding = 1
 label-empty = ""
 label-empty-padding = 1
 
+[module/mic]
+type = custom/script
+exec =  MIC=$(pactl get-source-mute @DEFAULT_SOURCE@ | awk  '{print $2}'); [ $MIC = "yes" ] && MIC="" || MIC=""; echo $MIC
+label = "%output%"
+interval = 0.1
+label-foreground = ${colors.alert}
+
 [module/pulseaudio]
 type = internal/pulseaudio
 
@@ -184,7 +192,7 @@ label = %gb_used%
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
-warn-temperature = 70
+warn-temperature = 85
 
 format = <ramp> <label>
 format-warn = <ramp> <label-warn>
@@ -213,7 +221,6 @@ date-alt = %a, %b %d, %Y %I:%M%P %Z
 date = %I:%M%P
 
 label = %date%
-label-alt = test
 format-prefix = " "
 format-prefix-foreground = ${colors.secondary}
 
