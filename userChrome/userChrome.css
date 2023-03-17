@@ -1,0 +1,372 @@
+#webrtcIndicator {
+    display: none;
+  }
+
+.tab-icon-sound-label {
+    display: none !important;
+}
+
+#nav-bar:not(:-moz-lwtheme) {height: 0px !important; margin-top: 0px !important; margin-bottom: 1px !important}
+
+/* The first and last 2 characters on this line serve as space to comment or disable functions. I have disabled some of the functions in this file and they start from "bookmark - right - off". For clarity, I recommend editing this file in Notepad++ with syntax */
+
+/* open tabs - turn off blurring */
+#tabbrowser-tabs:not([noshadowfortests]) .tab-background:is([selected], [multiselected]) {
+    box-shadow: none !important;
+    border: 1px solid var(--lwt-tab-line-color, var(--lwt-tabs-border-color, currentColor)) !important;
+}
+
+:root {
+    --lwt-tab-line-color: red !important;
+}
+
+/* open tabs - spacing */
+.tab-content {padding-right: 2px!important;padding-left: 2px!important;}
+tab.tabbrowser-tab:nth-child(1) > stack:nth-child(1) > hbox:nth-child(2) {margin-left: 5px!important;}
+
+/* open panels - edging */
+.tabbrowser-tab {border-inline-end: 1px solid !important;border-color: #FF00A3 !important;}
+
+/* open tabs - remove empty space at the right end */
+#TabsToolbar .titlebar-spacer {display: none !important;}
+
+/* open tabs - remove the "list of all panels" icon */
+#alltabs-button {display: none !important;}
+
+/* open tabs - fixed pinned panel displayed under the bar */
+.tab-content, #TabsToolbar {height: 19px !important;}
+
+/* bookmarks - folder - turn off blurry edges */
+.menupopup-arrowscrollbox {box-shadow: none !important;}
+
+/* full screen - show bookmarks */
+#navigator-toolbox[inFullscreen] toolbar:not([collapsed="true"]) {visibility:visible!important;}
+
+/* find on page - change the color of check icons */
+.checkbox-check{border-color: #FF00A3 !important;}
+
+/* find on page - remove closing key */
+/* .close-icon.findbar-closebutton {display: none !important;}
+
+/* notification bar + main menu - position under open tabs */
+#tab-notification-deck{ -moz-box-ordinal-group: 2;}
+#titlebar > #toolbar-menubar{ -moz-box-ordinal-group: 2;}
+
+/* address order - hide the star icon at the right end */
+#userContext-icons, #star-button-box {display: none !important;}
+
+/* hide add-on icon */
+#unified-extensions-button {display: none !important;}
+
+/* address order - hide the page zoom value at the right end */
+#urlbar-zoom-button {display:none!important}
+
+/* address order */
+#urlbar, .searchbar-textbox {font-size: 13px !important;min-height: 6px !important;padding-top: 0px !important;padding-bottom: 0px !important;padding-left: 0px !important;margin-left: 0px !important;}
+
+/* Address order - remove margins */
+.urlbarView{margin:0px 0px!important;width:100%!important}.urlbarView-row{padding:0px!important}
+
+/* Address order - turn off text blurring on the sides */
+#urlbar:not([focused])[textoverflow="right"] > #urlbar-input-container > .urlbar-input-box > #urlbar-input { mask-image: unset !important; }
+#urlbar:not([focused])[textoverflow="left"] > #urlbar-input-container > .urlbar-input-box > #urlbar-input { mask-image: unset !important; }
+
+/* find on page */
+.browserContainer > findbar {-moz-box-ordinal-group: 0;font-size: 13px !important;max-heeight: 23px !important;padding-top: 0px !important;padding-bottom: 0px !important;transition: transform 0ms linear, opacity 0ms linear 0ms !important;border-top: 0px !important;border-bottom: 0px !important;}
+
+/*bookmarks*/
+#toolbarbutton, .bookmark-item {font-size: 12px !important;min-height: 6px !important;padding-top: 0px !important;padding-bottom: 0px !important;border-top: 0px !important;border-bottom: 0px !important;padding-left: 3px !important;padding-right: 3px !important;}
+menupopup > menuitem, menupopup > menu {padding-top: 0px !important; padding-bottom: 0px !important;margin-right: 0px !important;margin-left: 0px !important;}
+*|*:root {--arrowpanel-menuitem-padding: 0px 0px !important;margin-right: 0px !important;}
+
+/* bookmarks - folder - remove borders */
+toolbarbutton menupopup[placespopup] {
+  --panel-padding: 0px!important;
+}
+
+/* scroll bar */
+.panel-subview-body{scrollbar-face-color: #FB7914;scrollbar-track-color: transparent !important;scrollbar-color: #FB7914 transparent !important;scrollbar-width: auto;}
+#permList, scrollbar{scrollbar-face-color: #FB7914;scrollbar-track-color: transparent !important;scrollbar-color: #FB7914 transparent !important;scrollbar-width: auto;}
+
+/* open tabs - turn off text blur */
+.tab-label-container[textoverflow]:not([pinned]) { mask-image: unset !important; }
+
+/* open tabs - arrows - remove inner edges */
+#scrollbutton-up {border-right: 0px !important;}
+#scrollbutton-down {border-left: 0px !important;}
+
+/* open panels - hide the panel close (the panel can be closed, among other things, by the mouse button) */
+.tabbrowser-tab .tab-close-button {visibility: collapse !important;}
+
+/* change the order of controls - search boxes and icons (top), tabs (middle), open panels (bottom) */
+#titlebar{-moz-box-ordinal-group: 2 !important;}
+
+/* hide buttons minimize/resume/close */
+#TabsToolbar .titlebar-buttonbox-container {display: none !important;}
+
+/* address order - reduce spacing */
+.urlbarView-row-inner {padding-block: 0px !important;}
+
+/* address bar - pop-up menu - disable blurring */
+menupopup, panel {--panel-shadow: none !important;}
+
+/* tabs - folder - hide "open all in panels" (panels can be opened via mouse button) */
+.openintabs-menuitem {display: none !important;}
+
+/* address order - reduce "search using" */
+.urlbarView .search-one-offs {padding-top: 0px !important;padding-bottom: 0px !important;}
+
+/* crop UI by 5px left and right = remove margins */
+/* #navigator-toolbox {margin-left: -5px !important;margin-right: -5px !important;}
+
+/* reduce the spacing of accessory icons, etc. */
+#nav-bar toolbarbutton {margin-left: -5px !important;margin-right: -5px !important;margin-top: 0px !important;}
+
+/* sharp edges */
+:root{--toolbarbutton-border-radius: 0 !important;--arrowpanel-menuitem-border-radius: 0 !important;--tab-border-radius: 0 !important;--subviewbutton-border-radius: 0 !important;--arrowpanel-border-radius: 0 !important;}
+
+/* tabs - folder - remove separator */
+.openintabs-menuitem, .bookmarks-actions-menuseparator { display: none !important; }
+
+/* find on page - highlight "end of page reached, resumes from beginning" */
+.findbar-container .find-status-icon[status="wrapped"] {display: none;}
+.findbar-container .find-status-icon[status="wrapped"]
+    ~ [anonid="find-status"].findbar-find-status {font-weight: bold;background: #FFA6C9;color: blue !important;}
+
+/* find on page - background and outline colors */
+.findbar-textbox[status="notfound"] {color: #000000 !important;background-color: #eeeeee !important;border-color: #000000 !important;outline-color: red! important;}
+.findbar-textbox {border-color: #000000 !important}
+
+/* Address order - turn off blurry edges and turn on edging */
+#urlbar[breakout][breakout-extend], #urlbar-background,
+#urlbar[breakout][breakout-extend] > #urlbar-input-container,
+#urlbar[breakout] > #urlbar-input-container {border-color: none !important;box-shadow: none !important;}
+#urlbar-background {border-color: var(--lwt-toolbar-field-background-color) !important;}
+
+/* open panels - reduce bar height */
+#titlebar {margin-bottom: 0px !important;}
+
+/*** Proton Tabs Tweaks ***/
+
+/* Adjust tab corner shape, optionally remove space below tabs */
+
+#tabbrowser-tabs {
+    --user-tab-rounding: 0px;
+}
+
+.tab-background {
+    border-radius: var(--user-tab-rounding) var(--user-tab-rounding) 0px 0px !important;
+    margin-block: 0px 0 !important;
+}
+#scrollbutton-up, #scrollbutton-down { /* 6/10/2021 */
+    border-top-width: 0px !important;
+    border-bottom-width: 0 !important;
+}
+/* Container color bar visibility */
+.tabbrowser-tab[usercontextid] > .tab-stack > .tab-background > .tab-context-line {
+    margin: 0px max(calc(var(--user-tab-rounding) - 0px), 0px) !important;
+}
+
+/* Override Normal Density height to Compact Density height only for tabs */
+
+#TabsToolbar, #tabbrowser-tabs {
+    --tab-min-height: 18px !important;
+	margin-top: -1px !important;
+	border-top: 0px !important;
+	border-bottom: 0px !important;
+}
+    /* Tweak for covering a line at the bottom of the active tab on some themes 8/11/2021 */
+#main-window[sizemode="normal"] #toolbar-menubar[autohide="true"] + #TabsToolbar, 
+#main-window[sizemode="normal"] #toolbar-menubar[autohide="true"] + #TabsToolbar #tabbrowser-tabs {
+    --tab-min-height: 18px !important;
+}
+#scrollbutton-up,
+#scrollbutton-down {
+    border-top-width: 0 !important;
+    border-bottom-width: 0 !important;
+}
+
+    /* [Connected Tabs] Set a max height based on min-height plus margin-block: 1px 0 */
+#TabsToolbar, #TabsToolbar > hbox, #TabsToolbar-customization-target, #tabbrowser-arrowscrollbox  {
+    max-height: calc(var(--tab-min-height) + 1px) !important;
+}
+    /* [Connected Tabs] Adjust padding around icons on buttons to avoid crushed images */
+#TabsToolbar-customization-target toolbarbutton > .toolbarbutton-icon, 
+#TabsToolbar-customization-target .toolbarbutton-text, 
+#TabsToolbar-customization-target .toolbarbutton-badge-stack,
+#scrollbutton-up,#scrollbutton-down {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+/* Inactive tabs: Separator line style */
+
+.tabbrowser-tab:not([selected=true]):not([multiselected=true]):not([beforeselected-visible="true"]) .tab-background {
+    border-right: 0px solid var(--lwt-background-tab-separator-color, rgba(0, 0, 0, .20)) !important;
+}
+/* For dark backgrounds */
+[brighttext="true"] .tabbrowser-tab:not([selected=true]):not([multiselected=true]):not([beforeselected-visible="true"]) .tab-background {
+    border-right: 0px solid var(--lwt-background-tab-separator-color, var(--lwt-selected-tab-background-color, rgba(255, 255, 255, .20))) !important;
+}
+.tabbrowser-tab:not([selected=true]):not([multiselected=true]) .tab-background {
+    border-radius: 0 !important;
+}
+/* Remove padding between tabs */
+.tabbrowser-tab {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* Override font-weight for tabs */
+
+.tabbrowser-tab {
+    font-weight: 700 !important;
+}
+
+/* Tweak Options as of 9/21/2021; Generated Wed Dec 22 2021 11:12:54 GMT+0100 (St�edoevropsk� standardn� �as) */
+
+
+
+
+
+/*** adresn� ��dek - vypnout animace a zv�t�en� p�i jeho otev�en�. BEGIN Firefox 77 (June 2, 2020) Override URL bar enlargement ***/
+
+  /* Compute new position, width, and padding */
+
+  #urlbar[breakout][breakout-extend] {
+    top: 4px !important;
+    left: 1px !important;
+    width: 100% !important;
+    padding: 0px !important;
+  }
+  /* for alternate Density settings */
+  [uidensity="compact"] #urlbar[breakout][breakout-extend] {
+    top: 4px !important;
+  }
+
+  /* Prevent shift of URL bar contents */
+
+  #urlbar[breakout][breakout-extend] > #urlbar-input-container {
+    height: var(--urlbar-height) !important;
+    padding: 0 !important;
+  }
+
+  /* Do not animate */
+
+  #urlbar[breakout][breakout-extend] > #urlbar-background {
+    animation: none !important;;
+  }
+
+  /* Remove shadows */
+
+  #urlbar[breakout][breakout-extend] > #urlbar-background {
+    box-shadow: none !important;
+  }
+
+/*** END Firefox 77 (June 2, 2020) Override URL bar enlargement ***/
+
+/* find on page - details - to the end */
+.findbar-container > hbox:nth-child(1) {margin-bottom: -3px!important;}
+.findbar-container {height: 25px!important;}
+
+/* findbar.css | chrome://global/skin/findbar.css */
+
+.findbar-container {
+  margin-inline-start: 2px!important;
+}
+
+.findbar-find-previous, .findbar-find-next {display: none !important;}
+
+/* Element | chrome://browser/content/browser.xhtml */
+
+#panel-1-1 > vbox:nth-child(1) > findbar:nth-child(3) {
+  border-top-width: 0px!important;
+  border-bottom-width: 0px!important;
+  border-bottom-style: solid!important;
+  padding-bottom: 0px!important;
+  padding-top: 0px!important;
+}
+
+/* Element | chrome://browser/content/browser.xhtml */
+
+.findbar-textbox {
+  padding-left: 0px!important;
+  padding-right: 0px!important;
+  padding-top: 0px!important;
+  padding-bottom: 0px!important;
+  width: 215.667px!important;
+  height: 23.6667px!important;
+}
+
+/* Element | chrome://browser/content/browser.xhtml */
+
+.findbar-find-previous {
+  padding-left: 0px!important;
+  padding-right: 0px!important;
+  padding-top: 0px!important;
+  padding-bottom: 0px!important;
+  margin-left: 2px!important;
+}
+
+/* Element | chrome://browser/content/browser.xhtml */
+
+.findbar-find-next {
+  padding-left: 0px!important;
+  padding-bottom: 0px!important;
+  padding-top: 0px!important;
+  padding-right: 0px!important;
+  margin-right: 0px!important;
+}
+
+/* Element | chrome://browser/content/browser.xhtml */
+
+.findbar-textbox {
+  padding-left: 4px!important;
+  padding-right: 4px!important;
+  margin-bottom: 3px!important;
+  border-bottom-style: solid!important;
+}
+
+/* Element | chrome://browser/content/browser.xhtml */
+
+.findbar-highlight {
+  margin-left: 10px!important;
+  margin-right: 0px!important;
+}
+
+/* Element | chrome://browser/content/browser.xhtml */
+
+.findbar-match-diacritics {
+  margin-left: 0px!important;
+  margin-right: 0px!important;
+}
+
+/* Element | chrome://browser/content/browser.xhtml */
+
+description.findbar-label {
+  margin-left: 6px!important;
+}
+
+/* Element | chrome://browser/content/browser.xhtml */
+
+.findbar-highlight > image:nth-child(1) {
+  margin-right: 2px!important;
+}
+
+/* Element | chrome://browser/content/browser.xhtml */
+
+.findbar-case-sensitive > image:nth-child(1) {
+  margin-right: 2px!important;
+}
+
+/* Element | chrome://browser/content/browser.xhtml */
+
+.findbar-match-diacritics > image:nth-child(1) {
+  margin-right: 2px!important;
+}
+
+/* Element | chrome://browser/content/browser.xhtml */
+
+.findbar-entire-word > image:nth-child(1) {
+  margin-right: 2px!important;
+}
