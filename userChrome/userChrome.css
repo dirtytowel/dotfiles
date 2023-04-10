@@ -22,7 +22,7 @@
 
 /* open tabs - spacing */
 .tab-content {padding-right: 2px!important;padding-left: 2px!important;}
-tab.tabbrowser-tab:nth-child(1) > stack:nth-child(1) > hbox:nth-child(2) {margin-left: 5px!important;}
+tab.tabbrowser-tab:nth-child(1) > stack:nth-child(1) > hbox:nth-child(2) {margin-left: 0px!important;}
 
 /* open panels - edging */
 .tabbrowser-tab {border-inline-end: 1px solid !important;border-color: #FF00A3 !important;}

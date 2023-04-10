@@ -43,6 +43,7 @@ Xft.dpi:		135
 !Xft.dpi:		144
 !Xft.dpi:		168
 !Xft.dpi:		244
+!Xft.dpi:		600
 
 !! Cursors
 Xcursor.size:		16
@@ -99,7 +100,7 @@ dwm.mfact:		0.55
 dwm.nmaster:		1
 dwm.resizehints:	0
 dwm.attachdirection:	4
-dwm.enablegaps:		1
+dwm.enablegaps:		0
 
 !! URxvt
 URxvt.depth:		32
