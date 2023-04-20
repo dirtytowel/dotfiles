@@ -1,17 +1,31 @@
 set encoding=utf-8
 set t_Co=16
 syntax on
-" Status bar
-" set laststatus=2
 
-" Last line
+" Status bar
+"set laststatus=2
+
+" Last line configurations
+" Display the current mode (e.g., INSERT, NORMAL)
 set showmode
+
+" Show the partial command as it's being typed
 set showcmd
+
+" Assume a fast terminal connection
 set ttyfast
 
+" Display line numbers
 set number
 
+" Display the cursor position in the lower right corner
 set ruler
+
+" Number of spaces a <Tab> character counts for
+set tabstop=2
+
+" Use relative line numbering to make it easy to move between lines
+set relativenumber
 
 " Visualize tabs and newlines
 set listchars=tab:▸\ ,eol:¬
