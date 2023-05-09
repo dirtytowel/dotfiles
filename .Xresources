@@ -6,10 +6,13 @@
 !!
 !! to enable changes type `xrdb -load .Xresources` and restart URxvt
 #define TRANSPARENCY [75]BACKGROUND
+!#define TRANSPARENCY [90]BACKGROUND
 !#define TRANSPARENCY [100]BACKGROUND
 
 #include ".colors/default"
 !#include ".colors/nord"
+!#include ".colors/latte"
+!#include ".colors/mocha"
 !#include ".colors/gruv-light"
 !#include ".colors/gruv-dark"
 !#include ".colors/solar-light"
