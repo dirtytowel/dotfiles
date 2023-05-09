@@ -278,7 +278,7 @@ label-disconnected = ""
 
 [module/eth]
 type = internal/network
-interface = enp0s13f0u3c2
+interface = enp0s13f0u3
 label-connected = eth
 format-connected = <label-connected>
 format-connected-foreground = ${colors.secondary}
