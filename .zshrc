@@ -48,7 +48,7 @@ local dwt () {
 }
 
 if [ -z $(ssh_check) ]; then
-  [ $(xdotool getactivewindow getwindowname) != "spterm" ] && dwt
+  [ $(xdotool getactivewindow getwindowname) != "spterm" ] && dwt || precmd(){ print -n "\033]0;spterm\007" }
 else
   dwt
 fi
