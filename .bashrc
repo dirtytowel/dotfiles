@@ -28,8 +28,5 @@ get_pwd () {
   echo $(~/.shell/shortpath)
 }
 
-  # xterm color fix
-[ $TERM = xterm ] && TERM=xterm-256color
-
 #source ~/prompt
 PS1="\[\033[38;5;11m\]\$(ssh_check)\[$(tput sgr0)\]\[\033[38;5;14m\]\$(get_pwd)\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;13m\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
