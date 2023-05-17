@@ -2,6 +2,8 @@ set encoding=utf-8
 set t_Co=16
 syntax on
 
+set clipboard=unnamedplus
+
 " Status bar
 "set laststatus=2
 
