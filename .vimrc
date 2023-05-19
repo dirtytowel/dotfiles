@@ -4,6 +4,9 @@ syntax on
 
 set clipboard=unnamedplus
 
+" Define an autocmd that triggers when lines are yanked
+autocmd TextYankPost * silent! execute "Oscyank"
+
 " Status bar
 "set laststatus=2
 
@@ -35,3 +38,10 @@ set listchars=tab:▸\ ,eol:¬
 " set list " To enable by default
 " Or use your leader key + l to toggle on/off
 map <leader>l :set list!<CR> " Toggle tabs and EOL
+
+" Improve the searching experience
+set incsearch           " Show search matches as you type
+set hlsearch            " Highlight search matches
+nnoremap <leader><space> :nohlsearch<CR> " Clear highlighted search results
+hi Search ctermbg=LightYellow
+hi Search ctermfg=Red
