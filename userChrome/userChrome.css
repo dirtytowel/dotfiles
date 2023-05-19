@@ -49,8 +49,8 @@ tab.tabbrowser-tab:nth-child(1) > stack:nth-child(1) > hbox:nth-child(2) {margin
 /* .close-icon.findbar-closebutton {display: none !important;}
 
 /* notification bar + main menu - position under open tabs */
-#tab-notification-deck{ -moz-box-ordinal-group: 2;}
-#titlebar > #toolbar-menubar{ -moz-box-ordinal-group: 2;}
+#tab-notification-deck{ order: 2;}
+#titlebar > #toolbar-menubar{ order: 2;}
 
 /* address order - hide the star icon at the right end */
 #userContext-icons, #star-button-box {display: none !important;}
@@ -72,7 +72,7 @@ tab.tabbrowser-tab:nth-child(1) > stack:nth-child(1) > hbox:nth-child(2) {margin
 #urlbar:not([focused])[textoverflow="left"] > #urlbar-input-container > .urlbar-input-box > #urlbar-input { mask-image: unset !important; }
 
 /* find on page */
-.browserContainer > findbar {-moz-box-ordinal-group: 0;font-size: 13px !important;max-heeight: 23px !important;padding-top: 0px !important;padding-bottom: 0px !important;transition: transform 0ms linear, opacity 0ms linear 0ms !important;border-top: 0px !important;border-bottom: 0px !important;}
+.browserContainer > findbar {order: 0;font-size: 13px !important;max-heeight: 23px !important;padding-top: 0px !important;padding-bottom: 0px !important;transition: transform 0ms linear, opacity 0ms linear 0ms !important;border-top: 0px !important;border-bottom: 0px !important;}
 
 /*bookmarks*/
 #toolbarbutton, .bookmark-item {font-size: 12px !important;min-height: 6px !important;padding-top: 0px !important;padding-bottom: 0px !important;border-top: 0px !important;border-bottom: 0px !important;padding-left: 3px !important;padding-right: 3px !important;}
@@ -99,7 +99,7 @@ toolbarbutton menupopup[placespopup] {
 .tabbrowser-tab .tab-close-button {visibility: collapse !important;}
 
 /* change the order of controls - search boxes and icons (top), tabs (middle), open panels (bottom) */
-#titlebar{-moz-box-ordinal-group: 2 !important;}
+#titlebar{order: 2 !important;}
 
 /* hide buttons minimize/resume/close */
 #TabsToolbar .titlebar-buttonbox-container {display: none !important;}
