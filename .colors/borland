@@ -1,6 +1,7 @@
 #define FOREGROUND #ffffff
 #define BACKGROUND #0000a4
-#define ACCENT #ffff4e
+#define ACCENT     #ffff4e
+#define NORM       #7c7c7c
 
 !!black
 #define COLOR0  #4f4f4f

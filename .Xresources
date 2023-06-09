@@ -5,20 +5,13 @@
 !!(_)_/\_\_|  \___||___/\___/ \__,_|_|  \___\___||___/
 !!
 !! to enable changes type `xrdb -load .Xresources` and restart URxvt
-#define TRANSPARENCY [75]BACKGROUND
+!#define TRANSPARENCY [75]BACKGROUND
 !#define TRANSPARENCY [90]BACKGROUND
-!#define TRANSPARENCY [100]BACKGROUND
+#define TRANSPARENCY [100]BACKGROUND
 
 #include ".colors/default"
-!#include ".colors/nord"
-!#include ".colors/latte"
-!#include ".colors/mocha"
-!#include ".colors/gruv-light"
-!#include ".colors/gruv-dark"
-!#include ".colors/solar-light"
-!#include ".colors/solar-dark"
+!#include ".colors/lcontrast"
 !#include ".colors/borland"
-!#include ".colors/dracula"
 
 
 !! Set Colors
@@ -39,6 +32,7 @@
 *color7:		COLOR7
 *color15:		COLOR15
 *accent:		ACCENT
+*norm:      NORM
 
 !! hiDPI
 !Xft.dpi:		96
@@ -84,7 +78,7 @@ dwm.usealtbar:		1
 dwm.font:		Hack Nerd Font Mono:style=Regular:size=9
 dwm.dmenufont:		Hack Nerd Font Mono:style=Regular:size=9
 
-dwm.normbordercol:	COLOR8
+dwm.normbordercol:	NORM
 dwm.selbordercol:	ACCENT
 dwm.statusfgcol:	FOREGROUND
 dwm.statusbgcol:	BACKGROUND
