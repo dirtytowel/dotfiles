@@ -15,108 +15,108 @@
 
 
 !! Set Colors
-*color0:		COLOR0
-*color8:		COLOR8
-*color1:		COLOR1
-*color9:		COLOR9
-*color2:		COLOR2
-*color10:		COLOR10
-*color3:		COLOR3
-*color11:		COLOR11
-*color4:		COLOR4
-*color12:		COLOR12
-*color5:		COLOR5
-*color13:		COLOR13
-*color6:		COLOR6
-*color14:		COLOR14
-*color7:		COLOR7
-*color15:		COLOR15
-*accent:		ACCENT
-*norm:      NORM
+*color0:								COLOR0
+*color8:								COLOR8
+*color1:								COLOR1
+*color9:								COLOR9
+*color2:								COLOR2
+*color10:								COLOR10
+*color3:								COLOR3
+*color11:								COLOR11
+*color4:								COLOR4
+*color12:								COLOR12
+*color5:								COLOR5
+*color13:								COLOR13
+*color6:								COLOR6
+*color14:								COLOR14
+*color7:								COLOR7
+*color15:								COLOR15
+*accent:								ACCENT
+*norm:      						NORM
 
 !! hiDPI
-!Xft.dpi:		96
-Xft.dpi:		135
-!Xft.dpi:		144
-!Xft.dpi:		168
-!Xft.dpi:		244
-!Xft.dpi:		600
+!Xft.dpi:								96
+Xft.dpi:								135
+!Xft.dpi:								144
+!Xft.dpi:								168
+!Xft.dpi:								244
+!Xft.dpi:								600
 
 !! Cursors
-Xcursor.size:		16
-!Xcursor.size:		32
-!Xcursor.size:		48
+Xcursor.size:						16
+!Xcursor.size:					32
+!Xcursor.size:					48
 
-*foreground:    	FOREGROUND
-*background:		BACKGROUND
-URxvt.foreground:	FOREGROUND
-URxvt.background:	TRANSPARENCY
-*.internalBorder:	15
-*.cursorColor:		COLOR5
-URxvt.cursorColor:	COLOR5
-*.cursorBlink:		true
+*foreground:						FOREGROUND
+*background:						BACKGROUND
+URxvt.foreground:				FOREGROUND
+URxvt.background:				TRANSPARENCY
+*.internalBorder:				15
+*.cursorColor:					COLOR5
+URxvt.cursorColor:			COLOR5
+*.cursorBlink:					true
 
 !! Fonts
-URxvt.iso14755:		false
-URxvt.iso14755_52:	false
-*.font:			xft:Hack Nerd Font Mono:antialias=true:hinting=true:size=9, \
-			xft:Symbola:antialias=true:hinting=true:size=9
+URxvt.iso14755:					false
+URxvt.iso14755_52:			false
+*.font:									xft:Hack Nerd Font Mono:antialias=true:hinting=true:size=9, \
+												xft:Symbola:antialias=true:hinting=true:size=9
 *.boldFont:
 
 
 !! dwm
-dwm.borderpx:		3
-dwm.snap:		20
-dwm.gappih:		8
-dwm.gappiv:		8
-dwm.gappoh:		8
-dwm.gappov:		8
-dwm.smartgaps:		1
-dwm.showbar:		1
-dwm.topbar:		1
-dwm.usealtbar:		1
-dwm.font:		Hack Nerd Font Mono:style=Regular:size=9
-dwm.dmenufont:		Hack Nerd Font Mono:style=Regular:size=9
+dwm.borderpx:						2
+dwm.snap:								20
+dwm.gappih:							8
+dwm.gappiv:							8
+dwm.gappoh:							8
+dwm.gappov:							8
+dwm.smartgaps:					1
+dwm.showbar:						1
+dwm.topbar:							1
+dwm.usealtbar:					1
+dwm.font:								Hack Nerd Font Mono:style=Regular:size=9
+dwm.dmenufont:					Hack Nerd Font Mono:style=Regular:size=9
 
-dwm.normbordercol:	NORM
-dwm.selbordercol:	ACCENT
-dwm.statusfgcol:	FOREGROUND
-dwm.statusbgcol:	BACKGROUND
-dwm.tagsselfgcol:	BACKGROUND
-dwm.tagsselbgcol:	ACCENT
-dwm.tagsnormfgcol:	FOREGROUND
-dwm.tagsnormbgcol:	BACKGROUND
-dwm.infoselfgcol:	FOREGROUND
-!dwm.infoselfgcol:	BACKGROUND
-dwm.infoselbgcol:	BACKGROUND
-!dwm.infoselbgcol:	ACCENT
-dwm.infonormfgcol:	FOREGROUND
-dwm.infonormbgcol:	BACKGROUND
+dwm.normbordercol:			NORM
+dwm.selbordercol:				ACCENT
+dwm.statusfgcol:				FOREGROUND
+dwm.statusbgcol:				BACKGROUND
+dwm.tagsselfgcol:				BACKGROUND
+dwm.tagsselbgcol:				ACCENT
+dwm.tagsnormfgcol:			FOREGROUND
+dwm.tagsnormbgcol:			BACKGROUND
+dwm.infoselfgcol:				FOREGROUND
+!dwm.infoselfgcol:			BACKGROUND
+dwm.infoselbgcol:				BACKGROUND
+!dwm.infoselbgcol:			ACCENT
+dwm.infonormfgcol:			FOREGROUND
+dwm.infonormbgcol:			BACKGROUND
 
-dwm.mfact:		0.55
-dwm.nmaster:		1
-dwm.resizehints:	0
-dwm.attachdirection:	4
-dwm.enablegaps:		0
+dwm.mfact:							0.55
+dwm.nmaster:						1
+dwm.resizehints:				0
+dwm.attachdirection:		4
+dwm.enablegaps:					0
 
 !! URxvt
-URxvt.depth:		32
-URxvt.scrollBar:	false
-URxvt.intensityStyles:  false
-!!URxvt.geometry:		175x63
+URxvt.depth:						32
+URxvt.scrollBar:				false
+URxvt.intensityStyles:	false
+!!URxvt.geometry:				175x63
 
 !! XTerm
-XTerm*pointerShape:	XC_xterm
-XTerm*cursorTheme:	Adwaita
-XTerm*allowBoldFonts:	false
-XTerm*boldMode:		false
-XTerm*alwaysBoldMode:	false
+XTerm*pointerShape:			XC_xterm
+XTerm*cursorTheme:			Adwaita
+XTerm*allowBoldFonts:		false
+XTerm*boldMode:					false
+XTerm*alwaysBoldMode:		false
 
 !! URxvt extensions
 URxvt.perl-ext-common:	default,-confirm-paste,matcher,resize-font,config-reload,
-URxvt.url-launcher:	/usr/bin/librewolf
-URxvt.matcher.button:	C-1
+URxvt.url-launcher:			/usr/bin/librewolf
+URxvt.matcher.button:		C-1
 URxvt.resize-font.step: 1 
-URxvt.keysym.C-minus:	resize-font:smaller
-URxvt.keysym.C-equal:	resize-font:bigger
-URxvt.keysym.C-0:	resize-font:reset
+URxvt.keysym.C-minus:		resize-font:smaller
+URxvt.keysym.C-equal:		resize-font:bigger
+URxvt.keysym.C-0:				resize-font:reset

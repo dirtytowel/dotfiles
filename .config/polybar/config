@@ -30,7 +30,7 @@ disabled = ${xrdb:color8}
 [bar/main]
 width = 100%
 
-dpi = 135
+dpi = ${xrdb:Xft.dpi}
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -58,7 +58,7 @@ separator-foreground = ${colors.disabled}
 
 font-0 = Hack Nerd Font Mono:antialiasing=true:size=9;3
 
-modules-left = dwm
+modules-left = dwm title
 modules-right = mic pulseaudio memory temperature eth wlan battery date
 
 cursor-click = pointer
@@ -76,7 +76,7 @@ enable-ipc = true
 
 [module/dwm]
 type = internal/dwm
-format = <label-tags><label-layout> <label-floating><label-title>
+format = <label-tags><label-layout>
 ; Path to dwm socket (default: /tmp/dwm.sock)
 ; socket-path = /tmp/dwm.sock
 
@@ -108,24 +108,25 @@ secondary-layout-symbol = [M]
 ; Title of currently focused window
 ; Available tokens:
 ;   %title%
-label-title = %title%
-label-title-padding = 0
-label-title-foreground = ${colors.foreground}
-label-title-maxlen = 90
+;label-title = %title%
+;label-title-padding = 0
+;label-title-foreground = ${colors.foreground}
+;label-title-maxlen = 90
 
 ; Defaults to 'Desktop'
 ;label-title-default = ""
-label-title-default = "dwm"
+;label-title-default = "dwm"
 
 ; Symbol of current layout
 ; Available tokens:
 ;   %symbol%
 label-layout = %symbol%
-label-layout-padding = 1
+label-layout-padding-left = 1
+label-layout-padding-right = 0
 label-layout-foreground = ${colors.secondary}
 
 ; Text to show when currently focused window is floating
-label-floating = *
+;label-floating = *
 
 ; States: focused, unfocused, visible, urgent, empty
 ; Available tokens:
@@ -160,8 +161,16 @@ label-urgent-padding = 1
 label-empty = ""
 label-empty-padding = 1
 
+[module/title]
+type = internal/xwindow
+label = %title%
+label-maxlen = 130
+;exec = wmctrl -m | head -n1 | awk '{print $2}'
+label-empty = dwm
+
 [module/mic]
 type = custom/script
+tail = true
 exec =  MIC=$(pactl get-source-mute @DEFAULT_SOURCE@ | awk  '{print $2}'); [ $MIC = "yes" ] && MIC="" || MIC=""; echo $MIC
 label = "%output%"
 interval = 0.1
