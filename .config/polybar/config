@@ -164,7 +164,7 @@ label-empty-padding = 1
 [module/title]
 type = internal/xwindow
 label = %title%
-label-maxlen = 130
+label-maxlen = 93
 ;exec = wmctrl -m | head -n1 | awk '{print $2}'
 label-empty = dwm
 
