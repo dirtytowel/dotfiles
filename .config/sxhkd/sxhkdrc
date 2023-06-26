@@ -28,22 +28,22 @@ super + shift + Print
 	cd ~/pix/scrot && scrot -s
 
 XF86AudioRaiseVolume
-	pactl set-sink-mute @DEFAULT_SINK@ 0; pactl set-sink-volume @DEFAULT_SINK@ +5% && refreshbar.sh
+	pactl set-sink-mute @DEFAULT_SINK@ 0; pactl set-sink-volume @DEFAULT_SINK@ +5%
 
 XF86AudioLowerVolume
-	pactl set-sink-mute @DEFAULT_SINK@ 0; pactl set-sink-volume @DEFAULT_SINK@ -5% && refreshbar.sh
+	pactl set-sink-mute @DEFAULT_SINK@ 0; pactl set-sink-volume @DEFAULT_SINK@ -5%
 
 XF86AudioMute
-	pactl set-sink-mute @DEFAULT_SINK@ toggle && refreshbar.sh
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 shift + XF86AudioRaiseVolume
-	pactl set-source-mute @DEFAULT_SOURCE@ 0; pactl set-source-volume @DEFAULT_SOURCE@ +5% && refreshbar.sh
+	pactl set-source-mute @DEFAULT_SOURCE@ 0; pactl set-source-volume @DEFAULT_SOURCE@ +5%
 
 shift + XF86AudioLowerVolume
-	pactl set-source-mute @DEFAULT_SOURCE@ 0; pactl set-source-volume @DEFAULT_SOURCE@ -5% && refreshbar.sh
+	pactl set-source-mute @DEFAULT_SOURCE@ 0; pactl set-source-volume @DEFAULT_SOURCE@ -5%
 
 shift + XF86AudioMute
-	pactl set-source-mute @DEFAULT_SOURCE@ toggle && refreshbar.sh
+	pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 XF86MonBrightnessDown
 	sudo xbacklight -dec 5

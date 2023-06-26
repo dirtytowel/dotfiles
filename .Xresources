@@ -5,9 +5,9 @@
 !!(_)_/\_\_|  \___||___/\___/ \__,_|_|  \___\___||___/
 !!
 !! to enable changes type `xrdb -load .Xresources` and restart URxvt
-!#define TRANSPARENCY [75]BACKGROUND
+#define TRANSPARENCY [75]BACKGROUND
 !#define TRANSPARENCY [90]BACKGROUND
-#define TRANSPARENCY [100]BACKGROUND
+!#define TRANSPARENCY [100]BACKGROUND
 
 #include ".colors/default"
 !#include ".colors/lcontrast"
@@ -71,7 +71,7 @@ dwm.gappih:							8
 dwm.gappiv:							8
 dwm.gappoh:							8
 dwm.gappov:							8
-dwm.smartgaps:					1
+dwm.smartgaps:					0
 dwm.showbar:						1
 dwm.topbar:							1
 dwm.usealtbar:					1
@@ -97,7 +97,7 @@ dwm.mfact:							0.55
 dwm.nmaster:						1
 dwm.resizehints:				0
 dwm.attachdirection:		4
-dwm.enablegaps:					0
+dwm.enablegaps:					1
 
 !! URxvt
 URxvt.depth:						32
