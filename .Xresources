@@ -65,13 +65,13 @@ URxvt.iso14755_52:			false
 
 
 !! dwm
-dwm.borderpx:						2
-dwm.snap:								20
+dwm.borderpx:						3
+dwm.snap:								0
 dwm.gappih:							8
 dwm.gappiv:							8
 dwm.gappoh:							8
 dwm.gappov:							8
-dwm.smartgaps:					0
+dwm.smartgaps:					1
 dwm.showbar:						1
 dwm.topbar:							1
 dwm.usealtbar:					1

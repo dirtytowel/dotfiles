@@ -25,5 +25,5 @@
 
 #define FOREGROUND #ffffff
 #define BACKGROUND #000000
-#define ACCENT     COLOR6
+#define ACCENT     COLOR13
 #define NORM       COLOR8
