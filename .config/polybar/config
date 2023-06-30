@@ -43,7 +43,7 @@ border-size = 8
 height = 30
 radius = 6
 
-border-color = #00000000
+;border-color = #00000000
 ;border-color = #ff00ff
 
 padding-left = 0
