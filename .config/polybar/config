@@ -35,13 +35,13 @@ dpi = ${xrdb:Xft.dpi}
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-border-size = 0
-height = 22
-radius = 0
-;border-bottom-size = 0
-;border-size = 8
-;height = 30
-;radius = 7
+;border-size = 0
+;height = 22
+;radius = 0
+border-bottom-size = 0
+border-size = 8
+height = 30
+radius = 7
 
 border-color = #00000000
 ;border-color = #ff00ff

@@ -1,3 +1,6 @@
+super + d
+	dmenu_script.sh
+
 super + shift + Return
 	urxvtc
 
