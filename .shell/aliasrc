@@ -9,6 +9,8 @@
 
 #source ~/.docker-aliases
 
+eval $(thefuck --alias)
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -30,12 +32,19 @@ alias la='ls -lA'
 alias l='ls -CF'
 
 # aliases
+alias sudo="sudo "
 alias hg='history | grep'
 alias mirror='devour mpv av://v4l2:/dev/video0 --vf=hflip --profile=low-latency --untimed'
-alias t="todo.sh -a"
 alias s="share.sh"
 alias ifconfig.me="curl ifconfig.me; echo"
 alias bat="bat -p --theme base16"
+alias paru="paru --aur"
+
+# todo.txt-cli
+alias t="todo.sh -a"
+export TODOTXT_DEFAULT_ACTION=ls
+export TODOTXT_SORT_COMMAND='env LC_COLLATE=C sort -k 2,2 -k 1,1n'
+	# sort by priority then number
 
 # timezones
 alias CST='doas timedatectl set-timezone America/Chicago && refreshbar.sh'
@@ -56,4 +65,3 @@ export EDITOR="vim"
 
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-

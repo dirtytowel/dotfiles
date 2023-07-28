@@ -39,7 +39,7 @@ foreground = ${colors.foreground}
 ;height = 22
 ;radius = 0
 border-bottom-size = 0
-border-size = 8
+border-size = ${xrdb:dwm.gappih}
 height = 30
 radius = 6
 
@@ -179,7 +179,7 @@ type = custom/script
 tail = true
 exec =  MIC=$(pactl get-source-mute @DEFAULT_SOURCE@ | awk  '{print $2}'); [ $MIC = "yes" ] && MIC="" || MIC=""; echo $MIC
 label = "%output%"
-interval = 0.1
+;interval = 0.1
 label-foreground = ${colors.alert}
 
 [module/pulseaudio]
