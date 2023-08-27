@@ -8,6 +8,9 @@
 # if you are using ssh or a tty then type exit and log back in
 setopt PROMPT_SUBST
 
+if [[ `ps ho command $(ps ho ppid $$)` == 'urxvt'* ]]; then
+  clear
+fi
 
 # common
 source ~/.shell/*
@@ -66,9 +69,6 @@ zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots) # Include hidden files.
-
-# startx in tty1
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then startx; fi
 
 # plugins
 
