@@ -43,8 +43,10 @@ alias paru="paru --aur"
 # todo.txt-cli
 alias t="todo.sh -a"
 export TODOTXT_DEFAULT_ACTION=ls
-export TODOTXT_SORT_COMMAND='env LC_COLLATE=C sort -k 2,2 -k 1,1n'
+export TODOTXT_SORT_COMMAND='env LC_COLLATE=C sort -k1.4,1.4 -k2,2 -k1,1n'
 	# sort by priority then number
+
+alias n="notes.sh"
 
 # timezones
 alias CST='doas timedatectl set-timezone America/Chicago && refreshbar.sh'

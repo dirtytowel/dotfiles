@@ -78,4 +78,4 @@ super + shift + r
 	tdrop -w 60% -h 70% -x 20% -y 15% bitwarden-desktop
 
 super + m
-	tdrop -w 60% -h 60% -x 20% -y 20% --class plexamp flatpak run com.plexamp.Plexamp
+	tdrop -w 60% -h 60% -x 20% -y 20% plexamp.sh
