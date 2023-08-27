@@ -56,7 +56,7 @@ tab.tabbrowser-tab:nth-child(1) > stack:nth-child(1) > hbox:nth-child(2) {margin
 #userContext-icons, #star-button-box {display: none !important;}
 
 /* hide add-on icon */
-#unified-extensions-button {display: none !important;}
+/* #unified-extensions-button {display: none !important;}
 
 /* address order - hide the page zoom value at the right end */
 #urlbar-zoom-button {display:none!important}
