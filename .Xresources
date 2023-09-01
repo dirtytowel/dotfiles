@@ -51,7 +51,7 @@ Xcursor.size:						16
 *background:						BACKGROUND
 URxvt.foreground:				FOREGROUND
 URxvt.background:				TRANSPARENCY
-*.internalBorder:				15
+*.internalBorder:				10
 *.cursorColor:					COLOR5
 URxvt.cursorColor:			COLOR5
 *.cursorBlink:					true
@@ -103,7 +103,7 @@ dwm.enablegaps:					1
 URxvt.depth:						32
 URxvt.scrollBar:				false
 URxvt.intensityStyles:	false
-!!URxvt.geometry:				175x63
+URxvt.geometry:					80x54
 
 !! XTerm
 XTerm*pointerShape:			XC_xterm

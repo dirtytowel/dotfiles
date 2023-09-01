@@ -18,7 +18,7 @@
 
 [colors]
 background = ${xrdb:background}
-;background = #98000000
+;background = #BF000000
 foreground = ${xrdb:foreground}
 primary = ${xrdb:background}
 secondary = ${xrdb:color3}
@@ -206,7 +206,7 @@ label = %gb_used%
 
 [module/temperature]
 type = internal/temperature
-thermal-zone = 0
+thermal-zone = 1
 warn-temperature = 85
 
 format = <ramp> <label>
@@ -297,6 +297,15 @@ interface = enp0s13f0u3
 label-connected = eth
 format-connected = <label-connected>
 format-connected-foreground = ${colors.secondary}
+
+[module/vpn]
+type = custom/script
+tail = true
+exec =  MIC=$(echo hello); echo $
+label = "%output%"
+;interval = 0.1
+format-prefix = "world"
+label-foreground = ${colors.alert}
 
 [settings]
 screenchange-reload = true
