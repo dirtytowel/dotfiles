@@ -56,7 +56,7 @@ font-0 = Hack Nerd Font Mono:antialiasing=true:size=9;3
 
 modules-left = dwm title
 ;modules-center = title
-modules-right = desktop mic pulseaudio memory temperature eth wlan battery date
+modules-right = pulseaudio memory temperature eth wlan battery date
 
 module-margin = 1
 
@@ -174,13 +174,13 @@ label = "%output%"
 interval = 0.1
 label-foreground = ${colors.secondary}
 
-[module/mic]
-type = custom/script
-tail = true
-exec =  MIC=$(pactl get-source-mute @DEFAULT_SOURCE@ | awk  '{print $2}'); [ $MIC = "yes" ] && MIC="" || MIC=""; echo $MIC
-label = "%output%"
-;interval = 0.1
-label-foreground = ${colors.alert}
+;[module/mic]
+;type = custom/script
+;tail = true
+;exec =  MIC=$(pactl get-source-mute @DEFAULT_SOURCE@ | awk  '{print $2}'); [ $MIC = "yes" ] && MIC="" || MIC=""; echo $MIC
+;label = "%output%"
+;;interval = 0.1
+;label-foreground = ${colors.alert}
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -298,14 +298,14 @@ label-connected = eth
 format-connected = <label-connected>
 format-connected-foreground = ${colors.secondary}
 
-[module/vpn]
-type = custom/script
-tail = true
-exec =  MIC=$(echo hello); echo $
-label = "%output%"
-;interval = 0.1
-format-prefix = "world"
-label-foreground = ${colors.alert}
+;[module/vpn]
+;type = custom/script
+;tail = true
+;exec =  MIC=$(echo hello); echo $
+;label = "%output%"
+;;interval = 0.1
+;format-prefix = "world"
+;label-foreground = ${colors.alert}
 
 [settings]
 screenchange-reload = true
