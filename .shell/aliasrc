@@ -59,9 +59,8 @@ export PATH=$PATH:/sbin
 export PATH=$PATH:/home/ethan/.local/usr/bin/
 
 # browsers
-export BROWSER=/usr/bin/librewolf
-export PWBROWSER="/usr/bin/librewolf --private-window"
-
+export BROWSER="/usr/bin/firefox"
+export PWBROWSER="/usr/bin/firefox --private-window"
 # editor
 export EDITOR="vim"
 

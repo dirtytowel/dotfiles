@@ -103,7 +103,7 @@ dwm.enablegaps:					1
 URxvt.depth:						32
 URxvt.scrollBar:				false
 URxvt.intensityStyles:	false
-URxvt.geometry:					80x54
+URxvt.geometry:					90x40
 
 !! XTerm
 XTerm*pointerShape:			XC_xterm
