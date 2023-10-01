@@ -8,10 +8,6 @@
 # if you are using ssh or a tty then type exit and log back in
 setopt PROMPT_SUBST
 
-if [[ `ps ho command $(ps ho ppid $$)` == 'urxvt'* ]]; then
-  clear
-fi
-
 # common
 source ~/.shell/*
   # History

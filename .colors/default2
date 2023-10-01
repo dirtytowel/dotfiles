@@ -1,0 +1,38 @@
+#define FOREGROUND #ffffff
+#define BACKGROUND #000000
+#define ACCENT     COLOR13
+#define NORM       COLOR8
+
+!!black
+#define COLOR0  #000000
+#define COLOR8  #666666
+
+!!red
+#define COLOR1  #fe1414
+#define COLOR9  #c7001f
+
+!!green
+#define COLOR2  #31fe31
+#define COLOR10 #00a800
+
+!!yellow
+#define COLOR3  #fef81f
+#define COLOR11 #de8900
+
+!!blue
+#define COLOR4  #3963ff
+#define COLOR12 #002fdc
+
+!!magenta
+#define COLOR5  #fb00ff
+#define COLOR13 #a0009a
+
+!!cyan
+#define COLOR6  #33e8fd
+#define COLOR14 #007987 
+
+!!white
+#define COLOR7  #ffffff
+#define COLOR15 #bebbb8
+
+
