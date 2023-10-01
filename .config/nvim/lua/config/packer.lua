@@ -32,7 +32,9 @@ return require('packer').startup(function(use)
 	}
 
 	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+
 	use('nvim-treesitter/playground')
+
 	use('mbbill/undotree')
 
 	use {
@@ -51,5 +53,11 @@ return require('packer').startup(function(use)
 			{'L3MON4D3/LuaSnip'},
 		}
 	}
+
+  use('mg979/vim-visual-multi')
+
+  use('preservim/nerdtree')
+
+  use('ryanoasis/vim-devicons')
 
 end)

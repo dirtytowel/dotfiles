@@ -100,6 +100,16 @@ URxvt.scrollBar:				false
 URxvt.intensityStyles:	false
 URxvt.geometry:					90x40
 
+!! nvim compat
+URxvt.keysym.Control-Up:    \033[1;5A
+URxvt.keysym.Control-Down:  \033[1;5B
+URxvt.keysym.Control-Left:  \033[1;5D
+URxvt.keysym.Control-Right: \033[1;5C
+URxvt.keysym.M-Down:        \033[1;3B
+URxvt.keysym.M-Up:          \033[1;3A
+URxvt.keysym.M-Left:        \033[1;3D
+URxvt.keysym.M-Right:       \033[1;3C
+
 !! XTerm
 XTerm*pointerShape:			XC_xterm
 XTerm*cursorTheme:			Adwaita
@@ -109,7 +119,7 @@ XTerm*alwaysBoldMode:		false
 
 !! URxvt extensions
 URxvt.perl-ext-common:	default,-confirm-paste,matcher,resize-font,config-reload,
-URxvt.url-launcher:			/usr/bin/librewolf
+URxvt.url-launcher:			/usr/bin/firefox
 URxvt.matcher.button:		C-1
 URxvt.resize-font.step: 1 
 URxvt.keysym.C-minus:		resize-font:smaller
