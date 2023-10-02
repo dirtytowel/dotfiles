@@ -17,15 +17,15 @@ end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-	ensure_installed = {
-		'lua_ls', -- Lua
-		'cmake', -- Makefile
-		'bashls', -- POSIX shell
-		'zk', -- Markdown
-		'pylsp', -- Python
-		'yamlls', -- YAML
-		'dockerls', -- Docker
-	},
+--	ensure_installed = {
+--		'lua_ls', -- Lua
+--		'cmake', -- Makefile
+--		'bashls', -- POSIX shell
+--		'zk', -- Markdown
+--		'pylsp', -- Python
+--		'yamlls', -- YAML
+--		'dockerls', -- Docker
+--	},
   handlers = {
     lsp_zero.default_setup,
     lua_ls = function()

@@ -10,3 +10,5 @@ vim.g.NERDTreeGitStatusIndicatorMapCustom = {
     Clean     = 'C',
     Unknown   = '???'
 }
+
+vim.g.NERDTreeQuitOnOpen = "1"
