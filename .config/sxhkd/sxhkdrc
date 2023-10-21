@@ -71,6 +71,9 @@ super + shift + F7
 super + s
 	tdrop -w 50% -h 55% -x 25% -y 22% urxvt -tn rxvt-unicode -name spterm -title spterm
 
+super + shift + s
+	sshmenu
+
 super + r
 	tdrop -w 60% -h 70% -x 20% -y 15% keepassxc 
 

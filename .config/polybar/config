@@ -184,14 +184,14 @@ type = internal/pulseaudio
 
 ramp-volume-0 = 
 ramp-volume-1 = 
-ramp-volume-2 = 墳
+ramp-volume-2 = 
 ramp-volume-foreground = ${colors.secondary}
 
 format-volume = <ramp-volume> <label-volume>
 
 label-volume = %percentage%%
 
-label-muted = 婢 %percentage%%
+label-muted = 󰖁 %percentage%%
 label-muted-foreground = ${colors.disabled}
 
 [module/memory]
@@ -248,18 +248,18 @@ adapter = AC
 full-at = 99
 low-at = 20
 
-format-charging-prefix = " "  
+format-charging-prefix = "󰂄 "  
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
+ramp-capacity-0 = 󰁺
+ramp-capacity-1 = 󰁼
 ramp-capacity-1-foreground = ${colors.secondary}
-ramp-capacity-2 = 
+ramp-capacity-2 = 󰁾
 ramp-capacity-2-foreground = ${colors.secondary}
-ramp-capacity-3 = 
+ramp-capacity-3 = 󰂀
 ramp-capacity-3-foreground = ${colors.secondary}
-ramp-capacity-4 = 
+ramp-capacity-4 = 󰂂
 ramp-capacity-4-foreground = ${colors.secondary}
-ramp-capacity-5 = 
+ramp-capacity-5 = 󰁹
 
 format-charging = <label-charging>
 format-charging-foreground = ${colors.col6}
@@ -282,7 +282,7 @@ type = internal/network
 interface = wlp166s0
 
 format-connected = <label-connected>
-format-connected-prefix = "說 "
+format-connected-prefix = "󰖩 "
 format-connected-prefix-foreground = ${colors.secondary}
 label-connected =%upspeed% %downspeed%
 
@@ -307,5 +307,3 @@ format-connected-foreground = ${colors.secondary}
 [settings]
 screenchange-reload = true
 pseudo-transparency = false
-
-; vim:ft=dosini
