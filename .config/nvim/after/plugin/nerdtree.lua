@@ -1,14 +1,14 @@
 vim.g.NERDTreeGitStatusIndicatorMapCustom = {
     Modified  = 'M',
     Staged    = 'A',
-    Untracked = '?',
+    Untracked = '??',
     Renamed   = 'R',
     Unmerged  = 'U',
     Deleted   = 'D',
-    Dirty     = 'd',
-    Ignored   = '!',
-    Clean     = 'C',
-    Unknown   = '???'
+    Dirty     = 'M',
+    Ignored   = '!!',
+    Clean     = '',
+    Unknown   = '',
 }
 
 vim.g.NERDTreeQuitOnOpen = "1"

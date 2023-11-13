@@ -43,5 +43,6 @@ map <leader>l :set list!<CR> " Toggle tabs and EOL
 set incsearch           " Show search matches as you type
 set hlsearch            " Highlight search matches
 nnoremap <leader><space> :nohlsearch<CR> " Clear highlighted search results
+autocmd CursorMoved * :nohlsearch
 hi Search ctermbg=LightYellow
 hi Search ctermfg=Red

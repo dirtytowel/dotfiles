@@ -17,8 +17,8 @@
 ;==========================================================
 
 [colors]
-background = ${xrdb:background}
-;background = #BF000000
+;background = ${xrdb:background}
+background = #BF000000
 foreground = ${xrdb:foreground}
 primary = ${xrdb:background}
 secondary = ${xrdb:color3}
@@ -36,17 +36,19 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 border-size = 0
+;border-right-size = 19
 ;height = 22
-radius = 0
+radius = 3
 height = 30
+line-size = 3
 
 ;border-color = #00000000
-;border-color = #ff00ff
+border-color = ${colors.disabled}
 
 padding-left = 0
 padding-right = 3
 
-separator = "│"
+;separator = "│"
 separator-foreground = ${colors.disabled}
 
 font-0 = Hack Nerd Font Mono:antialiasing=true:size=9;3
@@ -132,6 +134,7 @@ label-layout-foreground = ${colors.secondary}
 label-focused = %name%
 label-focused-background = ${colors.accent}
 label-focused-foreground = ${colors.primary}
+;label-focused-underline = ${colors.accent}
 label-focused-padding = 1
 
 ; unfocused = Unselected tag on unselected monitor

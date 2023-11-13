@@ -57,6 +57,7 @@ URxvt.cursorColor:			COLOR5
 *.cursorBlink:					true
 
 !! Fonts
+URxvt.letterSpace:      -1
 URxvt.iso14755:					false
 URxvt.iso14755_52:			false
 *.font:									xft:Hack Nerd Font Mono:antialias=true:hinting=true:size=9, \

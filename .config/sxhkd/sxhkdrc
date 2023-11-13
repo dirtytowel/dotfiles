@@ -1,84 +1,121 @@
+## NOTE: it might be nice to create makefile so that it will cat the files
+# together based on what wm/host you are on
+# ex: cat ./dwm ./scripts ./desktop
+# would allow for single config directory with different implementations, however
+# I would need to add sxhkdrc to the gitignore and have .xinitrc run the make file every startup
+
+## CUSTOM SCRIPTS
+# dmenu catchall
 super + d
-	dmenu_script.sh
+	dmu.sh
 
+# ssh picker
+super + shift + s
+	sshmenu
+
+# rxvt-unicode and start daemon if not currently running
 super + shift + Return
-	urxvtc
+	urxvtcd
 
+# smartspawn rxvt-unicode based on currently focused window
 super + shift + backslash
 	smartspwn.sh
 
+#  nmtui floating and kill old instance if exists
 super + n
-	kill -44 $(pidof nmtui) & urxvtc -tn rxvt-unicode -name nmtui -e nmtui
+	kill -44 $(pidof nmtui) & urxvtcd -tn rxvt-unicode -name nmtui -e nmtui
 
+# default bowser
 super + w
 	$BROWSER
 
+# weechat script (dtach on vps)
 super + shift + w
 	weechat
+
+# email client
 super + e
 	thunderbird
 
-super + v
-	code
 
-super + f
-	spacefm
-
+## SCREENSHOTS
+# full monitor screenshot
 super + Print
 	cd ~/pix/scrot && scrot
 
+# interactive screenshot
 super + shift + Print
 	cd ~/pix/scrot && scrot -s
 
+
+## VOLUME CONTROL
+# raise volume of default output
 XF86AudioRaiseVolume
 	pactl set-sink-mute @DEFAULT_SINK@ 0; pactl set-sink-volume @DEFAULT_SINK@ +5%
 
+# lower volume of default output
 XF86AudioLowerVolume
 	pactl set-sink-mute @DEFAULT_SINK@ 0; pactl set-sink-volume @DEFAULT_SINK@ -5%
 
+# toggle default output mute
 XF86AudioMute
 	pactl set-sink-mute @DEFAULT_SINK@ toggle
 
+# raise folume of default mic
 shift + XF86AudioRaiseVolume
 	pactl set-source-mute @DEFAULT_SOURCE@ 0; pactl set-source-volume @DEFAULT_SOURCE@ +5%
 
+# lower volume of default mic
 shift + XF86AudioLowerVolume
 	pactl set-source-mute @DEFAULT_SOURCE@ 0; pactl set-source-volume @DEFAULT_SOURCE@ -5%
 
+# toggle mic mute
 shift + XF86AudioMute
 	pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
+## MONITORS
+# decrease monitor brightness
 XF86MonBrightnessDown
 	sudo xbacklight -dec 5
 
+# increase monitor brightness
 XF86MonBrightnessUp
 	sudo xbacklight -inc 5
 
+# suspend system
 XF86Sleep
 	lock.sh & systemctl suspend
 
+# lock system
 XF86ScreenSaver
 	lock.sh
 super + F2
 	lock.sh
 
+# toggle desktop mode (don't hibernate or sleep)
 super + F7
 	desktop_mode.sh
 
+# manually update autorandr config
 super + shift + F7
 	autorandr --change
 
+
+## SCRATCHPADS
+# terminal scratchpad
 super + s
 	tdrop -w 50% -h 55% -x 25% -y 22% urxvt -tn rxvt-unicode -name spterm -title spterm
 
-super + shift + s
-	sshmenu
-
+# pawword manager scratchpad
 super + r
 	tdrop -w 60% -h 70% -x 20% -y 15% keepassxc 
 
+# bitwarden scratchpad
+# (for work, could be removed once I write script
+# that regularly import bitwarden passwords to .kdbx db)
 super + shift + r
 	tdrop -w 60% -h 70% -x 20% -y 15% bitwarden-desktop
 
-super + m
-	tdrop -w 60% -h 60% -x 20% -y 20% plexamp.sh
+# music player scratchpad
+#super + m
+#	tdrop -w 60% -h 60% -x 20% -y 20% plexamp.sh
