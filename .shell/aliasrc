@@ -9,7 +9,7 @@
 
 #source ~/.docker-aliases
 
-eval $(thefuck --alias)
+#eval $(thefuck --alias)
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -32,7 +32,7 @@ alias la='ls -lA'
 alias l='ls -CF'
 
 # functions
-nv() {
+vim() {
   /bin/nvim $@
 }
 
@@ -67,7 +67,7 @@ export PATH=$PATH:/home/ethan/.local/usr/bin/
 export BROWSER="/usr/bin/firefox"
 export PWBROWSER="/usr/bin/firefox --private-window"
 # editor
-export EDITOR="vim"
+export EDITOR="nvim"
 
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8

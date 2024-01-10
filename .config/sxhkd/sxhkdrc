@@ -1,6 +1,5 @@
 ## NOTE: it might be nice to create makefile so that it will cat the files
 # together based on what wm/host you are on
-# ex: cat ./dwm ./scripts ./desktop
 # would allow for single config directory with different implementations, however
 # I would need to add sxhkdrc to the gitignore and have .xinitrc run the make file every startup
 

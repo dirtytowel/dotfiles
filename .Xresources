@@ -9,7 +9,7 @@
 !#define TRANSPARENCY [90]BACKGROUND
 !#define TRANSPARENCY [100]BACKGROUND
 
-#include ".colors/default2"
+#include ".colors/default"
 !#include ".colors/lcontrast"
 !#include ".colors/borland"
 

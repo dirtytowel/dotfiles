@@ -206,7 +206,7 @@ label = %gb_used%
 
 [module/temperature]
 type = internal/temperature
-thermal-zone = 1
+thermal-zone = 3
 warn-temperature = 85
 
 format = <ramp> <label>

@@ -78,4 +78,3 @@ typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[comment]='fg=red'
 
 source ~/.zsh/git.plugin.zsh
-
