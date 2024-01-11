@@ -25,23 +25,23 @@ return require('packer').startup(function(use)
 
   -- VNIM-XRESOURCES --
   -- https://github.com/martineausimon/nvim-xresources
-	use {
-		'martineausimon/nvim-xresources',
-		as = 'xresources',
-		config = function()
-			require('nvim-xresources').setup({
-				xresources_path = os.getenv("HOME") .. '/.Xresources',
-				auto_light = {
-					enable = false,
-				},
-				contrast = 1,
-				palette_overrides = {},
-			})
-			local C = require('nvim-xresources.colors')
-			require('nvim-xresources').custom_highlight_groups({ })
-			vim.cmd('colorscheme xresources')
-		end
-	}
+--	use {
+--		'martineausimon/nvim-xresources',
+--		as = 'xresources',
+--		config = function()
+--			require('nvim-xresources').setup({
+--				xresources_path = os.getenv("HOME") .. '/.Xresources',
+--				auto_light = {
+--					enable = false,
+--				},
+--				contrast = 1,
+--				palette_overrides = {},
+--			})
+--			local C = require('nvim-xresources.colors')
+--			require('nvim-xresources').custom_highlight_groups({ })
+--			vim.cmd('colorscheme xresources')
+--		end
+--	}
 
   -- TREESITTER --
   -- https://github.com/nvim-treesitter/nvim-treesitter
