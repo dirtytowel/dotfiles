@@ -74,12 +74,12 @@ shift + XF86AudioMute
 
 ## MONITORS
 # decrease monitor brightness
-XF86MonBrightnessDown
-	sudo xbacklight -dec 5
+super + Down
+	brightnessctl set 5%-
 
 # increase monitor brightness
-XF86MonBrightnessUp
-	sudo xbacklight -inc 5
+super + Up
+	brightnessctl set 5%+
 
 # suspend system
 XF86Sleep
