@@ -39,27 +39,27 @@ autoload -U colors && colors
 function git_branch {
   git branch 2> /dev/null | grep '^*' | colrm 1 2 | while read branch
   do
-    branch_notation=" on \ue0a0 %F{yellow}$branch%f"
+    branch_notation=" on  %F{yellow}$branch%f"
 
     # branch is 'ahead'
     if git status | grep -q 'ahead'; then
-        branch_notation="$branch_notation %F{yellow}↿%f"
+        branch_notation="$branch_notation %F{yellow}%f"
     fi
     # branch is 'behind'
     if git status | grep -q 'behind'; then
-        branch_notation="$branch_notation %F{yellow}⇂%f"
+        branch_notation="$branch_notation %F{yellow}%f"
     fi
     # branch is 'up to date'
     if git status | grep -q 'up to date'; then
-        branch_notation="$branch_notation %F{yellow}✓%f"
+        branch_notation="$branch_notation %F{yellow}%f"
     fi
     # branch has 'conflicts'
     if git status | grep -q 'conflicts'; then
-        branch_notation="$branch_notation %F{red}⚠%f"
+        branch_notation="$branch_notation %F{red}%f"
     fi
     # branch has 'untracked' or 'modified' files
     if git status | grep -q 'untracked' || git status | grep -q 'modified'; then
-        branch_notation="$branch_notation %F{yellow}±%f"
+        branch_notation="$branch_notation %F{yellow}󰦒%f"
     fi
     echo -n $branch_notation  # Use '-n' to prevent echo from adding a newline.
 
