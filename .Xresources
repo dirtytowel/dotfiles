@@ -84,6 +84,7 @@ dwm.dmenufont:					Hack Nerd Font Mono:style=Regular:size=9
 
 dwm.normbgcol:					BACKGROUND
 dwm.normbordercol:			NORM
+!dwm.normbordercol:			BACKGROUND
 dwm.normfgcol:					FOREGROUND
 dwm.selbgcol:						ACCENT
 dwm.selbordercol:				ACCENT
