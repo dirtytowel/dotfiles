@@ -2,10 +2,8 @@
 
 git_branch() {
   # Check if we are in a git repository
-  if ! git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
-    return  # Not a git repository, so don't display branch information
-  fi
-  
+  git rev-parse --is-inside-work-tree > /dev/null 2>&1 || return
+
   # Store the output of git status to avoid multiple calls
   git_status=$(git status 2> /dev/null)
   
@@ -27,9 +25,8 @@ git_branch() {
       branch_notation="$branch_notation ";;
   esac
  
-  if printf "$git_status" | grep -Eq 'untracked|modified'; then
-      branch_notation="$branch_notation 󰦒"
-  fi
+  printf "$git_status" | grep -Eq 'untracked|modified' && \
+    branch_notation="$branch_notation 󰦒"
  
   printf " $branch_notation"
 } 
