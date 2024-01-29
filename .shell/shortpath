@@ -1,8 +1,24 @@
 #!/bin/sh
 #pwd | sed "s|^$HOME|~|"; exit #uncomment for default current directory setup
+
+# uncomment for last dir full name
 short_path () {
-  local IFS='
-'
+  dirs=$(pwd | sed "s|^$HOME|~|" | tr '\/' '\n' )
+  num_dirs=$(echo "$dirs" | wc -l)
+  c=0
+  for d in $dirs; do
+    c=$((c + 1))
+    [ $d = '~' ] && pth='~' && continue
+    [ "$c" -eq "$num_dirs" ] && d="/$d" || d="/$(echo ${d#.} | cut -b1 )"
+    pth="${pth:+${pth}}${d}"
+  done
+  [ -z $pth ] && pth="/"
+  echo $pth
+}
+short_path
+exit
+
+short_path () {
   dirs=$(pwd | sed "s|^$HOME|~|" | tr '\/' '\n' )
   for d in $dirs; do
     [ $d = '~' ] && pth='~' && \
