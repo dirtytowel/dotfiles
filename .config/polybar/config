@@ -38,7 +38,7 @@ foreground = ${colors.foreground}
 border-size = 0
 ;border-right-size = 19
 ;height = 22
-radius = 3
+;radius = 3
 height = 30
 line-size = 3
 
