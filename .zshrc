@@ -4,39 +4,42 @@
 # _ / /\__ \ | | | | | (__
 #(_)___|___/_| |_|_|  \___|
 #
-# to enable changes restart your terminal emulator and come back.
-# if you are using ssh or a tty then type exit and log back in
+# to enable changes restart your terminal emulator or run "source ~/.zshrc"
 
-# common settings for all shells
-source ~/.shell/*
+source ~/.shell/aliasrc
+source ~/.shell/commonrc
 
-
-## STARTX IN TTY1 ##
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then startx; fi
-
-
-## XTERM COLOR FIX ##
-[ $TERM = xterm ] && TERM=xterm-256color
-
-
-## ENABLE COLORS ##
-autoload -U colors && colors
+setopt PROMPT_SUBST
 
 
 ## PROMPT ##
-setopt PROMPT_SUBST
-
-ssh_check () { [ -z $SSH_TTY ] && echo "" || echo "($(cat /proc/sys/kernel/hostname)) " }
-
-get_pwd () { echo "$(~/.shell/shortpath)" }
-
-git_branch () { echo "$(~/.shell/gitbranch)" }
+# I am sure there is a way to just source these instead of doing it this way
+get_pwd () {
+  echo "$(~/.shell/shortpath)"
+}
 
 # set prompt
-PS1="%F{yellow}\$(ssh_check)%f%F{cyan}\$(get_pwd)%f%F{yellow}\$(git_branch)%f %F{magenta}$%f "
+PS1="%F{yellow}\$(ssh_check)%f\
+%F{cyan}\$(get_pwd)%f\
+%F{yellow}\$(git_branch)%f \
+%F{magenta}$%f "
 
 
-## DYNAMIC WINDOW TITLE ##
+## ZSH SPECIFIC ##
+# enable colors
+autoload -U colors && colors
+
+# show all history instead of 
+alias history='history 1'
+
+# tab completion
+autoload -U compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots) # Include hidden files.
+
+# dynamic window title
 local dwt () {
     case $TERM in (rxvt|rxvt-*|st|st-*|*xterm*|(dt|k|E)term)
       precmd  () { print -Pn "\e]0;\$(ssh_check)zsh %~\a" }
@@ -50,20 +53,6 @@ if [ -z $(ssh_check) ]; then
 else
   dwt
 fi
-
-
-## HISTORY ##
-HISTSIZE=10000
-SAVEHIST=10000
-HISTCONTROL=ignoreboth
-HISTFILE=~/.history
-alias history='history 1'
-# Basic auto/tab complete:
-autoload -U compinit
-zstyle ':completion:*' menu select
-zmodload zsh/complist
-compinit
-_comp_options+=(globdots) # Include hidden files.
 
 
 ## PLUGINS ##

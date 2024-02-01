@@ -4,29 +4,19 @@
 # _| |_) | (_| \__ \ | | | | | (__
 #(_)_.__/ \__,_|___/_| |_|_|  \___|
 #
-# to enable changes restart your terminal emulator and come back.
-# if you are using ssh or a tty then type exit and log back in
+# to enable changes restart your terminal emulator or run "source ~/.bashrc"
 
-# common
-source ~/.shell/*
-  # History
-HISTSIZE=10000
-SAVEHIST=10000
-HISTCONTROL=ignoreboth
-HISTFILE=~/.history
+source ~/.shell/aliasrc
+source ~/.shell/commonrc
 
-  # autostart startx in tty1
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then startx; fi
-
-  # SSH check
-ssh_check () {
-  [ -z $SSH_TTY ] && echo "" || echo "($(cat /proc/sys/kernel/hostname)) "
-}
-
-  # shortpath
+## PROMPT ##
+# I am sure there is a way to just source these instead of doing it this way
 get_pwd () {
   echo $(~/.shell/shortpath)
 }
 
-#source ~/prompt
-PS1="\[\033[38;5;11m\]\$(ssh_check)\[$(tput sgr0)\]\[\033[38;5;14m\]\$(get_pwd)\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;13m\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
+# set prompt
+PS1="\[\033[38;5;11m\]\$(ssh_check)\[$(tput sgr0)\]\
+\[\033[38;5;14m\]\$(get_pwd)\[$(tput sgr0)\]\
+\[\033[38;5;11m\]\$(git_branch) \[$(tput sgr0)\]\
+\[$(tput sgr0)\]\[\033[38;5;13m\]\\$ \[$(tput sgr0)\]"
