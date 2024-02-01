@@ -1,7 +1,9 @@
 -- set leader key
 vim.g.mapleader = " "
+
 -- NERDTreeToggle
 vim.keymap.set("n", "<leader>pv", vim.cmd.NERDTreeToggle)
+
 -- SPLIT MANAGEMENT --
 -- create splits
 vim.keymap.set("n", "<leader>-", vim.cmd.split)
@@ -14,3 +16,9 @@ vim.keymap.set("n", "<C-l>", function() vim.cmd("wincmd l") end)
 
 -- undotree
 vim.keymap.set("n", "<leader>t", vim.cmd.UndotreeToggle)
+
+-- VISUALIZE TABS AND EOL --
+vim.opt.listchars = { tab = '▸\\ ', eol = '¬' }
+vim.api.nvim_set_keymap('n', '<leader>l', ':set list!<CR>', { noremap = true, silent = true })
+-- Set true to enable by default:
+vim.opt.list = false
