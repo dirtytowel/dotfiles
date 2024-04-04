@@ -3,7 +3,7 @@
 
 # last dir full dir name
 short_path () {
-  IFS='
+  local IFS='
 '
   dirs=$(pwd | sed "s|^$HOME|~|" | tr '\/' '\n' )
   num_dirs=$(echo "$dirs" | wc -l)
@@ -22,6 +22,8 @@ exit
 
 # last dir first letter
 short_path () {
+  local IFS='
+'
   dirs=$(pwd | sed "s|^$HOME|~|" | tr '\/' '\n' )
   for d in $dirs; do
     [ $d = '~' ] && pth='~' && \

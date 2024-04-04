@@ -67,14 +67,15 @@ URxvt.iso14755_52:			false
 
 !! dwm
 
+#define GAP 8
 dwm.borderpx:						3
 dwm.snap:								10
-dwm.gappih:							8
-dwm.gappiv:							8
-dwm.gappoh:							8
-dwm.gappov:							8
-dwm.vertpad:						8
-dwm.sidepad:						8
+dwm.gappih:							GAP
+dwm.gappiv:							GAP
+dwm.gappoh:							GAP
+dwm.gappov:							GAP
+dwm.vertpad:						GAP
+dwm.sidepad:						GAP
 dwm.smartgaps:					0
 dwm.showbar:						1
 dwm.topbar:							1
