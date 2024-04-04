@@ -23,30 +23,9 @@ return require('packer').startup(function(use)
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
-
   -- BASE16 --
   -- https://github.com/chriskempson/base16-vim
   use ('chriskempson/base16-vim')
-
-  -- VNIM-XRESOURCES --
-  -- https://github.com/martineausimon/nvim-xresources
---	use {
---		'martineausimon/nvim-xresources',
---		as = 'xresources',
---		config = function()
---			require('nvim-xresources').setup({
---				xresources_path = os.getenv("HOME") .. '/.Xresources',
---				auto_light = {
---					enable = false,
---				},
---				contrast = 1,
---				palette_overrides = {},
---			})
---			local C = require('nvim-xresources.colors')
---			require('nvim-xresources').custom_highlight_groups({ })
---			vim.cmd('colorscheme xresources')
---		end
---	}
 
   -- TREESITTER --
   -- https://github.com/nvim-treesitter/nvim-treesitter

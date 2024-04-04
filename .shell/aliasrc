@@ -29,11 +29,6 @@ alias ll='ls -l'
 alias la='ls -lA'
 alias l='ls -F'
 
-# funtions
-vim() {
-  /bin/nvim $@
-}
-
 # aliases
 alias hg='history | grep'
 #alias mirror='devour mpv av://v4l2:/dev/video0 --vf=hflip --profile=low-latency --untimed'
