@@ -41,11 +41,11 @@ git_branch() {
   # append git status condition to branch_notation
   case "$git_status" in
     *"ahead"*)
-      branch_notation="$branch_notation ";;
+      branch_notation="$branch_notation ";;
     *"behind"*)
-      branch_notation="$branch_notation ";;
+      branch_notation="$branch_notation ";;
     *"have diverged,"*)
-      branch_notation="$branch_notation ";;
+      branch_notation="$branch_notation ";;
     *"up to date"*)
       branch_notation="$branch_notation ";;
     *"conflicts"*)

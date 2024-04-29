@@ -23,6 +23,13 @@ return require('packer').startup(function(use)
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
+  -- HARPOON --
+  -- https://github.com/ThePrimeagen/harpoon
+  use {
+    'ThePrimeagen/harpoon', 
+		requires = { {'nvim-lua/plenary.nvim'} }
+  }
+
   -- BASE16 --
   -- https://github.com/chriskempson/base16-vim
   use ('chriskempson/base16-vim')
@@ -35,6 +42,7 @@ return require('packer').startup(function(use)
   -- UNDOTREE --
   -- https://github.com/mbbill/undotree
 	use('mbbill/undotree')
+
 
   -- LSP-ZERO --
   -- https://github.com/VonHeikemen/lsp-zero.nvim
