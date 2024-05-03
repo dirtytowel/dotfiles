@@ -9,12 +9,12 @@ vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "no"
 
-
+-- indenting and tabs
 vim.opt.expandtab = true
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
-vim.opt.smartindent = true
+vim.opt.smartindent = false
 
 -- long running undos (great for undotree)
 vim.opt.swapfile = false
@@ -22,10 +22,10 @@ vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
--- don't keep searches highlighted
-vim.opt.hlsearch = false
 -- start highlighting when searching
 vim.opt.incsearch = true
+-- but don't keep searches highlighted
+vim.opt.hlsearch = false
 
 -- required for lualine and some themes
 vim.opt.termguicolors = true
@@ -46,3 +46,4 @@ vim.opt.colorcolumn = "80"
 -- TODO:
 -- this breaks smartspawn.sh over ssh
 vim.opt.title = true
+

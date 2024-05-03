@@ -24,18 +24,31 @@ fi
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
+## ALIASES ##
+
+#alias mirror='devour mpv av://v4l2:/dev/video0 --vf=hflip --profile=low-latency --untimed'
+#alias s="share.sh"
+
+alias hg='history | grep'
+alias ifconfig.me="curl ifconfig.me; echo"
+alias bat="bat -p --theme base16"
+
+# mdn shit
+alias nd='PATHSTORE=$(pwd) && cd ~/mdn && nvim ~/mdn && cd $PATHSTORE && unset PATHSTORE'
+alias n='PATHSTORE=$(pwd) && cd ~/mdn && nvim ~/mdn/quicknote.md && cd $PATHSTORE && unset PATHSTORE'
+alias c='PATHSTORE=$(pwd) && cd ~/mdn && nvim ~/mdn/commands.md && cd $PATHSTORE && unset PATHSTORE'
+
+# standard dirs
+alias cr='cd ~/dat/repos'
+alias crw='cd ~/dat/repos/beyondmd'
+
+# git aliases
+alias gp='git fetch --prune && git pull'
+
 # ls aliases
 alias ll='ls -l'
 alias la='ls -lA'
 alias l='ls -F'
-
-# aliases
-alias hg='history | grep'
-#alias mirror='devour mpv av://v4l2:/dev/video0 --vf=hflip --profile=low-latency --untimed'
-#alias s="share.sh"
-alias ifconfig.me="curl ifconfig.me; echo"
-alias bat="bat -p --theme base16"
-alias n="notes.sh"
 
 # todo.txt-cli
 alias t="todo.sh -a"
@@ -46,12 +59,12 @@ export TODOTXT_SORT_COMMAND='env LC_COLLATE=C sort -k1.4,1.4 -k2,2 -k1,1n'
 alias CST='doas timedatectl set-timezone America/Chicago && refreshbar.sh'
 alias EST='doas timedatectl set-timezone America/New_York && refreshbar.sh'
 
-# PATH
+## PATH ##
 export PATH=$PATH:/home/ethan/.scripts
 export PATH=$PATH:/usr/sbin
 export PATH=$PATH:/sbin
 
-# EXPORTS
+## EXPORTS ##
 export BROWSER="/usr/bin/firefox"
 export PWBROWSER="/usr/bin/firefox --private-window"
 export EDITOR="nvim"

@@ -55,6 +55,10 @@ else
 fi
 
 
+## VIM BACKSPACE FIX ##
+bindkey "^H" backward-delete-char
+bindkey "^?" backward-delete-char
+
 ## PLUGINS ##
 # autosuggestions
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
