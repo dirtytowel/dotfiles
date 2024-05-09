@@ -103,17 +103,23 @@ super + shift + F7
 ## SCRATCHPADS
 # terminal scratchpad
 super + s
-	tdrop -w 50% -h 55% -x 25% -y 22% urxvt -tn rxvt-unicode -name spterm -title spterm
+  DESKTOP=$(dwm-msg get_monitors | grep -A1 tag_state | sed 's/[^0-9]//g' | tail -n1); \
+  tdrop --wm bspwm -w 50% -h 55% -x 25% -y 22% urxvt -tn rxvt-unicode -name spterm -title spterm; \
+  dwm-msg run_command view $DESKTOP
 
 # pawword manager scratchpad
 super + r
-	tdrop -w 60% -h 70% -x 20% -y 15% keepassxc 
+  DESKTOP=$(dwm-msg get_monitors | grep -A1 tag_state | sed 's/[^0-9]//g' | tail -n1); \
+	tdrop -w 60% -h 70% -x 20% -y 15% keepassxc; \
+  dwm-msg run_command view $DESKTOP
 
 # bitwarden scratchpad
 # (for work, could be removed once I write script
 # that regularly import bitwarden passwords to .kdbx db)
 super + shift + r
-	tdrop -w 60% -h 70% -x 20% -y 15% bitwarden-desktop
+  DESKTOP=$(dwm-msg get_monitors | grep -A1 tag_state | sed 's/[^0-9]//g' | tail -n1); \
+	tdrop -w 60% -h 70% -x 20% -y 15% bitwarden-desktop; \
+  dwm-msg run_command view $DESKTOP
 
 # music player scratchpad
 #super + m

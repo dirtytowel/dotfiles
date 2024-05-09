@@ -34,10 +34,10 @@ return require('packer').startup(function(use)
   -- https://github.com/chriskempson/base16-vim
   use ('chriskempson/base16-vim')
 
-  -- TREESITTER --
-  -- https://github.com/nvim-treesitter/nvim-treesitter
-	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-	use('nvim-treesitter/playground')
+--  -- TREESITTER --
+--  -- https://github.com/nvim-treesitter/nvim-treesitter
+--	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+--	use('nvim-treesitter/playground')
 
   -- UNDOTREE --
   -- https://github.com/mbbill/undotree

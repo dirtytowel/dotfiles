@@ -42,6 +42,23 @@ alias c='PATHSTORE=$(pwd) && cd ~/mdn && nvim ~/mdn/commands.md && cd $PATHSTORE
 alias cr='cd ~/dat/repos'
 alias crw='cd ~/dat/repos/beyondmd'
 
+vr () {
+  PATHSTORE=$(pwd)
+  cd ~/dat/repos/$@
+  nvim ~/dat/repos/$@
+  cd $PATHSTORE
+  unset PATHSTORE
+}
+
+vrw () {
+  PATHSTORE=$(pwd)
+  cd ~/dat/repos/beyondmd/$@
+  nvim ~/dat/repos/beyondmd/$@
+  cd $PATHSTORE
+  unset PATHSTORE
+}
+
+
 # git aliases
 alias gp='git fetch --prune && git pull'
 
