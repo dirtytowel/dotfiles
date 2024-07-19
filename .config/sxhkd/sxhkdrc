@@ -74,11 +74,11 @@ shift + XF86AudioMute
 
 ## MONITORS
 # decrease monitor brightness
-super + Down
+XF86MonBrightnessDown
 	brightnessctl set 5%-
 
 # increase monitor brightness
-super + Up
+XF86MonBrightnessUp
 	brightnessctl set 5%+
 
 # suspend system

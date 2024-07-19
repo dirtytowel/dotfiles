@@ -61,6 +61,7 @@ vrw () {
 
 # git aliases
 alias gp='git fetch --prune && git pull'
+alias gs='git status -s'
 
 # ls aliases
 alias ll='ls -l'
