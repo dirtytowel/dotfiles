@@ -15,8 +15,18 @@ return require('packer').startup(function(use)
 	-- https://github.com/wbthomason/packer.nvim
 	use 'wbthomason/packer.nvim'
 
-	-- TELESCOPE --
-	-- https://github.com/nvim-telescope/telescope.nvim
+  -- AUTOPAIRS --
+  -- https://github.com/windwp/nvim-autopairs
+  use {
+      "windwp/nvim-autopairs",
+      event = "InsertEnter",
+      config = function()
+          require("nvim-autopairs").setup {}
+      end
+  }
+
+  -- TELESCOPE --
+  -- https://github.com/nvim-telescope/telescope.nvim
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.3',
 		-- or,                           branch = '0.1.x',
@@ -30,9 +40,11 @@ return require('packer').startup(function(use)
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
-	-- BASE16 --
-	-- https://github.com/chriskempson/base16-vim
-	use ('chriskempson/base16-vim')
+  -- BASE16 --
+  -- https://github.com/chriskempson/base16-vim
+  use {
+    'chriskempson/base16-vim'
+  }
 
   -- COLORIZER --
   -- https://github.com/norcalli/nvim-colorizer.lua
@@ -46,7 +58,6 @@ return require('packer').startup(function(use)
 	-- UNDOTREE --
 	-- https://github.com/mbbill/undotree
 	use('mbbill/undotree')
-
 
 	-- LSP-ZERO --
 	-- https://github.com/VonHeikemen/lsp-zero.nvim

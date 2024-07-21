@@ -101,7 +101,7 @@ dwm.enablegaps:					1
 URxvt.depth:						32
 URxvt.scrollBar:				false
 URxvt.intensityStyles:	false
-URxvt.geometry:					90x40
+URxvt.geometry:					90x30
 
 !! nvim compat
 URxvt.keysym.Control-Up:    \033[1;5A
