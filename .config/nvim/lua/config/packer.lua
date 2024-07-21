@@ -34,6 +34,10 @@ return require('packer').startup(function(use)
 	-- https://github.com/chriskempson/base16-vim
 	use ('chriskempson/base16-vim')
 
+  -- COLORIZER --
+  -- https://github.com/norcalli/nvim-colorizer.lua
+  use ('norcalli/nvim-colorizer.lua')
+
 	 -- TREESITTER --
 	 -- https://github.com/nvim-treesitter/nvim-treesitter
 	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})

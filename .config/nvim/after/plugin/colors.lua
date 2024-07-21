@@ -1,4 +1,5 @@
 function UpdateColors(color)
+  require'colorizer'.setup()
 	--color = color or "xresources"
 	color = color or "base16-3024"
 	vim.cmd.colorscheme(color)

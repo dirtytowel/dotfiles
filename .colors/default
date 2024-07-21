@@ -1,5 +1,5 @@
 !!black
-#define COLOR0  #000000
+#define COLOR0  #333333
 #define COLOR8  #666666
 !!red
 #define COLOR1  #ed1b23
