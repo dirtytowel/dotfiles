@@ -69,3 +69,6 @@ bindkey '^f' forward-word
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[comment]='fg=red'
+
+# todo.sh on new zsh open
+#todo.sh ls

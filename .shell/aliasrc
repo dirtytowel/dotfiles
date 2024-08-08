@@ -33,31 +33,39 @@ alias hg='history | grep'
 alias ifconfig.me="curl ifconfig.me; echo"
 alias bat="bat -p --theme base16"
 
+# gentoo
+#alias belongs='equery belongs'
+
 # mdn shit
 alias nd='PATHSTORE=$(pwd) && cd ~/mdn && nvim ~/mdn && cd $PATHSTORE && unset PATHSTORE'
 alias n='PATHSTORE=$(pwd) && cd ~/mdn && nvim ~/mdn/quicknote.md && cd $PATHSTORE && unset PATHSTORE'
 alias c='PATHSTORE=$(pwd) && cd ~/mdn && nvim ~/mdn/commands.md && cd $PATHSTORE && unset PATHSTORE'
 
 # standard dirs
-alias cr='cd ~/dat/repos'
-alias crw='cd ~/dat/repos/beyondmd'
+alias cdr='cd ~/dat/repos'
+alias cdrw='cd ~/dat/repos/beyondmd'
+alias cdp='cd /etc/portage'
 
-vr () {
-  PATHSTORE=$(pwd)
-  cd ~/dat/repos/$@
-  nvim ~/dat/repos/$@
+vd () {
+  local PATHSTORE=$(pwd)
+  [ ! -e $@ ] && echo "file/directory does not exist" && return
+  [ -f $@ ] && cd "${@%/*}" && vim "${@##*/}"
+  [ -d $@ ] && cd $@ && vim .
   cd $PATHSTORE
-  unset PATHSTORE
 }
 
-vrw () {
-  PATHSTORE=$(pwd)
-  cd ~/dat/repos/beyondmd/$@
-  nvim ~/dat/repos/beyondmd/$@
+vdr () { vd "$HOME/dat/repos/$@" }
+vdrw () { vd "$HOME/dat/repos/beyondmd/$@" }
+
+svd () {
+  local PATHSTORE=$(pwd)
+  [ ! -e $@ ] && echo "file/directory does not exist" && return
+  [ -f $@ ] && cd "${@%/*}" && sudo vim "${@##*/}"
+  [ -d $@ ] && cd $@ && sudo vim .
   cd $PATHSTORE
-  unset PATHSTORE
 }
 
+vdp () { svd "/etc/portage/$@" }
 
 # git aliases
 alias gp='git fetch --prune && git pull'
@@ -68,8 +76,8 @@ alias ll='ls -l'
 alias la='ls -lA'
 alias l='ls -F'
 
-# todo.txt-cli
-alias t="todo.sh -a"
+# todo.txt-cliS
+alias t='todo.sh -a'
 export TODOTXT_DEFAULT_ACTION=ls
 export TODOTXT_SORT_COMMAND='env LC_COLLATE=C sort -k1.4,1.4 -k2,2 -k1,1n'
 
