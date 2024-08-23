@@ -6,8 +6,6 @@
 #
 # to enable changes restart your terminal emulator or run "source ~/.zshrc"
 
-export TERM=xterm-256color
-
 source ~/.shell/aliasrc
 source ~/.shell/commonrc
 
