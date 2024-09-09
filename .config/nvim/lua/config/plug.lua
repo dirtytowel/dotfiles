@@ -66,6 +66,10 @@ Plug('Xuyuanp/nerdtree-git-plugin')
 Plug('nvim-lualine/lualine.nvim')
 Plug('nvim-tree/nvim-web-devicons')
 
+-- GIT BLAME --
+-- https://github.com/f-person/git-blame.nvim
+Plug('f-person/git-blame.nvim')
+
 vim.call('plug#end')
 
 require('nvim-autopairs').setup {}
