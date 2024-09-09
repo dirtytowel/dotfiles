@@ -7,4 +7,4 @@ require("config.remap")
 require("config.set")
 
 -- vim plug
-require("plug")
+require("config.plug")
