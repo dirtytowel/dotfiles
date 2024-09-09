@@ -73,3 +73,12 @@ Plug('f-person/git-blame.nvim')
 vim.call('plug#end')
 
 require('nvim-autopairs').setup {}
+
+require("plugins.colors")
+require("plugins.harpoon")
+require("plugins.lsp")
+require("plugins.lualine")
+require("plugins.nerdtree")
+require("plugins.telescope")
+require("plugins.treesitter")
+require("plugins.visual-multi")
