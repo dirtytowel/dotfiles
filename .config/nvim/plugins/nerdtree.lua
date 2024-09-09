@@ -12,3 +12,5 @@ vim.g.NERDTreeGitStatusIndicatorMapCustom = {
 }
 
 vim.g.NERDTreeQuitOnOpen = "1"
+
+vim.keymap.set("n", "<leader>pv", vim.cmd.NERDTreeToggle)
