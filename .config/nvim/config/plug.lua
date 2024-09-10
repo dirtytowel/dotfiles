@@ -81,7 +81,7 @@ build_plugin_configs("lualine")
 
 -- GIT BLAME --
 -- https://github.com/f-person/git-blame.nvim
---Plug('f-person/git-blame.nvim')
+Plug('f-person/git-blame.nvim')
 
 -- Commenting
 -- https://github.com/numToStr/Comment.nvim
