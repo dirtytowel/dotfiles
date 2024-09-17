@@ -18,12 +18,17 @@ get_pwd () {
   echo "$(~/.shell/shortpath)"
 }
 
-# set prompt
-PS1="%F{yellow}\$(ssh_check)%f\
-%F{cyan}\$(get_pwd)%f\
-%F{yellow}\$(git_branch)%f \
-%F{magenta}$%f "
+# # set prompt
+# PS1="\
+# %F{yellow}\$(ssh_check)%f\
+# %F{cyan}\$(get_pwd)%f\
+# %F{yellow}\$(git_branch)%f \
+# %F{magenta}%f "
 
+PS1="%F{0}%f%K{0} %F{yellow}\$(ssh_check)%f\
+%F{cyan}\$(get_pwd)%f\
+%F{yellow}\$(git_branch)%f %k\
+%F{0}%f "
 
 ## ZSH SPECIFIC ##
 # enable colors
@@ -42,8 +47,12 @@ _comp_options+=(globdots) # Include hidden files.
 # dynamic window title
 local dwt () {
     case $TERM in (rxvt|rxvt-*|st|st-*|*xterm*|(dt|k|E)term)
-      precmd  () { print -Pn "\e]0;\$(ssh_check)zsh %~\a" }
-      preexec () { print -Pn "\e]0;\$(ssh_check)$1\a" }
+      precmd  () {
+        print -Pn "\e]0;\$(ssh_check)zsh %~\a"
+      }
+      preexec () {
+        print -Pn "\e]0;\$(ssh_check)$1\a"
+      }
     esac
 }
 

@@ -5,8 +5,8 @@
 !!(_)_/\_\_|  \___||___/\___/ \__,_|_|  \___\___||___/
 !!
 !! to enable changes type `xrdb -load .Xresources` and restart URxvt
-#define TRANSPARENCY [75]BACKGROUND
-!#define TRANSPARENCY [90]BACKGROUND
+!#define TRANSPARENCY [75]BACKGROUND
+#define TRANSPARENCY [85]BACKGROUND
 !#define TRANSPARENCY [100]BACKGROUND
 
 #include ".colors/default"

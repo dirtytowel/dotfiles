@@ -18,7 +18,7 @@ setup_plugin("nvim-autopairs")
 -- TELESCOPE --
 -- https://github.com/nvim-telescope/telescope.nvim
 Plug('nvim-lua/plenary.nvim')
-Plug('nvim-telescope/telescope.nvim', { ['tag'] = '0.1.8' } )
+Plug('nvim-telescope/telescope.nvim', { ['tag'] = '0.1.8' })
 build_plugin_configs("telescope")
 
 -- HARPOON --
@@ -37,7 +37,7 @@ Plug('norcalli/nvim-colorizer.lua')
 
 -- TREESITTER --
 -- https://github.com/nvim-treesitter/nvim-treesitter
-Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate'} )
+Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
 Plug('nvim-treesitter/playground')
 build_plugin_configs("treesitter")
 
@@ -48,7 +48,7 @@ build_plugin_configs("undotree")
 
 -- LSP-ZERO --
 -- https://github.com/VonHeikemen/lsp-zero.nvim
-Plug('VonHeikemen/lsp-zero.nvim', { ['branch'] = 'v4.x'} )
+Plug('VonHeikemen/lsp-zero.nvim', { ['branch'] = 'v4.x' })
 Plug('williamboman/mason.nvim')
 Plug('williamboman/mason-lspconfig.nvim')
 Plug('neovim/nvim-lspconfig')

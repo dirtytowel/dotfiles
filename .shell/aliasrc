@@ -42,14 +42,13 @@ alias n='PATHSTORE=$(pwd) && cd ~/mdn && nvim ~/mdn/quicknote.md && cd $PATHSTOR
 alias c='PATHSTORE=$(pwd) && cd ~/mdn && nvim ~/mdn/commands.md && cd $PATHSTORE && unset PATHSTORE'
 
 # standard dirs
-#alias cdr='cd ~/dat/repos'
 fzcd () {
-  fzdir=$(ls $1 | fzy)
-  cd $1/$dir
+  local fzdir=$(ls "$1" | fzy)
+  cd "$1/$fzdir"
 }
 
-alias cdr='fzcd ~/dat/repos'
-alias cdrw='fzcd ~/dat/repos/beyondmd'
+cdr () { fzcd ~/dat/repos }
+cdrw () { fzcd ~/dat/repos/beyondmd }
 alias cdp='cd /etc/portage'
 
 vd () {
