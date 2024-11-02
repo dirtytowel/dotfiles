@@ -10,8 +10,9 @@
 !#define TRANSPARENCY [100]BACKGROUND
 
 #include ".colors/default"
-!#include ".colors/lcontrast"
+!#include ".colors/xcodelight"
 !#include ".colors/borland"
+!#include ".colors/frappe"
 
 
 !! Set Colors

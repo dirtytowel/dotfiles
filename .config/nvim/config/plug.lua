@@ -26,14 +26,9 @@ build_plugin_configs("telescope")
 Plug('ThePrimeagen/harpoon')
 build_plugin_configs("harpoon")
 
--- BASE16 --
--- https://github.com/chriskempson/base16-vim
-Plug('chriskempson/base16-vim')
+-- dim colorscheme --
+Plug('jeffkreeftmeijer/vim-dim')
 build_plugin_configs("colors")
-
--- COLORIZER --
--- https://github.com/norcalli/nvim-colorizer.lua
-Plug('norcalli/nvim-colorizer.lua')
 
 -- TREESITTER --
 -- https://github.com/nvim-treesitter/nvim-treesitter
@@ -72,12 +67,6 @@ build_plugin_configs("visual-multi")
 Plug('preservim/nerdtree')
 Plug('Xuyuanp/nerdtree-git-plugin')
 build_plugin_configs("nerdtree")
-
--- LUALINE --
--- https://github.com/nvim-lualine/lualine.nvim
-Plug('nvim-lualine/lualine.nvim')
-Plug('nvim-tree/nvim-web-devicons')
-build_plugin_configs("lualine")
 
 -- GIT BLAME --
 -- https://github.com/f-person/git-blame.nvim

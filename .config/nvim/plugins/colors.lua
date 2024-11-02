@@ -1,13 +1,15 @@
-function UpdateColors(color)
-  require'colorizer'.setup()
-	--color = color or "xresources"
-	color = color or "base16-3024"
-	vim.cmd.colorscheme(color)
-	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-	--vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-	vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
-	vim.api.nvim_set_hl(0, "EndOfBuffer", { fg = "Blue" })
-	vim.api.nvim_set_hl(0, "LineNr", { fg = "Yellow" })
-	vim.api.nvim_set_hl(0, "ColorColumn", { bg = "Gray20" })
-end
-UpdateColors()
+color = color or "dim"
+vim.cmd.colorscheme(color)
+
+vim.api.nvim_set_hl(0, "Normal", { ctermbg = "none" })
+vim.api.nvim_set_hl(0, "NormalFloat", { ctermbg = "Black" })
+vim.api.nvim_set_hl(0, "SignColumn", { ctermbg = "none" })
+vim.api.nvim_set_hl(0, "EndOfBuffer", { ctermfg = "Blue" })
+vim.api.nvim_set_hl(0, "LineNr", { ctermfg = "Yellow" })
+vim.api.nvim_set_hl(0, "ColorColumn", { ctermbg = "Gray" })
+vim.api.nvim_set_hl(0, "CursorLine", { reverse = true })
+vim.api.nvim_set_hl(0, "TelescopePromptPrefix", { ctermfg = "Magenta" })
+vim.api.nvim_set_hl(0, "Pmenu", { ctermfg = "Magenta", ctermbg = "Black" })
+vim.api.nvim_set_hl(0, "PmenuSel", { reverse = true })
+vim.api.nvim_set_hl(0, "PmenuSbar", { ctermbg = "Black" })
+vim.api.nvim_set_hl(0, "PmenuThumb", { ctermbg = "Magenta" })

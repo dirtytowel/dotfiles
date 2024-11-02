@@ -46,7 +46,7 @@ line-size = 3
 border-color = ${colors.disabled}
 
 padding-left = 0
-padding-right = 2
+padding-right = 3
 
 ;separator = "│"
 separator-foreground = ${colors.disabled}

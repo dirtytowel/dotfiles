@@ -28,7 +28,7 @@ vim.opt.incsearch = true
 vim.opt.hlsearch = false
 
 -- required for lualine and some themes
-vim.opt.termguicolors = true
+vim.opt.termguicolors = false
 
 -- min num of lines to keep visible above and below cursor when scrolling
 vim.opt.scrolloff = 8
