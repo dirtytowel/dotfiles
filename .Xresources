@@ -60,10 +60,9 @@ URxvt.cursorColor:			COLOR5
 URxvt.letterSpace:      -1
 URxvt.iso14755:					false
 URxvt.iso14755_52:			false
-*.font:									xft:Hack Nerd Font Mono:antialias=true:hinting=true:size=9, \
+*.font:									xft:SauceCodePro Nerd Font Mono:style=Bold:antialias=true:hinting=true:size=9, \
 												xft:Symbola:antialias=true:hinting=true:size=9
 *.boldFont:
-
 
 !! dwm
 
@@ -81,7 +80,7 @@ dwm.showbar:						1
 dwm.topbar:							1
 dwm.usealtbar:					1
 dwm.font:								Hack Nerd Font Mono:style=Regular:size=9
-dwm.dmenufont:					Hack Nerd Font Mono:style=Regular:size=9
+dwm.dmenufont:					SauceCodePro Nerd Font Mono:style=Bold:size=9
 
 dwm.normbgcol:					BACKGROUND
 dwm.normbordercol:			NORM

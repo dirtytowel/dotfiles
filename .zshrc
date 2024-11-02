@@ -18,17 +18,17 @@ get_pwd () {
   echo "$(~/.shell/shortpath)"
 }
 
-# # set prompt
-# PS1="\
-# %F{yellow}\$(ssh_check)%f\
-# %F{cyan}\$(get_pwd)%f\
-# %F{yellow}\$(git_branch)%f \
-# %F{magenta}%f "
-
-PS1="%F{0}%f%K{0} %F{yellow}\$(ssh_check)%f\
+# set prompt
+PS1="\
+%F{yellow}\$(ssh_check)%f\
 %F{cyan}\$(get_pwd)%f\
-%F{yellow}\$(git_branch)%f %k\
-%F{0}%f "
+%F{yellow}\$(git_branch)%f \
+%F{magenta}$%f "
+
+# PS1="%F{0}%f%K{0} %F{yellow}\$(ssh_check)%f\
+# %F{cyan}\$(get_pwd)%f\
+# %F{yellow}\$(git_branch)%f %k\
+# %F{0}%f "
 
 ## ZSH SPECIFIC ##
 # enable colors
