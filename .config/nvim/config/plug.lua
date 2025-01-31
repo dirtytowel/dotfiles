@@ -72,7 +72,7 @@ build_plugin_configs("nerdtree")
 -- https://github.com/f-person/git-blame.nvim
 Plug('f-person/git-blame.nvim')
 
--- Commenting
+-- Commenting --
 -- https://github.com/numToStr/Comment.nvim
 Plug("numToStr/Comment.nvim")
 setup_plugin("Comment")

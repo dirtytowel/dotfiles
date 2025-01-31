@@ -24,7 +24,28 @@ fi
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-## ALIASES ##
+## ALIASES AND FUNCTIONS ##
+
+# docker
+alias \
+	d="docker" \
+	dl="docker logs -f" \
+	dc="docker-compose" \
+	dcu="docker-compose up --remove-orphans -dV" \
+	dcd="docker-compose down" \
+	dcl="docker-compose logs -f" \
+	dcdu="docker-compose down && docker-compose up --remove-orphans -dV" \
+	dcul="docker-compose up --remove-orphans -dV && docker-compose logs -f" \
+	dcdul="docker-compose down && docker-compose up --remove-orphans -dV && docker-compose logs -f" 
+
+
+# backup file/dir
+bak () {
+  for i in $@; do
+    cp $i $i.bak
+  done
+}
+
 
 #alias mirror='devour mpv av://v4l2:/dev/video0 --vf=hflip --profile=low-latency --untimed'
 #alias s="share.sh"
