@@ -50,6 +50,8 @@ bak () {
 #alias mirror='devour mpv av://v4l2:/dev/video0 --vf=hflip --profile=low-latency --untimed'
 #alias s="share.sh"
 
+alias fm='fzmedia'
+
 alias hg='history | grep'
 alias ifconfig.me="curl ifconfig.me; echo"
 alias bat="bat -p --theme base16"

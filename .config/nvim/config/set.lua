@@ -6,7 +6,7 @@ vim.opt.clipboard = "unnamedplus"
 
 -- relative line numbers
 vim.opt.nu = true
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
 vim.opt.signcolumn = "no"
 
 -- indenting and tabs
@@ -27,7 +27,7 @@ vim.opt.incsearch = true
 -- but don't keep searches highlighted
 vim.opt.hlsearch = false
 
--- required for lualine and some themes
+-- use 16 colors from terminal
 vim.opt.termguicolors = false
 
 -- min num of lines to keep visible above and below cursor when scrolling
@@ -40,10 +40,9 @@ vim.opt.wrap = true
 vim.opt.updatetime = 50
 
 -- how many characters is "too long"
-vim.opt.colorcolumn = "80"
+--vim.opt.colorcolumn = "80"
 
 -- set window window title when vim is open
 -- TODO:
 -- this breaks smartspawn.sh over ssh
 vim.opt.title = true
-

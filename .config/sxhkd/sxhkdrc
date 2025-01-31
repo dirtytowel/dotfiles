@@ -104,7 +104,7 @@ super + shift + F7
 # terminal scratchpad
 super + s
   DESKTOP=$(dwm-msg get_monitors | grep -A1 tag_state | sed 's/[^0-9]//g' | tail -n1); \
-  tdrop --wm bspwm -w 50% -h 55% -x 25% -y 22% urxvt -tn rxvt-unicode -name spterm -title spterm; \
+  tdrop -w 50% -h 55% -x 25% -y 22% urxvt -tn rxvt-unicode -name spterm -title spterm; \
   dwm-msg run_command view $DESKTOP
 
 # pawword manager scratchpad

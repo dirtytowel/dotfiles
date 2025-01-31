@@ -68,7 +68,7 @@ URxvt.iso14755_52:			false
 
 !! dwm
 
-#define GAP 8
+#define GAP 0
 dwm.borderpx:						3
 dwm.snap:								10
 dwm.gappih:							GAP

@@ -37,16 +37,17 @@ foreground = ${colors.foreground}
 
 border-size = 0
 ;border-right-size = 19
-;height = 22
+height = 23
 ;radius = 3
-height = 30
+;height = 30
 line-size = 3
 
 ;border-color = #00000000
 border-color = ${colors.disabled}
 
 padding-left = 0
-padding-right = 3
+;padding-right = 3
+padding-right = 1
 
 ;separator = "│"
 separator-foreground = ${colors.disabled}
