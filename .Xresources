@@ -9,11 +9,11 @@
 #define TRANSPARENCY [85]BACKGROUND
 !#define TRANSPARENCY [100]BACKGROUND
 
-!#include ".colors/default"
+#include ".colors/default"
 !#include ".colors/xcodelight"
 !#include ".colors/borland"
 !#include ".colors/frappe"
-#include ".colors/p8"
+!#include ".colors/p8"
 
 
 !! Set Colors
