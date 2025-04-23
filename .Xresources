@@ -81,6 +81,8 @@ dwm.smartgaps:					0
 dwm.showbar:						1
 dwm.topbar:							1
 dwm.usealtbar:					1
+! dwm.altbarclass:        Polybar
+! dwm.altbarcmd:          $HOME/.scripts/polybar.sh
 dwm.font:								Hack Nerd Font Mono:style=Regular:size=9
 dwm.dmenufont:					SauceCodePro Nerd Font Mono:style=Bold:size=9
 
