@@ -32,20 +32,30 @@ super + w
 super + shift + w
 	weechat
 
-# email client
-super + e
-	thunderbird
-
+# fzmedia, play movies and shows and shit
+super + f
+  fzmedia
 
 ## SCREENSHOTS
+# todo: like this:
+# scrot out.png && magick out.png out.jpg && rm out.png
+# but current date timestamp
+
 # full monitor screenshot
 super + Print
-	cd ~/pix/scrot && scrot
+	NAME="$(date '+%Y%m%e%k%M%S')" && \
+  cd ~/pix/scrot && \
+  scrot $NAME.png && \
+  magick $NAME.png $NAME.jpg && \
+  rm $NAME.png
 
 # interactive screenshot
 super + shift + Print
-	cd ~/pix/scrot && scrot -s
-
+	NAME="sel$(date '+%Y%m%e%k%M%S')" && \
+  cd ~/pix/scrot && \
+  scrot $NAME.png && \
+  magick $NAME.png $NAME.jpg && \
+  rm $NAME.png
 
 ## VOLUME CONTROL
 # raise volume of default output
@@ -94,6 +104,8 @@ super + F2
 # toggle desktop mode (don't hibernate or sleep)
 super + F7
 	desktop_mode.sh
+XF86Display
+  desktop_mode.sh
 
 # manually update autorandr config
 super + shift + F7
@@ -113,13 +125,13 @@ super + r
 	tdrop -w 60% -h 70% -x 20% -y 15% keepassxc; \
   dwm-msg run_command view $DESKTOP
 
-# bitwarden scratchpad
-# (for work, could be removed once I write script
-# that regularly import bitwarden passwords to .kdbx db)
-super + shift + r
-  DESKTOP=$(dwm-msg get_monitors | grep -A1 tag_state | sed 's/[^0-9]//g' | tail -n1); \
-	tdrop -w 60% -h 70% -x 20% -y 15% bitwarden-desktop; \
-  dwm-msg run_command view $DESKTOP
+# # bitwarden scratchpad
+# # (for work, could be removed once I write script
+# # that regularly import bitwarden passwords to .kdbx db)
+# super + shift + r
+#   DESKTOP=$(dwm-msg get_monitors | grep -A1 tag_state | sed 's/[^0-9]//g' | tail -n1); \
+# 	tdrop -w 60% -h 70% -x 20% -y 15% bitwarden-desktop; \
+#   dwm-msg run_command view $DESKTOP
 
 # music player scratchpad
 #super + m
