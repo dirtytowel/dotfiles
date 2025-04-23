@@ -38,6 +38,16 @@ alias \
 	dcul="docker-compose up --remove-orphans -dV && docker-compose logs -f" \
 	dcdul="docker-compose down && docker-compose up --remove-orphans -dV && docker-compose logs -f" 
 
+docker-edit () {
+  compose_path="$(docker inspect $1 | grep com.docker.compose.project.config_files | cut -d'"' -f4)"
+  save_path="$(pwd)"
+
+  cd ${compose_path%/docker-compose.yml}
+
+  $EDITOR $compose_path && docker compose down && docker compose up -d && docker compose logs -f
+
+  cd $save_path
+}
 
 # backup file/dir
 bak () {
