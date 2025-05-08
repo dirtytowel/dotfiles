@@ -26,7 +26,7 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 
 ## ALIASES AND FUNCTIONS ##
 
-# docker
+# docker aliases bc they can get really verbose sometimes
 alias \
 	d="docker" \
 	dl="docker logs -f" \
@@ -38,63 +38,61 @@ alias \
 	dcul="docker-compose up --remove-orphans -dV && docker-compose logs -f" \
 	dcdul="docker-compose down && docker-compose up --remove-orphans -dV && docker-compose logs -f" 
 
+# edit the docker-compose.yml by container name/id and restart it immediately. good for repetative testing.
 docker-edit () {
   compose_path="$(docker inspect $1 | grep com.docker.compose.project.config_files | cut -d'"' -f4)"
   save_path="$(pwd)"
-
   cd ${compose_path%/docker-compose.yml}
-
   $EDITOR $compose_path && docker compose down && docker compose up -d && docker compose logs -f
-
   cd $save_path
 }
 
 # backup file/dir
 bak () {
+  # in a for loop so it can work with a list of files/dirs
   for i in $@; do
     cp $i $i.bak
   done
 }
 
-
 #alias mirror='devour mpv av://v4l2:/dev/video0 --vf=hflip --profile=low-latency --untimed'
-#alias s="share.sh"
 
 alias fm='fzmedia'
-
 alias hg='history | grep'
 alias ifconfig.me="curl ifconfig.me; echo"
 alias bat="bat -p --theme base16"
 
-# gentoo
-#alias belongs='equery belongs'
 
 # mdn shit
 alias nd='PATHSTORE=$(pwd) && cd ~/mdn && nvim ~/mdn && cd $PATHSTORE && unset PATHSTORE'
 alias n='PATHSTORE=$(pwd) && cd ~/mdn && nvim ~/mdn/quicknote.md && cd $PATHSTORE && unset PATHSTORE'
 alias c='PATHSTORE=$(pwd) && cd ~/mdn && nvim ~/mdn/commands.md && cd $PATHSTORE && unset PATHSTORE'
 
-# standard dirs
+# fuzzy cd util
+# fzcd is the base function
 fzcd () {
+  [ -z $1 ] && return
   local fzdir=$(ls "$1" | fzy)
   cd "$1/$fzdir"
 }
-
-cdr () { fzcd ~/dat/repos }
+# really opinionated child functions of fzcd parent function
+cdr () { fzcd ~/dat/repos } 
 cdrw () { fzcd ~/dat/repos/beyondmd }
-alias cdp='cd /etc/portage'
+alias cdp='cd /etc/portage' #not a child fn of fzcd but it makes sense that it lives here to me
 
+# vim in dir util
 vd () {
-  local PATHSTORE=$(pwd)
+  local PATHSTORE=$(pwd) #remember current path
   [ ! -e $@ ] && echo "file/directory does not exist" && return
   [ -f $@ ] && cd "${@%/*}" && vim "${@##*/}"
   [ -d $@ ] && cd $@ && vim .
-  cd $PATHSTORE
+  cd $PATHSTORE #go back to saved path
 }
-
+# more opinionated child functions, but this time for vd
 vdr () { vd "$HOME/dat/repos/$@" }
 vdrw () { vd "$HOME/dat/repos/beyondmd/$@" }
 
+# same as vd but with sudo
 svd () {
   local PATHSTORE=$(pwd)
   [ ! -e $@ ] && echo "file/directory does not exist" && return
@@ -110,18 +108,18 @@ alias gp='git fetch --prune && git pull'
 alias gs='git status -s'
 
 # ls aliases
-alias ll='ls -l'
-alias la='ls -lA'
-alias l='ls -F'
+alias ll='ls -l' #long listing format
+alias la='ls -lA' #long listing and hidden files
+alias l='ls -F' #append indicator to end of file. in other words "wtf is this in the dir"
 
-# todo.txt-cliS
+# todo.txt-cli
 alias t='todo.sh -a'
 export TODOTXT_DEFAULT_ACTION=ls
 export TODOTXT_SORT_COMMAND='env LC_COLLATE=C sort -k1.4,1.4 -k2,2 -k1,1n'
 
 # timezones
-alias CST='doas timedatectl set-timezone America/Chicago && refreshbar.sh'
-alias EST='doas timedatectl set-timezone America/New_York && refreshbar.sh'
+alias CST='sudo timedatectl set-timezone America/Chicago && refreshbar.sh'
+alias EST='sudo timedatectl set-timezone America/New_York && refreshbar.sh'
 
 ## PATH ##
 export PATH=$PATH:/home/ethan/.scripts
@@ -132,6 +130,3 @@ export PATH=$PATH:/sbin
 export BROWSER="/usr/bin/firefox"
 export PWBROWSER="/usr/bin/firefox --private-window"
 export EDITOR="nvim"
-
-#export LC_CTYPE=en_US.UTF-8
-#export LC_ALL=en_US.UTF-8
