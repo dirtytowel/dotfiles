@@ -124,7 +124,7 @@ XTerm*boldMode:					false
 XTerm*alwaysBoldMode:		false
 
 !! URxvt extensions
-URxvt.perl-ext-common:	default,-confirm-paste,matcher,resize-font,config-reload,
+URxvt.perl-ext-common:	default,-confirm-paste,matcher,resize-font
 URxvt.url-launcher:			/usr/bin/firefox
 URxvt.matcher.button:		C-1
 URxvt.resize-font.step: 1 
