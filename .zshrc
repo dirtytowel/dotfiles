@@ -10,7 +10,7 @@ source ~/.shell/aliasrc
 source ~/.shell/commonrc
 
 setopt PROMPT_SUBST
-
+export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 ## PROMPT ##
 # I am sure there is a way to just source these instead of doing it this way
@@ -18,8 +18,12 @@ get_pwd () {
   echo "$(~/.shell/shortpath)"
 }
 
+get_venv () {
+  [[ -n $VIRTUAL_ENV ]] && echo "(venv) "
+}
+
 # set prompt
-PS1="\
+PS1="%F{green}\$(get_venv)%f\
 %F{yellow}\$(ssh_check)%f\
 %F{cyan}\$(get_pwd)%f\
 %F{yellow}\$(git_branch)%f \
