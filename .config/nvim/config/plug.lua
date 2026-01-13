@@ -5,7 +5,8 @@ local function build_plugin_configs(name)
     table.insert(plugin_configs, function() require("plugins." .. name) end)
 end
 local function setup_plugin(plugin_name)
-    table.insert(plugin_configs, function() require(plugin_name).setup {} end)
+    table.insert(
+      plugin_configs, function() require(plugin_name).setup {} end)
 end
 
 vim.call('plug#begin', '~/.local/share/nvim/plugged')
@@ -18,7 +19,7 @@ setup_plugin("nvim-autopairs")
 -- TELESCOPE --
 -- https://github.com/nvim-telescope/telescope.nvim
 Plug('nvim-lua/plenary.nvim')
-Plug('nvim-telescope/telescope.nvim', { ['tag'] = '0.1.8' })
+Plug('nvim-telescope/telescope.nvim', { ['tag'] = '*' })
 build_plugin_configs("telescope")
 
 -- HARPOON --
@@ -33,7 +34,7 @@ build_plugin_configs("colors")
 -- TREESITTER --
 -- https://github.com/nvim-treesitter/nvim-treesitter
 Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
-Plug('nvim-treesitter/playground')
+--Plug('nvim-treesitter/playground')
 build_plugin_configs("treesitter")
 
 -- UNDOTREE --
@@ -54,7 +55,7 @@ build_plugin_configs("lsp")
 
 -- VIM-DEVICONS --
 -- https://github.com/ryanoasis/vim-devicons
-Plug('ryanoasis/vim-devicons')
+--Plug('ryanoasis/vim-devicons')
 
 -- VIM-VISUAL-MULTI --
 -- https://github.com/mg979/vim-visual-multi
