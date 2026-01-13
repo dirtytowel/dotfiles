@@ -6,6 +6,7 @@
 # add "source ~/.shell/commonrc" to your .zshrc or .bashrc file
 # to add the following aliases to your shell
 
+export TERM=xterm-256color
 
 # run startx in if in tty1
 [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ] && startx
@@ -41,19 +42,19 @@ git_branch() {
   # append git status condition to branch_notation
   case "$git_status" in
     *"ahead"*)
-      branch_notation="$branch_notation ";;
+      branch_notation="$branch_notation >";;
     *"behind"*)
-      branch_notation="$branch_notation ";;
+      branch_notation="$branch_notation <";;
     *"have diverged,"*)
-      branch_notation="$branch_notation ";;
+      branch_notation="$branch_notation <>";;
     *"up to date"*)
-      branch_notation="$branch_notation ";;
+      branch_notation="$branch_notation =";;
     *"conflicts"*)
-      branch_notation="$branch_notation ";;
+      branch_notation="$branch_notation !!";;
   esac
  
   printf "$git_status" | grep -Eq 'untracked|modified' && \
-    branch_notation="$branch_notation 󰦒"
+    branch_notation="$branch_notation +"
  
   printf "$branch_notation"
 }
