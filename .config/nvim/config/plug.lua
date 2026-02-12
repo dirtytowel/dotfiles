@@ -72,6 +72,11 @@ setup_plugin("Comment")
 Plug('ThePrimeagen/99')
 build_plugin_configs("99")
 
+-- INDENT-BLANKLINE --
+-- https://github.com/lukas-reineke/indent-blankline.nvim
+Plug('lukas-reineke/indent-blankline.nvim')
+build_plugin_configs("indent-blankline")
+
 vim.call('plug#end')
 
 -- Run the plugin-specific configurations

@@ -70,6 +70,7 @@ fi
 ## VIM BACKSPACE FIX ##
 bindkey "^H" backward-delete-char
 bindkey "^?" backward-delete-char
+bindkey '^R' history-incremental-search-backward
 
 ## PLUGINS ##
 # autosuggestions

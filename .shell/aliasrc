@@ -51,7 +51,7 @@ docker-edit () {
 bak () {
   # in a for loop so it can work with a list of files/dirs
   for i in $@; do
-    cp $i $i.bak
+    cp -r $i $i.bak
   done
 }
 

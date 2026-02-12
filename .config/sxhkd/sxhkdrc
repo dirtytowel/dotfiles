@@ -70,6 +70,7 @@ XF86AudioLowerVolume
 XF86AudioMute
 	pactl set-sink-mute @DEFAULT_SINK@ toggle
 
+
 # raise folume of default mic
 shift + XF86AudioRaiseVolume
 	pactl set-source-mute @DEFAULT_SOURCE@ 0; pactl set-source-volume @DEFAULT_SOURCE@ +5%
@@ -81,6 +82,10 @@ shift + XF86AudioLowerVolume
 # toggle mic mute
 shift + XF86AudioMute
 	pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+XF86AudioMicMute
+	pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
 
 ## MONITORS
 # decrease monitor brightness
