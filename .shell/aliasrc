@@ -103,6 +103,32 @@ svd () {
 
 vdp () { svd "/etc/portage/$@" }
 
+reset_palette() {
+  xrdb -query |
+  awk -F'[: \t]+' '
+    /^\*color[0-9]+:/ {
+      n=$1; sub(/^\*color/,"",n)
+      printf "\033]4;%s;%s\007", n, $2
+      next
+    }
+    /^\*cursor(Color)?:/ { printf "\033]12;%s\007", $2; next }
+    /^\*accent:/ { printf "\033]12;%s\007", $2; next }  # if you use accent as cursor
+  ' > /dev/tty
+}
+
+opencode() { command opencode "$@"; reset_palette; }
+
+ocp() {
+  local tmp
+  tmp="$(mktemp)" || return 1
+
+  # Always clean up temp file
+  trap 'rm -f "$tmp"' RETURN
+
+  vim "$tmp" </dev/tty >/dev/tty 2>&1 || return $?
+  opencode run "$(cat "$tmp")" --agent g
+}
+
 # git aliases
 alias gp='git fetch --prune && git pull'
 alias gs='git status -s'

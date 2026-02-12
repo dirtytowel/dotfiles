@@ -13,3 +13,18 @@ vim.api.nvim_set_hl(0, "Pmenu", { ctermfg = "Magenta", ctermbg = "Black" })
 vim.api.nvim_set_hl(0, "PmenuSel", { reverse = true })
 vim.api.nvim_set_hl(0, "PmenuSbar", { ctermbg = "Black" })
 vim.api.nvim_set_hl(0, "PmenuThumb", { ctermbg = "Magenta" })
+
+for _, group in ipairs({
+  "Pmenu",
+  "PmenuSel",
+  "PmenuSbar",
+  "PmenuThumb",
+  "NormalFloat",
+  "FloatBorder",
+  "CmpPmenu",
+  "CmpSel",
+  "CmpDoc",
+  "CmpDocBorder",
+}) do
+  vim.api.nvim_set_hl(0, group, { bg = "NONE", ctermbg = "NONE" })
+end

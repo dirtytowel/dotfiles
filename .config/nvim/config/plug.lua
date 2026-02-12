@@ -42,17 +42,6 @@ build_plugin_configs("treesitter")
 Plug('mbbill/undotree')
 build_plugin_configs("undotree")
 
--- LSP-ZERO --
--- https://github.com/VonHeikemen/lsp-zero.nvim
-Plug('VonHeikemen/lsp-zero.nvim', { ['branch'] = 'v4.x' })
-Plug('williamboman/mason.nvim')
-Plug('williamboman/mason-lspconfig.nvim')
-Plug('neovim/nvim-lspconfig')
-Plug('hrsh7th/nvim-cmp')
-Plug('hrsh7th/cmp-nvim-lsp')
-Plug('L3MON4D3/LuaSnip')
-build_plugin_configs("lsp")
-
 -- VIM-DEVICONS --
 -- https://github.com/ryanoasis/vim-devicons
 --Plug('ryanoasis/vim-devicons')
@@ -77,6 +66,11 @@ Plug('f-person/git-blame.nvim')
 -- https://github.com/numToStr/Comment.nvim
 Plug("numToStr/Comment.nvim")
 setup_plugin("Comment")
+
+-- 99 ai slop --
+-- https://github.com/ThePrimeagen/99
+Plug('ThePrimeagen/99')
+build_plugin_configs("99")
 
 vim.call('plug#end')
 

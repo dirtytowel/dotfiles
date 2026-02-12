@@ -34,7 +34,7 @@ super + shift + w
 
 # fzmedia, play movies and shows and shit
 super + f
-  fzmedia
+  fzmedia -f "dmu.sh -S -i -l 10" -p "mpv --save-position-on-quit --no-resume-playback" -r "mpvcw"
 
 ## SCREENSHOTS
 # todo: like this:

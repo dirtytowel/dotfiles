@@ -67,7 +67,6 @@ else
   dwt
 fi
 
-
 ## VIM BACKSPACE FIX ##
 bindkey "^H" backward-delete-char
 bindkey "^?" backward-delete-char
