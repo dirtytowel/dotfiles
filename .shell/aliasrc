@@ -114,6 +114,12 @@ reset_palette() {
     /^\*cursor(Color)?:/ { printf "\033]12;%s\007", $2; next }
     /^\*accent:/ { printf "\033]12;%s\007", $2; next }  # if you use accent as cursor
   ' > /dev/tty
+  # reset to default blinking cursor (with tmux passthrough if needed)
+  if [ -n "$TMUX" ]; then
+    printf '\033Ptmux;\033\033[0 q\033\\' > /dev/tty
+  else
+    printf '\033[0 q' > /dev/tty
+  fi
 }
 
 opencode() { command opencode "$@"; reset_palette; }
