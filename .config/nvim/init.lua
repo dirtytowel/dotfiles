@@ -5,6 +5,7 @@ package.path = package.path .. ';' .. config_path
 -- basic configs
 require("config.remap")
 require("config.set")
+require("config.statusline")
 
 -- vim plug
 require("config.plug")
