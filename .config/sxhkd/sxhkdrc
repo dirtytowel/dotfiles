@@ -53,7 +53,7 @@ super + Print
 super + shift + Print
 	NAME="sel$(date '+%Y%m%e%k%M%S')" && \
   cd ~/pix/scrot && \
-  scrot $NAME.png && \
+  scrot -s $NAME.png && \
   magick $NAME.png $NAME.jpg && \
   rm $NAME.png
 

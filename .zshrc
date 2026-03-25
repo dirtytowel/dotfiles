@@ -22,8 +22,13 @@ get_venv () {
   [[ -n $VIRTUAL_ENV ]] && echo "(venv) "
 }
 
+get_incognito () {
+  [[ ${INCOGNITO_MODE:-0} -eq 1 ]] && echo "[i] "
+}
+
 # set prompt
 PS1="%F{green}\$(get_venv)%f\
+%F{red}\$(get_incognito)%f\
 %F{yellow}\$(ssh_check)%f\
 %F{cyan}\$(get_pwd)%f\
 %F{yellow}\$(git_branch)%f \
@@ -38,6 +43,36 @@ PS1="%F{green}\$(get_venv)%f\
 # enable colors
 autoload -U colors && colors
 
+# do not save commands prefixed with a space
+setopt HIST_IGNORE_SPACE
+
+# incognito mode toggle for history
+INCOGNITO_MODE=0
+
+i () {
+  if [[ ${INCOGNITO_MODE:-0} -eq 1 ]]; then
+    INCOGNITO_MODE=0
+  else
+    INCOGNITO_MODE=1
+  fi
+}
+
+zshaddhistory () {
+  [[ ${INCOGNITO_MODE:-0} -eq 1 ]] && return 1
+  return 0
+}
+
+as () {
+  if (( ${+_ZSH_AUTOSUGGEST_DISABLED} )); then
+    unset _ZSH_AUTOSUGGEST_DISABLED
+    print "autosuggestions: ON"
+  else
+    typeset -g _ZSH_AUTOSUGGEST_DISABLED
+    POSTDISPLAY=
+    print "autosuggestions: OFF"
+  fi
+}
+
 # show all history instead of 
 alias history='history 1'
 
@@ -50,7 +85,7 @@ _comp_options+=(globdots) # Include hidden files.
 
 # dynamic window title
 local dwt () {
-    case $TERM in (rxvt|rxvt-*|st|st-*|*xterm*|(dt|k|E)term)
+    case $TERM in (rxvt|rxvt-*|st|st-*|*xterm*|(dt|k|E)term|tmux*)
       precmd  () {
         print -Pn "\e]0;\$(ssh_check)zsh %~\a"
       }
