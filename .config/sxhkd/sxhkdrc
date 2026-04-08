@@ -6,7 +6,7 @@
 ## CUSTOM SCRIPTS
 # dmenu catchall
 super + d
-	dmu.sh
+	dmu
 
 # ssh picker
 super + shift + s
@@ -18,7 +18,7 @@ super + shift + Return
 
 # smartspawn rxvt-unicode based on currently focused window
 super + shift + backslash
-	smartspwn.sh
+	smartspwn
 
 #  nmtui floating and kill old instance if exists
 super + n
@@ -34,7 +34,7 @@ super + shift + w
 
 # fzmedia, play movies and shows and shit
 super + f
-  fzmedia -f "dmu.sh -S -i -l 10" -p "mpv --save-position-on-quit --no-resume-playback" -r "mpvcw"
+  fzmedia -f "dmu -S -i -l 10" -p "mpv --save-position-on-quit --no-resume-playback" -r "mpvcw"
 
 ## SCREENSHOTS
 # todo: like this:
@@ -98,19 +98,19 @@ XF86MonBrightnessUp
 
 # suspend system
 XF86Sleep
-	lock.sh & systemctl suspend
+	lock & systemctl suspend
 
 # lock system
 XF86ScreenSaver
-	lock.sh
+	lock
 super + F2
-	lock.sh
+	lock
 
 # toggle desktop mode (don't hibernate or sleep)
 super + F7
-	desktop_mode.sh
+	desktop_mode
 XF86Display
-  desktop_mode.sh
+  desktop_mode
 
 # manually update autorandr config
 super + shift + F7

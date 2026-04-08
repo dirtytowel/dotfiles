@@ -154,7 +154,7 @@ alias CST='sudo timedatectl set-timezone America/Chicago && refreshbar.sh'
 alias EST='sudo timedatectl set-timezone America/New_York && refreshbar.sh'
 
 ## PATH ##
-export PATH=$PATH:/home/ethan/.scripts
+#export PATH=$PATH:/home/ethan/.scripts
 export PATH=$PATH:/usr/sbin
 export PATH=$PATH:/sbin
 
