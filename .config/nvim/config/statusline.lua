@@ -27,11 +27,11 @@ end
 
 local function paint_base()
   for _, x in ipairs({
-    { "StatusLine", { ctermfg = 3, ctermbg = "NONE" } },
-    { "StatusLineNC", { ctermfg = 3, ctermbg = "NONE" } },
-    { "StlInfo", { ctermfg = 6, ctermbg = "NONE" } },
-    { "StlPath", { ctermfg = 3, ctermbg = "NONE" } },
-    { "StlPos", { ctermfg = 16, ctermbg = 6, bold = true } },
+    { "StatusLine", { ctermfg = "Yellow", ctermbg = "NONE" } },
+    { "StatusLineNC", { ctermfg = "Yellow", ctermbg = "NONE" } },
+    { "StlInfo", { ctermfg = "Cyan", ctermbg = "NONE" } },
+    { "StlPath", { ctermfg = "Yellow", ctermbg = "NONE" } },
+    { "StlPos", { ctermfg = "Black", ctermbg = "Cyan", bold = true } },
   }) do
     h(0, x[1], x[2])
   end
@@ -39,7 +39,7 @@ end
 
 local function paint_mode()
   local c = mode_color(a.nvim_get_mode().mode)
-  h(0, "StlMode", { ctermfg = 16, ctermbg = c, bold = true })
+  h(0, "StlMode", { ctermfg = "Black", ctermbg = c, bold = true })
   h(0, "StlPath", { ctermfg = c, ctermbg = "NONE" })
   vim.cmd.redrawstatus()
 end

@@ -10,10 +10,17 @@
 !#define TRANSPARENCY [100]BACKGROUND
 
 #include ".colors/default"
-!#include ".colors/xcodelight"
-!#include ".colors/borland"
-!#include ".colors/frappe"
+!#include ".colors/ayu-dark"
 !#include ".colors/p8"
+
+!#include ".colors/cat/latte"
+!#include ".colors/cat/frappe"
+!#include ".colors/cat/macchiato"
+!#include ".colors/cat/mocha"
+
+!#include ".colors/xcodelight"
+
+!#include ".colors/borland"
 
 
 !! Set Colors
@@ -81,8 +88,8 @@ dwm.smartgaps:					0
 dwm.showbar:						1
 dwm.topbar:							1
 dwm.usealtbar:					1
-! dwm.altbarclass:        Polybar
-! dwm.altbarcmd:          $HOME/.scripts/polybar.sh
+dwm.altbarclass:        Polybar
+dwm.altbarcmd:          /usr/bin/polybarstart
 dwm.font:								SauceCodePro Nerd Font Mono:style=Bold:size=9
 dwm.dmenufont:					SauceCodePro Nerd Font Mono:style=Bold:size=9
 
@@ -124,7 +131,7 @@ XTerm*boldMode:					false
 XTerm*alwaysBoldMode:		false
 
 !! URxvt extensions
-URxvt.perl-ext-common:	default,-confirm-paste,matcher,resize-font
+URxvt.perl-ext-common:	default,-confirm-paste,matcher,resize-font,config-reload
 URxvt.url-launcher:			/usr/bin/firefox
 URxvt.matcher.button:		C-1
 URxvt.resize-font.step: 1 

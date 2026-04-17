@@ -11,6 +11,14 @@ vim.keymap.set("n", "<C-j>", function() vim.cmd("wincmd j") end)
 vim.keymap.set("n", "<C-h>", function() vim.cmd("wincmd h") end)
 vim.keymap.set("n", "<C-l>", function() vim.cmd("wincmd l") end)
 
+-- half page scrolling
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "}", "}zz")
+vim.keymap.set("n", "{", "{zz")
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "nzzzv")
+
 -- SWITCH BETWEEN TAB AND DOUBLE SPACE --
 vim.api.nvim_set_keymap('n', '<leader>	', ':set expandtab!<CR>', { noremap = true, silent = false})
 

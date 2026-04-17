@@ -77,6 +77,7 @@ fzcd () {
 }
 # really opinionated child functions of fzcd parent function
 cdr () { fzcd ~/dat/repos } 
+cdw () { fzcd ~/wrk }
 cdrw () { fzcd ~/dat/repos/qts }
 alias cdp='cd /etc/portage' #not a child fn of fzcd but it makes sense that it lives here to me
 
@@ -90,6 +91,7 @@ vd () {
 }
 # more opinionated child functions, but this time for vd
 vdr () { vd "$HOME/dat/repos/$@" }
+vdw () { vd "$HOME/wrk/$@" }
 vdrw () { vd "$HOME/dat/repos/qts/$@" }
 
 # same as vd but with sudo
