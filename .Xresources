@@ -66,11 +66,11 @@ URxvt.cursorColor:			COLOR5
 *.cursorBlink:					true
 
 !! Fonts
-URxvt.letterSpace:      -1
+URxvt.letterSpace:      0
 URxvt.iso14755:					false
 URxvt.iso14755_52:			false
-*.font:									xft:SauceCodePro Nerd Font Mono:style=Bold:antialias=true:hinting=true:size=9, \
-												xft:Symbola:antialias=true:hinting=true:size=9
+*.font:									xft:ComicShannsMono Nerd Font Mono:antialias=true:hinting=true:size=12, \
+												xft:Symbola:antialias=true:hinting=true:size=12
 *.boldFont:
 
 !! dwm
@@ -90,8 +90,8 @@ dwm.topbar:							1
 dwm.usealtbar:					1
 dwm.altbarclass:        Polybar
 dwm.altbarcmd:          /usr/bin/polybarstart
-dwm.font:								SauceCodePro Nerd Font Mono:style=Bold:size=9
-dwm.dmenufont:					SauceCodePro Nerd Font Mono:style=Bold:size=9
+dwm.font:								ComicShannsMono Nerd Font Mono:style=Bold:size=12
+dwm.dmenufont:					ComicShannsMono Nerd Font Mono:style=Bold:size=12
 
 dwm.normbgcol:					BACKGROUND
 dwm.normbordercol:			NORM

@@ -146,6 +146,13 @@ alias ll='ls -l' #long listing format
 alias la='ls -lA' #long listing and hidden files
 alias l='ls -F' #append indicator to end of file. in other words "wtf is this in the dir"
 
+# k8s
+alias k='kubectl'
+alias kns='kubens'
+alias kctx='kubectx'
+alias ky='kubeon'
+alias kn='kubeoff'
+
 # todo.txt-cli
 alias t='todo.sh -a'
 export TODOTXT_DEFAULT_ACTION=ls

@@ -8,6 +8,7 @@
 
 source ~/.shell/aliasrc
 source ~/.shell/commonrc
+source ~/.shell/kube-ps1
 
 setopt PROMPT_SUBST
 export VIRTUAL_ENV_DISABLE_PROMPT=1
@@ -26,9 +27,14 @@ get_incognito () {
   [[ ${INCOGNITO_MODE:-0} -eq 1 ]] && echo "[i] "
 }
 
+KUBE_PS1_SYMBOL_ENABLE=false
+KUBE_PS1_NS_COLOR=green
+kubeoff
+
 # set prompt
 PS1="%F{green}\$(get_venv)%f\
 %F{red}\$(get_incognito)%f\
+\$(kube_ps1)\${\$(kube_ps1):+ }\
 %F{yellow}\$(ssh_check)%f\
 %F{cyan}\$(get_pwd)%f\
 %F{yellow}\$(git_branch)%f \
