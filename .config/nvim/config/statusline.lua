@@ -39,7 +39,7 @@ end
 
 local function paint_mode()
   local c = mode_color(a.nvim_get_mode().mode)
-  h(0, "StlMode", { ctermfg = 0, ctermbg = c, bold = true })
+  h(0, "StlMode", { ctermfg = 0, ctermbg = c })
   h(0, "StlPath", { ctermfg = c, ctermbg = "NONE" })
   vim.cmd.redrawstatus()
 end
