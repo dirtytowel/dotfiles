@@ -72,7 +72,7 @@ alias c='PATHSTORE=$(pwd) && cd ~/mdn && nvim ~/mdn/commands.md && cd $PATHSTORE
 # fzcd is the base function
 fzcd () {
   [ -z $1 ] && return
-  local fzdir=$(ls "$1" | fzy)
+  local fzdir=$(ls "$1" | fzy --vi)
   cd "$1/$fzdir"
 }
 # really opinionated child functions of fzcd parent function
@@ -86,7 +86,11 @@ vd () {
   local PATHSTORE=$(pwd) #remember current path
   [ ! -e $@ ] && echo "file/directory does not exist" && return
   [ -f $@ ] && cd "${@%/*}" && vim "${@##*/}"
-  [ -d $@ ] && cd $@ && vim .
+  if [ -d $@ ]; then
+    local fzdir=$(ls "$1" | fzy --vi)
+    cd $@/$fzdir
+    vim .
+  fi
   cd $PATHSTORE #go back to saved path
 }
 # more opinionated child functions, but this time for vd
@@ -94,16 +98,7 @@ vdr () { vd "$HOME/dat/repos/$@" }
 vdw () { vd "$HOME/wrk/$@" }
 vdrw () { vd "$HOME/dat/repos/qts/$@" }
 
-# same as vd but with sudo
-svd () {
-  local PATHSTORE=$(pwd)
-  [ ! -e $@ ] && echo "file/directory does not exist" && return
-  [ -f $@ ] && cd "${@%/*}" && sudo vim "${@##*/}"
-  [ -d $@ ] && cd $@ && sudo vim .
-  cd $PATHSTORE
-}
-
-vdp () { svd "/etc/portage/$@" }
+vdp () { sudo vim /etc/portage/ }
 
 reset_palette() {
   xrdb -query |
