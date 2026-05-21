@@ -22,6 +22,5 @@ vim.keymap.set("n", "N", "nzzzv")
 -- SWITCH BETWEEN TAB AND DOUBLE SPACE --
 vim.api.nvim_set_keymap('n', '<leader>	', ':set expandtab!<CR>', { noremap = true, silent = false})
 
--- ANSIBLE VAULT
-vim.api.nvim_set_keymap('n', '<leader>av', ':!ansible-vault encrypt --encrypt-vault-id default --vault-password-file=~/.vault_pass %<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>au', ':!ansible-vault decrypt --vault-password-file=~/.vault_pass %<CR>', { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>/", "/\\v^[^#].*", { noremap = true })
+vim.keymap.set("v", "<leader>/", "<Esc>/\\v%V^[^#].*", { noremap = true })
