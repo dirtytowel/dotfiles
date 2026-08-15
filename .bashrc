@@ -6,14 +6,7 @@
 #
 # to enable changes restart your terminal emulator or run "source ~/.bashrc"
 
-source ~/.shell/aliasrc
-source ~/.shell/commonrc
-
-## PROMPT ##
-# I am sure there is a way to just source these instead of doing it this way
-get_pwd () {
-  echo $(~/.shell/shortpath)
-}
+source ~/.shellrc
 
 # set prompt
 PS1="\[\033[38;5;11m\]\$(ssh_check)\[$(tput sgr0)\]\

@@ -6,19 +6,14 @@
 #
 # to enable changes restart your terminal emulator or run "source ~/.zshrc"
 
-source ~/.shell/aliasrc
-source ~/.shell/commonrc
-source ~/.shell/kube-ps1
+source ~/.shellrc
+kubeconfigs=(~/.kube/*(.N)); export KUBECONFIG="${(j/:/)kubeconfigs}"; unset kubeconfigs
+source ~/.kube-ps1
 
 setopt PROMPT_SUBST
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 ## PROMPT ##
-# I am sure there is a way to just source these instead of doing it this way
-get_pwd () {
-  echo "$(~/.shell/shortpath)"
-}
-
 get_venv () {
   [[ -n $VIRTUAL_ENV ]] && echo "(venv) "
 }
@@ -101,8 +96,8 @@ local dwt () {
     esac
 }
 
-if [ -z $(ssh_check) ]; then
-  [ $(xdotool getactivewindow getwindowname) != "spterm" ] \
+if [ -n "$DISPLAY" ] && command -v xdotool >/dev/null 2>&1 && [ -z "$(ssh_check)" ]; then
+  [ "$(xdotool getactivewindow getwindowname)" != "spterm" ] \
     && dwt || precmd(){ print -n "\033]0;spterm\007" }
 else
   dwt

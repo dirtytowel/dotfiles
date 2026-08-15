@@ -1,13 +1,38 @@
-#        _ _                    
-#   __ _| (_) __ _ ___ _ __ ___ 
-#  / _` | | |/ _` / __| '__/ __|
-# | (_| | | | (_| \__ \ | | (__ 
-#(_)__,_|_|_|\__,_|___/_|  \___|
-#
-# add "source ~/.shell/aliasrc" to your .zshrc or .bashrc file
-# to add the following aliases to your shell
+#        _          _ _          
+#    ___| |__   ___| | |_ __ ___ 
+#   / __| '_ \ / _ \ | | '__/ __|
+#  _\__ \ | | |  __/ | | | | (__ 
+# (_)___/_| |_|\___|_|_|_|  \___|
 
-#source ~/.config/user-dirs.dirs
+## EXPORTS ##
+export TERM=xterm-256color
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+export TODOTXT_DEFAULT_ACTION=ls
+export TODOTXT_SORT_COMMAND='env LC_COLLATE=C sort -k1.4,1.4 -k2,2 -k1,1n'
+export BROWSER="/usr/bin/firefox"
+export PWBROWSER="/usr/bin/firefox --private-window"
+export EDITOR="nvim"
+
+## PATH ##
+export PATH=$PATH:/usr/sbin
+export PATH=$PATH:/sbin
+
+# run startx in if in tty1
+[ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ] && startx
+
+# xterm color fix
+[ $TERM = xterm ] && TERM=xterm-256color
+
+# lines in history file
+HISTSIZE=10000
+SAVEHIST=10000
+
+# ignore commands with a leading space
+HISTCONTROL=ignoreboth
+HISTIGNORE=' *'
+
+# location of history file
+HISTFILE=~/.history
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -15,14 +40,10 @@ if [ -x /usr/bin/dircolors ]; then
     alias ls='ls --color=auto'
     alias dir='dir --color=auto'
     alias vdir='vdir --color=auto'
-
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
-
-# colored GCC warnings and errors
-export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 ## ALIASES AND FUNCTIONS ##
 
@@ -76,9 +97,9 @@ fzcd () {
   cd "$1/$fzdir"
 }
 # really opinionated child functions of fzcd parent function
-cdr () { fzcd ~/dat/repos } 
-cdw () { fzcd ~/wrk }
-cdrw () { fzcd ~/dat/repos/qts }
+cdr () { fzcd ~/dat/repos; } 
+cdw () { fzcd ~/wrk; }
+cdrw () { fzcd ~/dat/repos/qts; }
 alias cdp='cd /etc/portage' #not a child fn of fzcd but it makes sense that it lives here to me
 
 # vim in dir util
@@ -94,11 +115,16 @@ vd () {
   cd $PATHSTORE #go back to saved path
 }
 # more opinionated child functions, but this time for vd
-vdr () { vd "$HOME/dat/repos/$@" }
-vdw () { vd "$HOME/wrk/$@" }
-vdrw () { vd "$HOME/dat/repos/qts/$@" }
+vdr () { vd "$HOME/dat/repos/$@"; }
+vdw () { vd "$HOME/wrk/$@"; }
+vdrw () { vd "$HOME/dat/repos/qts/$@"; }
 
-vdp () { sudo vim /etc/portage/ }
+vdp () {
+  local PATHSTORE=$(pwd) #remember current path
+  cd /etc/portage
+  sudo vim .
+  cd $PATHSTORE #go back to saved path
+}
 
 reset_palette() {
   xrdb -query |
@@ -124,10 +150,7 @@ opencode() { command opencode "$@"; reset_palette; }
 ocp() {
   local tmp
   tmp="$(mktemp)" || return 1
-
-  # Always clean up temp file
   trap 'rm -f "$tmp"' RETURN
-
   vim "$tmp" </dev/tty >/dev/tty 2>&1 || return $?
   opencode run "$(cat "$tmp")" --agent g
 }
@@ -137,7 +160,7 @@ alias gp='git fetch --prune && git pull'
 alias gs='git status -s'
 
 # ls aliases
-alias ll='ls -l' #long listing format
+alias ll='ls -l'
 alias la='ls -lA' #long listing and hidden files
 alias l='ls -F' #append indicator to end of file. in other words "wtf is this in the dir"
 
@@ -150,19 +173,67 @@ alias kn='kubeoff'
 
 # todo.txt-cli
 alias t='todo.sh -a'
-export TODOTXT_DEFAULT_ACTION=ls
-export TODOTXT_SORT_COMMAND='env LC_COLLATE=C sort -k1.4,1.4 -k2,2 -k1,1n'
 
 # timezones
 alias CST='sudo timedatectl set-timezone America/Chicago && refreshbar.sh'
 alias EST='sudo timedatectl set-timezone America/New_York && refreshbar.sh'
 
-## PATH ##
-#export PATH=$PATH:/home/ethan/.scripts
-export PATH=$PATH:/usr/sbin
-export PATH=$PATH:/sbin
+## FUNCTIONS ##
 
-## EXPORTS ##
-export BROWSER="/usr/bin/firefox"
-export PWBROWSER="/usr/bin/firefox --private-window"
-export EDITOR="nvim"
+git_branch() {
+  # Check if we are in a git repository
+  git rev-parse --is-inside-work-tree > /dev/null 2>&1 || return
+
+  # Store the output of git status to avoid multiple calls
+  git_status=$(git status 2> /dev/null)
+
+  # Get the current branch name
+  branch=$(git symbolic-ref --short HEAD 2> /dev/null)
+	[ -z "$branch" ] && branch="(detatched HEAD)"
+  branch_notation=" $branch"
+
+  # append git status condition to branch_notation
+  case "$git_status" in
+    *"ahead"*)
+      branch_notation="$branch_notation >";;
+    *"behind"*)
+      branch_notation="$branch_notation <";;
+    *"have diverged,"*)
+      branch_notation="$branch_notation <>";;
+    *"up to date"*)
+      branch_notation="$branch_notation =";;
+    *"conflicts"*)
+      branch_notation="$branch_notation !!";;
+  esac
+  printf "$git_status" | grep -Eq 'untracked|modified' && \
+    branch_notation="$branch_notation +"
+  printf "$branch_notation"
+}
+
+ssh_check () {
+	[ -z $SSH_TTY ] && echo "" || echo "($(cat /proc/sys/kernel/hostname)) "
+}
+
+get_pwd () {
+  local dirs num_dirs c d pth
+  # Replace the $HOME part of the current directory path with '~' and split the path into components.
+  dirs=$(pwd | sed "s|^$HOME|~|" | tr '/' '\n' )
+  # Get the total number of directories in the path.
+  num_dirs=$(printf "%s\n" "$dirs" | wc -l)
+  # fix bug when starting from / by setting to 1
+  c=1
+  # Loop through each directory component.
+  while IFS= read -r d; do
+    c=$((c + 1))
+    # subtract 1 if ~
+    [ $d = '~' ] && pth='~' && c=$((c - 1)) && continue
+    [ "$c" -eq "$num_dirs" ] && d="/$d" || d="/$(printf "%s" ${d#.} | cut -b1 )"
+    pth="${pth:+${pth}}${d}"
+  done <<EOF
+$dirs
+EOF
+  # If the path is empty (unlikely), set it to the root directory.
+  [ -z "$pth" ] && pth="/"
+  # Output the shortened path.
+  echo $pth
+}
