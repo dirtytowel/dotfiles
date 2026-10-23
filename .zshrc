@@ -121,3 +121,6 @@ ZSH_HIGHLIGHT_STYLES[comment]='fg=red'
 
 # todo.sh on new zsh open
 #todo.sh ls
+
+# Pi
+export PATH="/home/ethan/.pi/agent/bin:$PATH"

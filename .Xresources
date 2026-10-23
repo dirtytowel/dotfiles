@@ -5,22 +5,22 @@
 !!(_)_/\_\_|  \___||___/\___/ \__,_|_|  \___\___||___/
 !!
 !! to enable changes type `xrdb -load .Xresources` and restart URxvt
-!#define TRANSPARENCY [75]BACKGROUND
+! #define TRANSPARENCY [75]BACKGROUND
 #define TRANSPARENCY [85]BACKGROUND
-!#define TRANSPARENCY [100]BACKGROUND
+! #define TRANSPARENCY [100]BACKGROUND
 
 #include ".colors/default"
-!#include ".colors/ayu-dark"
-!#include ".colors/p8"
+! #include ".colors/ayu-dark"
+! #include ".colors/p8"
 
-!#include ".colors/cat/latte"
-!#include ".colors/cat/frappe"
+! #include ".colors/cat/latte"
+! #include ".colors/cat/frappe"
 !#include ".colors/cat/macchiato"
 !#include ".colors/cat/mocha"
 
-!#include ".colors/xcodelight"
+! #include ".colors/xcodelight"
 
-!#include ".colors/borland"
+! #include ".colors/borland"
 
 
 !! Set Colors
@@ -52,8 +52,8 @@ Xft.dpi:								135
 !Xft.dpi:								600
 
 !! Cursors
-Xcursor.size:						16
-!Xcursor.size:					32
+! Xcursor.size:						16
+Xcursor.size:					32
 !Xcursor.size:					48
 
 *foreground:						FOREGROUND
@@ -66,17 +66,29 @@ URxvt.cursorColor:			COLOR5
 *.cursorBlink:					true
 
 !! Fonts
+#define FONT_SIZE 10
+#define FONT_NAME SauceCodePro Nerd Font Mono:style=Bold:size=FONT_SIZE
+
 URxvt.letterSpace:      -1
 URxvt.iso14755:					false
 URxvt.iso14755_52:			false
-*.font:									xft:SauceCodePro Nerd Font Mono:style=Bold:antialias=true:hinting=true:size=9, \
-												xft:Symbola:antialias=true:hinting=true:size=9
-*.boldFont:
+
+*.font: xft:FONT_NAME:antialias=true:hinting=true, \                                                                          
+xft:Symbola:antialias=true:hinting=true:size=FONT_SIZE 
+dwm.font: FONT_NAME
+dwm.dmenufont: FONT_NAME
+polybar.font: FONT_NAME;3
+
+! *.font:									xft:SauceCodePro Nerd Font Mono:style=Bold:antialias=true:hinting=true:size=12, \
+! 												xft:Symbola:antialias=true:hinting=true:size=12
+! *.boldFont:
+! dwm.font:								FONT
+! dwm.dmenufont:				  FONT	
 
 !! dwm
 
 #define GAP 0
-dwm.borderpx:						3
+dwm.borderpx:						4
 dwm.snap:								10
 dwm.gappih:							GAP
 dwm.gappiv:							GAP
@@ -90,8 +102,6 @@ dwm.topbar:							1
 dwm.usealtbar:					1
 dwm.altbarclass:        Polybar
 dwm.altbarcmd:          /usr/bin/polybarstart
-dwm.font:								SauceCodePro Nerd Font Mono:style=Bold:size=9
-dwm.dmenufont:					SauceCodePro Nerd Font Mono:style=Bold:size=9
 
 dwm.normbgcol:					BACKGROUND
 dwm.normbordercol:			NORM
@@ -107,9 +117,18 @@ dwm.resizehints:				0
 dwm.attachdirection:		4
 dwm.enablegaps:					1
 
+!! window
+
+window.height: 32
+window.radius: 7
+
 !! URxvt
 URxvt.depth:						32
 URxvt.scrollBar:				false
+URxvt.saveLines:				100000
+URxvt.scrollTtyOutput:	false
+URxvt.scrollTtyKeypress:	true
+URxvt.secondaryScroll:	true
 URxvt.intensityStyles:	false
 URxvt.geometry:					90x30
 
@@ -132,7 +151,9 @@ XTerm*alwaysBoldMode:		false
 
 !! URxvt extensions
 URxvt.perl-lib:				/home/ethan/.urxvt/ext/
-#URxvt.perl-ext-common:	default,-confirm-paste,matcher,resize-font,config-reload
+! if resizing fails then just reinstall this shit
+! sudo cpan AnyEvent Linux::FD common::sense
+! URxvt.perl-ext-common:	default,-confirm-paste,matcher,resize-font,config-reload
 URxvt.perl-ext-common:	default,-confirm-paste,matcher,resize-font
 URxvt.url-launcher:			/usr/bin/firefox
 URxvt.matcher.button:		C-1

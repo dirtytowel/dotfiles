@@ -18,6 +18,7 @@
 
 [colors]
 background = ${xrdb:background}
+; background = ${xrdb:color15}
 ;background = #BF000000
 foreground = ${xrdb:foreground}
 primary = ${xrdb:background}
@@ -28,31 +29,29 @@ alert = ${xrdb:color1}
 disabled = ${xrdb:color8}
 
 [bar/main]
-width = 100%
 
 dpi = ${xrdb:Xft.dpi}
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-border-size = 0
-;border-right-size = 19
-height = 24
-;radius = 3
-;height = 30
-line-size = 3
-
-;border-color = #00000000
-border-color = ${colors.disabled}
-
+border-color = #00000000
+;border-color = ${colors.disabled}
 padding-left = 0
-;padding-right = 3
+
+; radius = ${xrdb:window.radius}
+height = ${xrdb:window.height}
+offset-x = ${xrdb:dwm.gappoh}
+offset-y = ${xrdb:dwm.gappoh}
+width = ${env:BAR_WIDTH}
 padding-right = 1
+
+
 
 ;separator = "│"
 separator-foreground = ${colors.disabled}
 
-font-0 = "SauceCodePro Nerd Font Mono:style=Bold:size=9;3"
+font-0 = ${xrdb:polybar.font}
 
 modules-left = dwm title
 ;modules-center = title

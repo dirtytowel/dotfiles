@@ -42,10 +42,6 @@ build_plugin_configs("treesitter")
 Plug('mbbill/undotree')
 build_plugin_configs("undotree")
 
--- VIM-DEVICONS --
--- https://github.com/ryanoasis/vim-devicons
---Plug('ryanoasis/vim-devicons')
-
 -- VIM-VISUAL-MULTI --
 -- https://github.com/mg979/vim-visual-multi
 Plug('mg979/vim-visual-multi')
@@ -76,6 +72,11 @@ build_plugin_configs("99")
 -- https://github.com/lukas-reineke/indent-blankline.nvim
 Plug('lukas-reineke/indent-blankline.nvim')
 build_plugin_configs("indent-blankline")
+
+-- nvim-pi --
+-- https://github.com/Huijiro/nvim-pi
+Plug('huijiro/nvim-pi')
+setup_plugin("nvim-pi")
 
 vim.call('plug#end')
 

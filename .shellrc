@@ -5,6 +5,13 @@
 # (_)___/_| |_|\___|_|_|_|  \___|
 
 ## EXPORTS ##
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_CACHE_HOME="$HOME/.cache"
+export LESSHISTFILE="$XDG_STATE_HOME/less/history"
+export W3M_DIR="$XDG_DATA_HOME/w3m"
+export PULSE_COOKIE="$XDG_CONFIG_HOME/pulse/cookie"
 export TERM=xterm-256color
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 export TODOTXT_DEFAULT_ACTION=ls
@@ -47,6 +54,8 @@ fi
 
 ## ALIASES AND FUNCTIONS ##
 
+alias wget='wget --hsts-file="$XDG_DATA_HOME/wget-hsts"'
+
 # docker aliases bc they can get really verbose sometimes
 alias \
 	d="docker" \
@@ -84,10 +93,10 @@ alias ifconfig.me="curl ifconfig.me; echo"
 alias bat="bat -p --theme base16"
 
 
-# mdn shit
-alias nd='PATHSTORE=$(pwd) && cd ~/mdn && nvim ~/mdn && cd $PATHSTORE && unset PATHSTORE'
-alias n='PATHSTORE=$(pwd) && cd ~/mdn && nvim ~/mdn/quicknote.md && cd $PATHSTORE && unset PATHSTORE'
-alias c='PATHSTORE=$(pwd) && cd ~/mdn && nvim ~/mdn/commands.md && cd $PATHSTORE && unset PATHSTORE'
+# dat/docs shit
+alias nd='PATHSTORE=$(pwd) && cd ~/dat/docs && nvim ~/dat/docs && cd $PATHSTORE && unset PATHSTORE'
+alias n='PATHSTORE=$(pwd) && cd ~/dat/docs && nvim ~/dat/docs/quicknote.md && cd $PATHSTORE && unset PATHSTORE'
+alias c='PATHSTORE=$(pwd) && cd ~/dat/docs && nvim ~/dat/docs/commands.md && cd $PATHSTORE && unset PATHSTORE'
 
 # fuzzy cd util
 # fzcd is the base function
@@ -152,7 +161,7 @@ ocp() {
   tmp="$(mktemp)" || return 1
   trap 'rm -f "$tmp"' RETURN
   vim "$tmp" </dev/tty >/dev/tty 2>&1 || return $?
-  opencode run "$(cat "$tmp")" --agent g
+  opencode run "$(cat "$tmp")" #--agent g
 }
 
 # git aliases
@@ -215,25 +224,32 @@ ssh_check () {
 }
 
 get_pwd () {
-  local dirs num_dirs c d pth
-  # Replace the $HOME part of the current directory path with '~' and split the path into components.
-  dirs=$(pwd | sed "s|^$HOME|~|" | tr '/' '\n' )
-  # Get the total number of directories in the path.
-  num_dirs=$(printf "%s\n" "$dirs" | wc -l)
-  # fix bug when starting from / by setting to 1
-  c=1
-  # Loop through each directory component.
-  while IFS= read -r d; do
-    c=$((c + 1))
-    # subtract 1 if ~
-    [ $d = '~' ] && pth='~' && c=$((c - 1)) && continue
-    [ "$c" -eq "$num_dirs" ] && d="/$d" || d="/$(printf "%s" ${d#.} | cut -b1 )"
-    pth="${pth:+${pth}}${d}"
+  # Replace $HOME with '~'.
+  get_pwd_p=$(pwd | sed "s|^$HOME|~|")
+  # Root is a special case with no components to shorten.
+  [ "$get_pwd_p" = "/" ] && { printf "/\n"; return; }
+  # Remember and strip a leading '/' so absolute paths don't yield an empty component.
+  case $get_pwd_p in
+    /*) get_pwd_lead="/"; get_pwd_p=${get_pwd_p#/} ;;
+    *)  get_pwd_lead="" ;;
+  esac
+  # Count components so the final directory can remain unshortened.
+  get_pwd_n=$(printf "%s\n" "$get_pwd_p" | tr '/' '\n' | wc -l)
+  get_pwd_i=0
+  get_pwd_out=
+
+  # Shorten every component to its first char (ignoring a leading '.'), except the last.
+  while IFS= read -r get_pwd_d; do
+    get_pwd_i=$((get_pwd_i + 1))
+    if [ "$get_pwd_i" -eq "$get_pwd_n" ]; then
+      get_pwd_seg=$get_pwd_d
+    else
+      get_pwd_seg=$(printf "%s" "${get_pwd_d#.}" | cut -b1)
+    fi
+    get_pwd_out="${get_pwd_out:+${get_pwd_out}/}${get_pwd_seg}"
   done <<EOF
-$dirs
+$(printf "%s\n" "$get_pwd_p" | tr '/' '\n')
 EOF
-  # If the path is empty (unlikely), set it to the root directory.
-  [ -z "$pth" ] && pth="/"
-  # Output the shortened path.
-  echo $pth
+
+  printf "%s%s\n" "$get_pwd_lead" "$get_pwd_out"
 }

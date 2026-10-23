@@ -32,8 +32,11 @@ super + w
 super + shift + w
 	weechat
 
-# fzmedia, play movies and shows and shit
 super + f
+  thunar
+
+# fzmedia, play movies and shows and shit
+super + m
   fzmedia -f "dmu -S -i -l 10" -p "mpv --save-position-on-quit --no-resume-playback" -r "mpvcw"
 
 ## SCREENSHOTS
